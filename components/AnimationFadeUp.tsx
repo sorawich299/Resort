@@ -1,0 +1,41 @@
+'use client';
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+
+export default function AnimatedFadeInUp({
+  children,
+  delay = 0,
+  y = 150,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  y?: number;
+}) {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: false });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      transition={{ duration: 0.6, delay }}
+      variants={{
+        hidden: { opacity: 0, y: y },
+        visible: { opacity: 1, y: 0 },
+      }}
+      className="relative overflow-hidden w-full h-full"
+    >
+      {children}
+    </motion.div>
+  );
+}

@@ -56,7 +56,7 @@ export default function Contact() {
                 </div>
 
                 {/* Map / Placeholder */}
-                <div className="w-full h-64 md:h-80 rounded-lg overflow-hidden shadow">
+                <div className="w-full h-64 md:h-80 rounded-lg overflow-hidden ">
                     <iframe
                         title="Google Map"
                         width="100%"
