@@ -1,0 +1,37 @@
+name: Build and Deploy Next.js Static Site
+
+on:
+  push:
+    branches:
+      - main  # เปลี่ยนถ้าใช้ branch อื่น
+
+permissions:
+  contents: write  # จำเป็นสำหรับการ push ไปยัง gh-pages
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Next.js
+        run: npm run build
+
+      - name: Export Static HTML
+        run: npm run export
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
