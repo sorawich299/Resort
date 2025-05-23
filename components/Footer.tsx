@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <footer className="bg-white  text-sm text-gray-600">
-            <div className="max-w-6xl mx-auto px-4 py-10">
+            <div className="container mx-auto px-4 py-10">
                 <div className="flex flex-col sm:flex-row justify-between gap-8">
                     {/* Logo and Address */}
                     <div className="flex flex-col gap-2">

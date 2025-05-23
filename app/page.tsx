@@ -2,6 +2,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import HeroSection from "@/components/Hero";
+import ImageGallery from "@/components/ImageGallery";
 import Infomation from "@/components/Information";
 import PrivateQuarters from "@/components/PrivateQuarters";
 import Reserve from "@/components/Reserve";
@@ -14,7 +15,7 @@ import VillaRetreatOverview from "@/components/VillaRetreatOverview";
 export default function Home() {
   return (
     <div >
-      <Header/>
+      
       <HeroSection/>
       <Infomation/>
       <VideoPlayer videoId="Erflio-agG4" />
@@ -80,6 +81,7 @@ export default function Home() {
           { icon: '🍸', label: 'Private Bar' },
         ]}
       />
+      <ImageGallery/>
       <ReviewResort/>
       <ReviewResort/>
       <Contact/>
