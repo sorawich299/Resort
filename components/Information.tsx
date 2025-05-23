@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import AnimatedFadeInUp from "./AnimationFadeUp";
-import heroImage from '../assets/img/5146a703aa1d1ecaec17e76c534a98e984b15d2c.avif';
+// import heroImage from '../assets/img/5146a703aa1d1ecaec17e76c534a98e984b15d2c.avif';
 import Link from "next/link";
 
 
@@ -32,7 +32,7 @@ export default function Information() {
           <AnimatedFadeInUp key={villa.alt} delay={index * 0.25} y={300}>
             <div className="relative rounded-xl overflow-hidden shadow-md">
               <Image
-                src={heroImage} // ใช้ StaticImageData โดยตรง
+                src={'heroImage'} // ใช้ StaticImageData โดยตรง
                 alt={villa.alt}
                 width={800}
                 height={600}
