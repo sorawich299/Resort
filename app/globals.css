@@ -20,6 +20,51 @@
 
 body {
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'IBM Plex Sans Thai Looped', sans-serif;
 }
 
+
+/* container ภายนอก */
+.App {
+  width: 100vw; /* เต็มความกว้างหน้าจอ */
+  max-width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.masonry-wrapper {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.masonry-column {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* ลดช่องว่างนิดหน่อย */
+}
+
+/* กำหนดความกว้างคอลัมน์เล็กลง (ถ้าต้องการ) */
+.masonry-column {
+  max-width: 180px; /* ปรับลดขนาดคอลัมน์ */
+}
+
+/* wrapper ของแต่ละภาพ */
+.image_wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.1);
+}
+
+.image_wrapper img {
+  width: 100%; /* ให้เต็มความกว้าง wrapper */
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 6px;
+}
