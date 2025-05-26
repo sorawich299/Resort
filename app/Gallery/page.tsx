@@ -52,7 +52,7 @@ export default function Home() {
                     <div className="sticky top-20 left-0">
                         <h1 className="text-5xl font-bold text-[#344054] py-4">Gallery</h1>
                         <div className="flex flex-col gap-4">
-                            <Link href={"#"} className="text-gray-400 text-base ">The Infinity Villa</Link>
+                            <Link href={"/Infinity/Gallery"} className="text-gray-400 text-base ">The Infinity Villa</Link>
                             <Link href={"/Horizon/Gallery"} className="text-gray-400 text-base ">The Horizon Retreat</Link>
                         </div>
 
