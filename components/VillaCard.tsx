@@ -23,7 +23,7 @@ const VillaCard: React.FC<VillaCardProps> = ({ title, description, image, featur
                     src={image} // รองรับ StaticImageData
                     alt={title}
                     layout="fill"
-                    objectFit="cover"
+                    style={{ objectFit: "cover" }}
                     className="rounded-lg"
                 /></AnimatedFadeInUp>
 

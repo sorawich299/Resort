@@ -10,14 +10,15 @@ export default function Header() {
 
   const menuItems = [
     { label: "Home", link: "/" },
-    { label: "The Infinity Villa", link: "/Infinity" },
-    { label: "The Horizon Retreat", link: "/Horizon" },
-    { label: "Gallery", link: "/Gallery" },
+    { label: "The Infinity Villa", link: "/Infinity/" },
+    { label: "The Horizon Retreat", link: "/Horizon/" },
+    { label: "The Infinity Villa", link: "/Infinity/Gallery/" },
+    { label: "The Horizon Retreat", link: "/Horizon/Gallery/" },
+    { label: "Gallery", link: "/Gallery/" },
   ];
 
   const activeLabel =
     menuItems.find((item) => pathname === item.link)?.label || "Home";
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +28,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  console.log(activeLabel)
 
   return (
     <header
@@ -43,14 +43,14 @@ export default function Header() {
         </div>
         <nav className="site-link">
           <div
-            className="flex md:hidden text-sm font-medium cursor-pointer"
+            className={`flex md:hidden ${activeLabel==="Home" ? 'text-white' : 'text-black/50' }  text-sm font-medium cursor-pointer transition duration-300 ease-in-out`}
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            ☰
+            {menuOpen ? '✖' : '☰'}
           </div>
           <ul
-            className={`$${
-              menuOpen ? 'flex' : 'hidden'
+            className={`${
+              menuOpen ? '' : 'hidden'
             } md:flex flex-col items-center justify-center text-center md:flex-row gap-4 md:gap-[50px] text-sm font-medium absolute md:static top-18 right-4 bg-white border-[3px] border-gray-200 shadow-lg rounded-lg z-50 md:z-auto md:shadow-none md:border-none md:bg-transparent w-[200px] md:w-auto`}
           >
             {[
@@ -67,7 +67,7 @@ export default function Header() {
               >
                 <a
                   href={label.link}
-                  className={`text-black/50 relative inline-block md:hover:text-black hover:text-orange-600 font-medium md:hover:font-medium hover:font-bold transition duration-200 transform ${
+                  className={`${activeLabel==="Home" ? scrolled ? 'md:text-black/50': 'md:text-white': 'md:text-black/50'} text-black/50 relative inline-block md:hover:text-black hover:text-orange-600 font-medium md:hover:font-medium hover:font-bold transition duration-200 transform ${
                     activeLabel === label.label ? 'text-orange-500 font-bold' : ''
                   }`}
                 >

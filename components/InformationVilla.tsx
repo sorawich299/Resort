@@ -3,7 +3,7 @@ import GalleryShow from "./VillaDetail/GalleryShow";
 
 export default function InformationVilla() {
   return (
-    <div className="flex flex-row h-fit transition duration-300 ease-in-out">
+    <div className="flex flex-col md:flex-row h-fit transition duration-300 ease-in-out">
       {/* Information */}
       <div className="flex-1">
         <div className="flex flex-col gap-[8px] py-4">

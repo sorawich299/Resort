@@ -85,7 +85,6 @@ export default function Home() {
       <ReviewResort/>
       <ReviewResort/>
       <Contact/>
-      <Footer/>
     </div>
   );
 }

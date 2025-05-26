@@ -1,17 +1,18 @@
 "use client";
 
-export default function Gallery() {
-    const images = [
-        "https://via.placeholder.com/800x800?text=1", // รูปใหญ่
-        "https://via.placeholder.com/400x400?text=2",
-        "https://via.placeholder.com/400x400?text=3",
-        "https://via.placeholder.com/400x400?text=4",
-        "https://via.placeholder.com/400x400?text=5",
-    ];
+import Link from "next/link";
+
+interface GalleryProps{
+    images: string[];
+    link: string;
+}
+
+export default function Gallery({images, link}: GalleryProps) {
+    
 
     return (
         <div className="relative">
-            <div className="flex gap-2 mx-auto p-4 h-[600px] max-w-6xl">
+            <div className="flex gap-2 mx-auto p-4 h-[600px] max-w-6xl flex-col md:flex-row">
                 {/* รูปใหญ่ (กินพื้นที่ซ้ายครึ่งหนึ่ง) */}
                 <div className="flex-1">
                     <img
@@ -34,8 +35,8 @@ export default function Gallery() {
                     ))}
                 </div>
             </div>
-            <div className="absolute bottom-10 right-20">
-                <button className="cursor-pointer p-4 bg-gray-600 border-lg rounded-lg text-white z-100" onClick={()=> alert(5555)}>Show all photos</button>
+            <div className="absolute bottom-85 md:bottom-20 right-20">
+                <Link className="cursor-pointer p-4 bg-white border-1 border-[#344054] rounded-lg text-[#344054] z-100" href={link}>Show all photos</Link>
             </div>
         </div>
     );

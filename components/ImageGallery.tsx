@@ -47,7 +47,7 @@ export default function ImageGallery() {
             src={images[currentIndex]}
             alt="Main"
             layout="fill"
-            objectFit="cover"
+            style={{ objectFit: "cover" }}
           />
         </div>
 
@@ -74,7 +74,7 @@ export default function ImageGallery() {
               src={img}
               alt={`Thumbnail ${index + 1}`}
               layout="fill"
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
             />
           </button>
         ))}
