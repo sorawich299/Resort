@@ -18,11 +18,11 @@ export default function Gallery() {
             {/* Header */}
             <div className="flex items-center gap-4">
                 {/* Back */}
-                <div className="flex flex-1 justify-end font-bold text-2xl text-[#2970FF] cursor-pointer" onClick={()=>router.back()}>{'←'}</div>
+                <div className="flex flex-1 justify-end font-bold text-2xl text-[#2970FF]  cursor-pointer" onClick={()=>router.back()}>{'←'}</div>
                 <div className="flex-9">
                     <div className="flex flex-col gap-5">
                         <span className="text-sm text-orange-400 font-bold">Gallery</span>
-                        <h1 className="text-2xl md:text-5xl font-bold ">The Horizon Retreat - Gallery</h1>
+                        <h1 className="text-2xl md:text-5xl font-bold ">The Infinity Villa - Gallery</h1>
                     </div>
                 </div>
             </div>

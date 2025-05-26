@@ -1,7 +1,12 @@
+import Link from "next/link";
 import AmenitiesSection from "./VillaDetail/AmenittiesSection";
 import GalleryShow from "./VillaDetail/GalleryShow";
 
-export default function InformationVilla() {
+
+interface InformationVillaProps {
+  link: string;
+}
+export default function InformationVilla({ link }: InformationVillaProps) {
   return (
     <div className="flex flex-col md:flex-row h-fit transition duration-300 ease-in-out">
       {/* Information */}
@@ -158,7 +163,8 @@ export default function InformationVilla() {
             </ul>
           </div>
         </div>
-        <button className="py-4 px-6 bg-white border rounded-lg text-xl text-[#344054] flex gap-5"><p>555</p><span>Show all photos</span></button>
+
+        <div className="flex"><Link href={link} className="py-4 px-6 bg-white border rounded-lg text-xl text-[#344054] flex gap-5"><p>555</p><span>Show all photos</span></Link></div>
         {/* <GalleryShow /> */}
         <AmenitiesSection />
       </div>

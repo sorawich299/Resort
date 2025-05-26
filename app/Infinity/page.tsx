@@ -18,7 +18,7 @@ export default function Home() {
                 <span className="text-[#344054] text-lg font-medium">10 guests ・ 5 bedrooms・5 beds・5 toilets・5 baths・5 Jacuzzi</span>
                 <Gallery images={images} link={'/Infinity/Gallery'}/>
             </div>
-            <InformationVilla/>
+            <InformationVilla link={'/Infinity/Gallery'}/>
             <hr className="border-gray-300 mt-20"/>
             <NearbySection/>
             <Information/>
