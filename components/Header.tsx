@@ -65,7 +65,7 @@ export default function Header() {
                   i === 3 ? 'border-none' : ''
                 }`}
               >
-                <a
+                <Link
                   href={label.link}
                   className={`${activeLabel==="Home" ? scrolled ? 'md:text-black/50': 'md:text-white': 'md:text-black/50'} text-black/50 relative inline-block md:hover:text-black hover:text-orange-600 font-medium md:hover:font-medium hover:font-bold transition duration-200 transform ${
                     activeLabel === label.label ? 'text-orange-500 font-bold' : ''
@@ -74,7 +74,7 @@ export default function Header() {
                   <span className="inline-block transform transition-transform duration-200 ">
                     {label.label}
                   </span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
