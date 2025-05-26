@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import heroImage from '../assets/img/5146a703aa1d1ecaec17e76c534a98e984b15d2c.png';
+import heroImage from "../public/images/Hero/Hero.png";
 
 const images = [
   heroImage,

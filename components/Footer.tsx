@@ -1,3 +1,5 @@
+import LogoIcon from "@/public/icons/LogoIcon"
+
 export default function Footer() {
     return (
         <footer className="bg-white  text-sm text-gray-600">
@@ -5,7 +7,7 @@ export default function Footer() {
                 <div className="flex flex-col sm:flex-row justify-between gap-8">
                     {/* Logo and Address */}
                     <div className="flex flex-col gap-2">
-                        <img src="/assets/img/logo.png" alt="PBB Logo" className="w-20 h-auto" />
+                        <LogoIcon color="black"/>
 
                         <div className="font-bold text-black">PBB SAILOM SEA BEACH</div>
                         <div>Bang Sare, Sattahip, Chon Buri 20250</div>
