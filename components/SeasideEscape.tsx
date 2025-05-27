@@ -1,9 +1,11 @@
 // components/SeasideEscape.tsx
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import clsx from 'clsx';
+import { ReactElement } from 'react';
+import AnimatedFadeInUp from './AnimationFadeUp';
 
 type Feature = {
-  icon: string;       // Emoji หรือ URL ของไอคอน
+  icon: string | ReactElement;       // Emoji หรือ URL ของไอคอน
   label: string;
 };
 
@@ -11,7 +13,7 @@ type SeasideEscapeProps = {
   title: string;
   subtitle: string;
   features: Feature[];
-  imageSrc: string;
+  imageSrc: string|StaticImageData;
   reverse?: boolean;
 };
 
@@ -25,38 +27,42 @@ export default function SeasideEscape({
   return (
     <section
       className={clsx(
-        'flex flex-col md:flex-row items-center justify-between gap-10 p-8 max-w-6xl mx-auto',
-        reverse && 'md:flex-row-reverse'
+        'flex flex-col lg:flex-row  gap-10 p-8 items-center justify-center',
+        reverse && 'flex-col-reverse  lg:flex-row-reverse'
       )}
     >
       {/* Text Content */}
-      <div className="flex-1">
-        <p className="text-sm text-gray-500 mb-2">{subtitle}</p>
-        <h1 className="text-4xl font-bold text-gray-900 mb-6">{title}</h1>
+      
+      <div className="flex-1 max-w-[600px]"><AnimatedFadeInUp>
+        <p className="text-base text-black font-normal mb-2">{subtitle}</p>
+        <h1 className="text-4xl font-medium text-black mb-6">{title}</h1>
 
-        <div className="flex gap-6 flex-wrap">
+        <div className="flex gap-4 flex-wrap">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center p-6 border rounded-xl shadow-md w-60"
+              className="flex flex-col p-6 border rounded-xl shadow-md w-60"
             >
-              <span className="text-3xl text-blue-600">{feature.icon}</span>
-              <p className="mt-4 font-medium text-lg text-center">{feature.label}</p>
+              <span className="text-xl text-blue-600">{feature.icon}</span>
+              <p className="mt-4 font-medium text-base lg:text-xl">{feature.label}</p>
             </div>
           ))}
-        </div>
+        </div></AnimatedFadeInUp>
       </div>
+      
 
       {/* Image */}
-      <div className="flex-1 rounded-3xl overflow-hidden shadow-lg max-w-xl">
-        <Image
+      
+      <div className="flex-1 rounded-3xl overflow-hidden shadow-lg max-w-[600px]">
+       <AnimatedFadeInUp> <Image
           src={imageSrc}
           alt="Seaside retreat"
           width={600}
           height={400}
           className="rounded-3xl object-cover w-full h-auto"
-        />
+        /></AnimatedFadeInUp>
       </div>
+      
     </section>
   );
 }

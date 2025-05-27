@@ -21,21 +21,23 @@ const VillaCard: React.FC<VillaCardProps> = ({
   features,
 }) => {
   return (
-    <div className="p-4 flex gap-6 mb-6 flex-col lg:flex-row">
+    <div className="p-4 flex gap-6 mb-6 flex-col lg:flex-row items-center lg:justify-center">
       {/* Image Section */}
-      <div className="relative w-full lg:w-1/2 h-96 overflow-hidden rounded-lg">
+      <div className="relative w-full h-96 overflow-hidden rounded-lg 
+                  lg:w-[616px] lg:h-[640px] flex justify-center items-center">
         <AnimatedFadeInUp>
           <Image
             src={image}
             alt={title}
-            fill // ✅ ใช้แทน layout="fill"
+            fill
             className="object-cover rounded-lg"
           />
         </AnimatedFadeInUp>
       </div>
 
       {/* Text Section */}
-      <div className="flex flex-col justify-between w-full lg:w-1/2">
+      <div className="flex flex-col justify-between w-full 
+                  lg:w-[616px]">
         <AnimatedFadeInUp delay={0.25}>
           <div>
             <h5 className="text-sm text-gray-500">
@@ -62,6 +64,7 @@ const VillaCard: React.FC<VillaCardProps> = ({
         </AnimatedFadeInUp>
       </div>
     </div>
+
   );
 };
 

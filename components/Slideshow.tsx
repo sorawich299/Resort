@@ -2,6 +2,7 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import Marquee from "react-fast-marquee";
+import Image, { StaticImageData } from "next/image";
 
 const images = [
   "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg",
@@ -46,16 +47,33 @@ const images = [
   "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg",
 ];
 
-const chunkImages = (arr: string[], numCols: number) => {
-  const columns: string[][] = Array.from({ length: numCols }, () => []);
+function shuffleArray<T>(array: T[]): T[] {
+  const result = [...array]; // สร้าง copy เพื่อไม่แก้ต้นฉบับ
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]]; // swap
+  }
+  return result;
+}
+
+const chunkImages = (
+  arr: (string | StaticImageData)[],
+  numCols: number
+): (string | StaticImageData)[][] => {
+  const columns = Array.from({ length: numCols }, () => [] as (string | StaticImageData)[]);
   arr.forEach((img, idx) => {
     columns[idx % numCols].push(img);
   });
   return columns;
 };
 
-export default function MasonryHorizontalAutoScroll() {
-  const columns = chunkImages(images, 20); 
+interface MasonryHorizontalAutoScrollProps{
+  images: string[] | StaticImageData[];
+}
+
+export default function MasonryHorizontalAutoScroll({images}: MasonryHorizontalAutoScrollProps) {
+  const shuffledImages = shuffleArray(images as StaticImageData[]);
+  const columns = chunkImages(shuffledImages, 15); 
 
   return (
     <div className="App">
@@ -67,7 +85,7 @@ export default function MasonryHorizontalAutoScroll() {
             <div key={colIdx} className="masonry-column">
               {col.map((src, i) => (
                 <div key={i} className="image_wrapper">
-                  <img src={src} alt={`img-${i}`} />
+                  <Image src={src} alt={`img-${i}`} />
                 </div>
               ))}
             </div>
