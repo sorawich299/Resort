@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface GalleryImageProps {
     title: string;
     subtitle?: string;
-    images: string[]
+    images: string[] | StaticImageData[]
 }
 export default function GalleryImage({ title, subtitle = "", images }: GalleryImageProps) {
     return (<div className="py-6">
