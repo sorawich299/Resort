@@ -1,6 +1,9 @@
 import Link from "next/link";
 import AmenitiesSection from "./VillaDetail/AmenittiesSection";
 import GalleryShow from "./VillaDetail/GalleryShow";
+import SunIcon from "@/public/icons/SunIcon";
+import PoolIcon from "@/public/icons/PoolIcon";
+import ListIcon from "@/public/icons/ListIcon";
 
 
 interface InformationVillaProps {
@@ -8,7 +11,7 @@ interface InformationVillaProps {
 }
 export default function InformationVilla({ link }: InformationVillaProps) {
   return (
-    <div className="flex flex-col md:flex-row h-fit transition duration-300 ease-in-out">
+    <div className="flex flex-col lg:flex-row h-fit transition duration-300 ease-in-out">
       {/* Information */}
       <div className="flex-1">
         <div className="flex flex-col gap-[8px] py-4">
@@ -45,12 +48,12 @@ export default function InformationVilla({ link }: InformationVillaProps) {
           nature, with luxury, and with yourself.
         </p>
         <div className="flex justify-between gap-16 py-16">
-          <div className="flex flex-col p-6 border rounded-xl shadow-md w-full">
-            <span className="text-3xl text-blue-600">555</span>
+          <div className="flex flex-col p-6 border rounded-xl shadow-lg w-full">
+            <span className="text-3xl text-blue-600"><SunIcon color="#2970FF" /></span>
             <p className="mt-4 font-bold text-2xl">5 Ocean View</p>
           </div>
-          <div className="flex flex-col p-6 border rounded-xl shadow-md w-full">
-            <span className="text-3xl text-blue-600">555</span>
+          <div className="flex flex-col p-6 border rounded-xl shadow-lg w-full">
+            <span className="text-3xl text-blue-600"><PoolIcon color="#2970FF" /></span>
             <p className="mt-4 font-bold text-2xl">Private Infinity Pool</p>
           </div>
         </div>
@@ -164,7 +167,15 @@ export default function InformationVilla({ link }: InformationVillaProps) {
           </div>
         </div>
 
-        <div className="flex"><Link href={link} className="py-4 px-6 bg-white border rounded-lg text-xl text-[#344054] flex gap-5"><p>555</p><span>Show all photos</span></Link></div>
+        <div className="flex">
+          <Link
+            href={link}
+            className="py-4 px-6 bg-white border border-[#344054] rounded-lg text-xl text-[#344054] flex items-center gap-3"
+          >
+            <ListIcon color="#344054" width="20" height="20" />
+            <span>Show all photos</span>
+          </Link>
+        </div>
         {/* <GalleryShow /> */}
         <AmenitiesSection />
       </div>

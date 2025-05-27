@@ -52,8 +52,8 @@ export default function Header() {
             {scrolled ? (
               <LogoIcon color="#F79009"/>
             ) : (
-              <LogoIcon/>
-            )}
+              activeLabel === 'Home' ? <LogoIcon/> : <LogoIcon color="#F79009"/>
+            )} 
           </Link>
         </div>
         <nav className="site-link">

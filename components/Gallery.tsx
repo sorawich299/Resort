@@ -1,21 +1,23 @@
 "use client";
 
+import ListIcon from "@/public/icons/ListIcon";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
-interface GalleryProps{
-    images: string[];
+interface GalleryProps {
+    images: string[] | StaticImageData[];
     link: string;
 }
 
-export default function Gallery({images, link}: GalleryProps) {
-    
+export default function Gallery({ images, link }: GalleryProps) {
+
 
     return (
         <div className="relative">
-            <div className="flex gap-2 mx-auto p-4 h-[600px] max-w-6xl flex-col md:flex-row">
+            <div className="flex gap-2  p-4 lg:h-[600px]  flex-col lg:flex-row">
                 {/* รูปใหญ่ (กินพื้นที่ซ้ายครึ่งหนึ่ง) */}
                 <div className="flex-1">
-                    <img
+                    <Image
                         src={images[0]}
                         alt="Large"
                         className="w-full h-full object-cover rounded-lg"
@@ -26,7 +28,7 @@ export default function Gallery({images, link}: GalleryProps) {
                 <div className="flex-1 grid grid-cols-2 grid-rows-2 gap-2">
                     {[1, 2, 3, 4].map((i) => (
                         <div key={i} className="w-full h-full">
-                            <img
+                            <Image
                                 src={images[i]}
                                 alt={`Small ${i}`}
                                 className="w-full h-full object-cover rounded-lg"
@@ -35,8 +37,14 @@ export default function Gallery({images, link}: GalleryProps) {
                     ))}
                 </div>
             </div>
-            <div className="absolute bottom-85 md:bottom-20 right-20">
-                <Link className="cursor-pointer p-4 bg-white border-1 border-[#344054] rounded-lg text-[#344054] z-100" href={link}>Show all photos</Link>
+            <div className="absolute bottom-125 lg:bottom-10 right-10">
+                <Link
+                    className="cursor-pointer p-4 bg-white border border-[#344054] rounded-lg text-[#344054] z-100 flex items-center gap-2"
+                    href={link}
+                >
+                    <ListIcon color="#344054" width="12" height="12" />
+                    <span>Show all photos</span>
+                </Link>
             </div>
         </div>
     );

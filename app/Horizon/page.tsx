@@ -2,14 +2,20 @@ import Gallery from "@/components/Gallery";
 import Information from "@/components/Information";
 import InformationVilla from "@/components/InformationVilla";
 import NearbySection from "@/components/VillaDetail/NearBySection";
+import Horizon from '../../public/images/Information/Horizon.png'
+import Horizon2 from '../../public/images/Information/e75722b3185602c1f46f08b002e8190efafab706.jpg'
+import Horizon3 from '../../public/images/Information/ba9fdbd300f115a67162f23ebe7e01d3df3c6523.jpg'
+import Horizon4 from '../../public/images/Information/4aaf9188c5edb63031e4d8d16f50735c74137852.jpg'
+import Horizon5 from '../../public/images/Information/b2953f007e500fb57c735b11ecb31dd6c2234834.jpg'
+
 
 export default function Home() {
     const images = [
-        "https://via.placeholder.com/800x800?text=1", // รูปใหญ่
-        "https://via.placeholder.com/400x400?text=2",
-        "https://via.placeholder.com/400x400?text=3",
-        "https://via.placeholder.com/400x400?text=4",
-        "https://via.placeholder.com/400x400?text=5",
+        Horizon, // รูปใหญ่
+        Horizon2, // รูปใหญ่
+        Horizon3, // รูปใหญ่
+        Horizon4, // รูปใหญ่
+        Horizon5, // รูปใหญ่
     ];
     return (
         <div className="container m-auto p-4  pt-20">
