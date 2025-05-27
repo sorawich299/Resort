@@ -176,7 +176,7 @@ export default function InformationVilla({ link }: InformationVillaProps) {
             <span>Show all photos</span>
           </Link>
         </div>
-        {/* <GalleryShow /> */}
+        <GalleryShow />
         <AmenitiesSection />
       </div>
       {/* Button Sticky */}
