@@ -12,10 +12,14 @@ export default function HeroSection() {
         style={{ objectFit: "cover" }}
         priority
       />
-      <div className="relative z-10">
+      <div className="container mx-auto relative z-10">
         <AnimatedFadeInUp>
-          <h1 className="text-5xl font-bold mb-2">Solunar.</h1>
-          <p className="text-lg">Between Light, Sea & Serenity.</p>
+          <div className="flex flex-col gap-6">
+            <h1 className="text-6xl font-semibold">Solunar.</h1>
+            <p className="text-2xl font-normal">
+              🌙 - Between Light, Sea & Serenity.
+            </p>
+          </div>
         </AnimatedFadeInUp>
       </div>
     </section>

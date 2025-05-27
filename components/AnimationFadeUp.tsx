@@ -1,15 +1,19 @@
 'use client';
 import { motion, useAnimation, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, CSSProperties } from "react";
 
 export default function AnimatedFadeInUp({
   children,
   delay = 0,
   y = 150,
+  style,
+  className = "",
 }: {
   children: React.ReactNode;
   delay?: number;
   y?: number;
+  style?: CSSProperties;
+  className?: string;
 }) {
   const controls = useAnimation();
   const ref = useRef(null);
@@ -33,7 +37,8 @@ export default function AnimatedFadeInUp({
         hidden: { opacity: 0, y: y },
         visible: { opacity: 1, y: 0 },
       }}
-      className="relative overflow-hidden w-full h-full"
+      className={`relative overflow-hidden w-full h-full ${className}`}
+      style={style}
     >
       {children}
     </motion.div>
