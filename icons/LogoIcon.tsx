@@ -1,12 +1,12 @@
 import React, { SVGProps } from "react";
 
-interface LogoIconProps extends SVGProps<SVGSVGElement> {
+interface IconProps extends SVGProps<SVGSVGElement> {
   color?: string;
   width?: string;
   height?: string;
 }
 
-const LogoIcon: React.FC<LogoIconProps> = ({ color = "white", width = "80", height = "32", ...props }) => {
+const LogoIcon: React.FC<IconProps> = ({ color = "white", width = "80", height = "32", ...props }) => {
   return (
     <svg
       width={width}
