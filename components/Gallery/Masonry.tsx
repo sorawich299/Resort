@@ -2,9 +2,8 @@
 
 import Image, { StaticImageData } from 'next/image';
 import { useState } from 'react';
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
 import styles from './Masonry.module.css';
+import lightboxStyles from './Lightbox.module.css';
 
 interface MasonryProps {
   images: (string | StaticImageData)[];
@@ -31,7 +30,6 @@ const Masonry: React.FC<MasonryProps> = ({ images, columns = 3 }) => {
     setLightboxOpen(true);
   };
 
-  // แปลงคอลัมน์กลับเป็น array เดียว พร้อม mapping index สำหรับ lightbox
   let globalIndex = 0;
 
   return (
@@ -40,9 +38,7 @@ const Masonry: React.FC<MasonryProps> = ({ images, columns = 3 }) => {
         {columnsData.map((column, colIndex) => (
           <div key={colIndex} className={styles.column}>
             {column.map((src, imgIndex) => {
-              const image = typeof src === 'string' ? src : src.src;
-              const index = globalIndex;
-              globalIndex++;
+              const index = globalIndex++;
               return (
                 <div
                   key={imgIndex}
@@ -52,12 +48,14 @@ const Masonry: React.FC<MasonryProps> = ({ images, columns = 3 }) => {
                 >
                   <Image
                     src={src}
-                    alt={`Image ${imgIndex}`}
+                    alt={`Image ${index}`}
                     width={300}
                     height={Math.floor(Math.random() * 200) + 200}
                     layout="responsive"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 300px"
                     style={{ objectFit: 'cover' }}
-                    placeholder="blur"
+                    placeholder={typeof src === 'string' ? 'empty' : 'blur'}
+                    priority={index === 0}
                   />
                 </div>
               );
@@ -67,18 +65,33 @@ const Masonry: React.FC<MasonryProps> = ({ images, columns = 3 }) => {
       </div>
 
       {lightboxOpen && (
-        <Lightbox
-          mainSrc={flatImageList[currentIndex]}
-          nextSrc={flatImageList[(currentIndex + 1) % flatImageList.length]}
-          prevSrc={flatImageList[(currentIndex + flatImageList.length - 1) % flatImageList.length]}
-          onCloseRequest={() => setLightboxOpen(false)}
-          onMovePrevRequest={() =>
-            setCurrentIndex((currentIndex + flatImageList.length - 1) % flatImageList.length)
-          }
-          onMoveNextRequest={() =>
-            setCurrentIndex((currentIndex + 1) % flatImageList.length)
-          }
-        />
+        <div className={lightboxStyles.overlay} onClick={() => setLightboxOpen(false)}>
+          <div className={lightboxStyles.content} onClick={(e) => e.stopPropagation()}>
+            <button className={lightboxStyles.close} onClick={() => setLightboxOpen(false)}>×</button>
+            <button
+              className={lightboxStyles.prev}
+              onClick={() => setCurrentIndex((currentIndex - 1 + flatImageList.length) % flatImageList.length)}
+            >
+              ‹
+            </button>
+            <div className={lightboxStyles.imageWrapper}>
+              <Image
+                src={flatImageList[currentIndex]}
+                alt={`Image ${currentIndex}`}
+                fill
+                sizes="100vw"
+                style={{ objectFit: 'contain' }}
+                priority
+              />
+            </div>
+            <button
+              className={lightboxStyles.next}
+              onClick={() => setCurrentIndex((currentIndex + 1) % flatImageList.length)}
+            >
+              ›
+            </button>
+          </div>
+        </div>
       )}
     </>
   );
