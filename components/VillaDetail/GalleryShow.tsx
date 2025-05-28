@@ -2,18 +2,20 @@
 
 import Image, { StaticImageData } from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-import BR1 from '../../public/images/Room 1/Preview_1400px/_NUT5047-HDR.jpg'
-import BR2 from '../../public/images/Room 2/Preview_1400px/_NUT4993-HDR.jpg'
-import BR3 from '../../public/images/Room 3/Preview_1400px/_NUT4939-HDR.jpg'
-import BR4 from '../../public/images/Room 4/Preview_1400px/_NUT5107-HDR.jpg'
-import BR5 from '../../public/images/Room 5/Preview_1400px/_NUT5164-HDR.jpg'
-import BR6 from '../../public/images/Room 1/Preview_1400px/_NUT5077-HDR.jpg'
-import BR7 from '../../public/images/Room 1/Preview_1400px/_NUT5074-HDR.jpg'
-import BR8 from '../../public/images/Room 1/Preview_1400px/_NUT5068-HDR.jpg'
-import BR9 from '../../public/images/Room 1/Preview_1400px/_NUT5050-HDR.jpg'
-import BR10 from '../../public/images/Room 1/Preview_1400px/_NUT5086-HDR.jpg'
+import BR1 from "../../public/images/Room 1/Preview_1400px/_NUT5047-HDR.jpg";
+import BR2 from "../../public/images/Room 2/Preview_1400px/_NUT4993-HDR.jpg";
+import BR3 from "../../public/images/Room 3/Preview_1400px/_NUT4939-HDR.jpg";
+import BR4 from "../../public/images/Room 4/Preview_1400px/_NUT5107-HDR.jpg";
+import BR5 from "../../public/images/Room 5/Preview_1400px/_NUT5164-HDR.jpg";
+import BR6 from "../../public/images/Room 1/Preview_1400px/_NUT5077-HDR.jpg";
+import BR7 from "../../public/images/Room 1/Preview_1400px/_NUT5074-HDR.jpg";
+import BR8 from "../../public/images/Room 1/Preview_1400px/_NUT5068-HDR.jpg";
+import BR9 from "../../public/images/Room 1/Preview_1400px/_NUT5050-HDR.jpg";
+import BR10 from "../../public/images/Room 1/Preview_1400px/_NUT5086-HDR.jpg";
+
+import Lightbox from "../LightBox"; // ✅ ต้องแน่ใจว่า Lightbox รองรับ props ด้านล่าง
 
 const villaData = [
   {
@@ -23,14 +25,12 @@ const villaData = [
       {
         name: "Bedroom 1",
         image: BR1,
-        description:
-          "Spacious master bedroom with ocean view and en-suite bathroom",
+        description: "Spacious master bedroom with ocean view and en-suite bathroom",
       },
       {
         name: "Bedroom 2",
-        image: BR1,
-        description:
-          "Modern bedroom with navy accents and entertainment system",
+        image: BR2,
+        description: "Modern bedroom with navy accents and entertainment system",
       },
     ],
   },
@@ -45,7 +45,7 @@ const villaData = [
       },
       {
         name: "Bedroom 4",
-        image: BR2,
+        image: BR3,
         description: "Cozy bedroom perfect for children or additional guests",
       },
     ],
@@ -61,7 +61,7 @@ const villaData = [
       },
       {
         name: "Dining Area",
-        image: BR3,
+        image: BR4,
         description: "Elegant dining space perfect for entertaining",
       },
     ],
@@ -77,7 +77,7 @@ const villaData = [
       },
       {
         name: "Wine Bar",
-        image: BR4,
+        image: BR5,
         description: "Sophisticated bar area with wine storage",
       },
     ],
@@ -93,7 +93,7 @@ const villaData = [
       },
       {
         name: "Guest Bathroom",
-        image: BR5,
+        image: BR6,
         description: "Modern guest bathroom with premium fixtures",
       },
     ],
@@ -109,7 +109,7 @@ const villaData = [
       },
       {
         name: "Pool Deck",
-        image: BR6,
+        image: BR7,
         description: "Spacious deck area with sun loungers",
       },
     ],
@@ -125,7 +125,7 @@ const villaData = [
       },
       {
         name: "Garden Terrace",
-        image: BR7,
+        image: BR8,
         description: "Peaceful garden terrace for relaxation",
       },
     ],
@@ -141,7 +141,7 @@ const villaData = [
       },
       {
         name: "Game Room",
-        image: BR8,
+        image: BR9,
         description: "Fun game room with pool table and arcade",
       },
     ],
@@ -157,7 +157,7 @@ const villaData = [
       },
       {
         name: "Gym",
-        image: BR9,
+        image: BR10,
         description: "Fully equipped fitness center with ocean view",
       },
     ],
@@ -173,18 +173,18 @@ const villaData = [
       },
       {
         name: "Private Beach Access",
-        image: BR10,
+        image: BR1,
         description: "Direct access to pristine private beach",
       },
     ],
   },
 ];
+
 export default function GalleryShow() {
   const [currentPage, setCurrentPage] = useState(0);
-  const [selectedImage, setSelectedImage] = useState<{
-    src: string | StaticImageData;
-    alt: string;
-  } | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+
+  const currentData = villaData[currentPage];
   const totalPages = villaData.length;
 
   const handlePrevious = () => {
@@ -192,38 +192,45 @@ export default function GalleryShow() {
   };
 
   const handleNext = () => {
-    console.log(11)
     setCurrentPage((prev) => (prev < totalPages - 1 ? prev + 1 : 0));
   };
 
-  const handleImageClick = (src: string| StaticImageData, alt: string) => {
-    setSelectedImage({ src, alt });
+  const handleImageClick = (index: number) => {
+    setCurrentIndex(index);
   };
 
   const closeModal = () => {
-    setSelectedImage(null);
+    setCurrentIndex(null);
   };
 
-  const currentData = villaData[currentPage];
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeModal();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
     <div className="max-w-6xl mx-auto p-6 bg-white">
-      {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <h1 className="text-3xl font-bold text-gray-800">Inside the Villa</h1>
         <div className="flex items-center gap-4">
-          <span className="text-lg font-medium text-gray-600">{currentPage + 1}/{totalPages}</span>
+          <span className="text-lg font-medium text-gray-600">
+            {currentPage + 1}/{totalPages}
+          </span>
           <div className="flex gap-2">
             <button
-              className="rounded-full p-4 cursor-pointer"
+              className="rounded-full p-4"
               onClick={handlePrevious}
-              disabled={currentPage === 0}
+              aria-label="Previous"
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
             <button
-              className="rounded-full p-4 cursor-pointer"
+              className="rounded-full p-4"
               onClick={handleNext}
-              disabled={currentPage === totalPages - 1}
+              aria-label="Next"
             >
               <ChevronRight className="h-4 w-4" />
             </button>
@@ -231,33 +238,45 @@ export default function GalleryShow() {
         </div>
       </div>
 
-      {/* Bedroom Gallery */}
       <div className="grid md:grid-cols-2 gap-8">
-          {currentData.rooms.map((room, index) => (
-            <div key={index} className="space-y-4">
-              <div
-                className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group"
-                onClick={() => handleImageClick(room.image, room.name)}
-              >
-                <Image
-                  src={room.image}
-                  alt={room.name}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0  bg-opacity-100 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                  <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">
-                    Click to view full size
-                  </span>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800">{room.name}</h3>
-                <p className="text-gray-600 mt-1">{room.description}</p>
+        {currentData.rooms.map((room, index) => (
+          <div key={index} className="space-y-4">
+            <div
+              className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group"
+              onClick={() => handleImageClick(index)}
+            >
+              <Image
+                src={room.image}
+                alt={room.name}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">
+                  Click to view full size
+                </span>
               </div>
             </div>
-          ))}
-        </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-800">{room.name}</h3>
+              <p className="text-gray-600 mt-1">{room.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Lightbox */}
+      {currentIndex !== null && (
+        <Lightbox
+          images={currentData.rooms.map((room) => ({
+            src: room.image,
+            alt: room.name,
+          }))}
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+          onClose={closeModal}
+        />
+      )}
     </div>
   );
 }

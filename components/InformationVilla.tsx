@@ -5,176 +5,198 @@ import SunIcon from "@/public/icons/SunIcon";
 import PoolIcon from "@/public/icons/PoolIcon";
 import ListIcon from "@/public/icons/ListIcon";
 
-
 interface InformationVillaProps {
   link: string;
 }
 export default function InformationVilla({ link }: InformationVillaProps) {
   return (
-    <div className="flex flex-col lg:flex-row h-fit transition duration-300 ease-in-out">
+    <div className="flex flex-col lg:flex-row h-fit transition duration-300 ease-in-out max-w-[1200px] w-full pt-28 mx-auto gap-10">
       {/* Information */}
-      <div className="flex-1">
-        <div className="flex flex-col gap-[8px] py-4">
-          <h1 className="text-3xl text-[#344054] font-bold">
-            The Infinity Villa
-          </h1>
-          <span className="text-lg text-[#344054] font-normal">
-            10 guests ・ 5 bedrooms・5 beds・5 toilets・5 baths・5 Jacuzzi
-          </span>
-        </div>
-
-        <p className="pb-4 text-base text-[#344054]">
-          “A Sanctuary by the Sea — Where Modern Elegance Meets Timeless
-          Tranquility”
-        </p>
-        <p className="pb-4 text-base text-[#344054]">
-          Completed in 2023, this villa is designed in a Modern Minimal Luxury
-          style — clean architectural lines, soft neutral tones, and expansive
-          glass panels that blur the line between indoor comfort and the
-          stunning natural landscape outside.
-        </p>
-        <p className="pb-4 text-base text-[#344054]">
-          Every bedroom offers panoramic ocean views, complete with a private
-          in-room jacuzzi facing the sea — where you can soak under the golden
-          sky and let time drift by.
-        </p>
-        <p className="pb-4 text-base text-[#344054]">
-          On the ground floor, an open-concept living space spills out onto a
-          pristine infinity-edge pool, surrounded by sleek white sun loungers
-          and soft lighting that glows at sunset.
-        </p>
-        <p className="pb-4 text-base text-[#344054]">
-          This isn’t just a place to stay. It’s a place to reconnect — with
-          nature, with luxury, and with yourself.
-        </p>
-        <div className="flex justify-between gap-16 py-16">
-          <div className="flex flex-col p-6 border rounded-xl shadow-lg w-full">
-            <span className="text-3xl text-blue-600"><SunIcon color="#2970FF" /></span>
-            <p className="mt-4 font-bold text-2xl">5 Ocean View</p>
+      <div className="flex-1 flex flex-col gap-10">
+        <div>
+          <div className="flex flex-col gap-[8px] py-4">
+            <h1 className="text-3xl/9.5 text-[#344054] font-bold">
+              The Infinity Villa
+            </h1>
+            <span className="text-lg text-[#667085] font-medium">
+              10 guests ・ 5 bedrooms・5 beds・5 toilets・5 baths・5 Jacuzzi
+            </span>
           </div>
-          <div className="flex flex-col p-6 border rounded-xl shadow-lg w-full">
-            <span className="text-3xl text-blue-600"><PoolIcon color="#2970FF" /></span>
-            <p className="mt-4 font-bold text-2xl">Private Infinity Pool</p>
+
+          <p
+            className="mb-4 text-base text-[#344054] font-normal"
+            style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
+          >
+            “A Sanctuary by the Sea — Where Modern Elegance Meets Timeless
+            Tranquility”
+          </p>
+          <p
+            className="mb-4 text-base text-[#344054] font-normal"
+            style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
+          >
+            Completed in 2023, this villa is designed in a Modern Minimal Luxury
+            style — clean architectural lines, soft neutral tones, and expansive
+            glass panels that blur the line between indoor comfort and the
+            stunning natural landscape outside.
+          </p>
+          <p
+            className="mb-4 text-base text-[#344054] font-normal"
+            style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
+          >
+            Every bedroom offers panoramic ocean views, complete with a private
+            in-room jacuzzi facing the sea — where you can soak under the golden
+            sky and let time drift by.
+          </p>
+          <p
+            className="mb-4 text-base text-[#344054] font-normal"
+            style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
+          >
+            On the ground floor, an open-concept living space spills out onto a
+            pristine infinity-edge pool, surrounded by sleek white sun loungers
+            and soft lighting that glows at sunset.
+          </p>
+          <p
+            className="mb-4 text-base text-[#344054] font-normal"
+            style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
+          >
+            This isn’t just a place to stay. It’s a place to reconnect — with
+            nature, with luxury, and with yourself.
+          </p>
+        </div>
+        <div className="flex gap-6">
+          <div className="flex flex-col p-5 border rounded-xl w-full max-w-[264px] gap-5">
+            <span className="text-3xl text-blue-600">
+              <SunIcon color="#2970FF" />
+            </span>
+            <p className="font-medium text-xl">5 Ocean View</p>
+          </div>
+          <div className="flex flex-col p-5 border rounded-xl w-full max-w-[264px] gap-5">
+            <span className="text-3xl text-blue-600">
+              <PoolIcon color="#2970FF" />
+            </span>
+            <p className="font-medium text-xl">Private Infinity Pool</p>
           </div>
         </div>
         <hr className="border-gray-300" />
-        {/* Detail */}
-        <div className="pb-4 pt-16">
-          <h1 className="text-xl font-bold pb-4">Detail</h1>
-          <ul className="list-disc pl-4">
-            <li>2-storey area / total 473 square meters</li>
-            <li>5 bedrooms, king size beds</li>
-            <li>10 guests</li>
-          </ul>
-        </div>
-        {/* Ground level */}
-        <div className="pb-4">
-          <h1 className="text-xl font-bold pb-4">
-            Ground level{" "}
-            <span className="text-[#344054] font-normal">
-              - Private Quarters
-            </span>
-          </h1>
-          <ul className="list-disc pl-4">
-            <li>Dining room measuring 63 square meters</li>
-            <li>
-              Recreation room measuring 80 square meters, equipped with an LED
-              screen, two microphones, a pool table, and a wine cooler.
-            </li>
-            <li>
-              Fitness room measuring 27 square meters, equipped with exercise
-              apparatus, including a treadmill.
-            </li>
-            <li>Shared bathroom and toilet, 24 square meters.</li>
-            <li>
-              Swimming pool dimensions: 6.0 x 12.0 meters (saltwater system)
-            </li>
-            <li>Meadow</li>
-          </ul>
-        </div>
-        {/* Upper level */}
-        <div className="pb-4">
-          <h1 className="text-xl font-bold pb-4">
-            Upper level{" "}
-            <span className="text-[#344054] font-normal">
-              - Private Quarters
-            </span>
-          </h1>
-          <div className="py-4">
-            <h4 className="text-base text-[#2970FF] font-bold">
-              Bedroom1<span className="text-[#344054]">: 33 sq.m.</span>
-            </h4>
-            <h4 className="text-base text-[#344054] pb-5">
-              King-size bed, shower, rain shower, jacuzzi
-            </h4>
+        <div className="flex flex-col gap-4">
+          {/* Detail */}
+          <div className=" ">
+            <h1 className="text-xl font-bold ">Detail</h1>
             <ul className="list-disc pl-4">
-              <li>Bedroom area 21 sq.m.</li>
-              <li>Jacuzzi area of 7.5 sq.m.</li>
-              <li>Bathroom measuring 4.5 sq.m.</li>
+              <li>2-storey area / total 473 square meters</li>
+              <li>5 bedrooms, king size beds</li>
+              <li>10 guests</li>
             </ul>
           </div>
-          <div className="py-4">
-            <h4 className="text-base text-[#2970FF] font-bold">
-              Bedroom2<span className="text-[#344054]">: 32 sq.m.</span>
-            </h4>
-            <h4 className="text-base text-[#344054] pb-5">
-              King-size bed, shower, rain shower, jacuzzi
-            </h4>
+          {/* Ground level */}
+          <div className="">
+            <h1 className="text-xl font-bold ">
+              Ground level{" "}
+              <span className="text-[#344054] font-normal">
+                - Private Quarters
+              </span>
+            </h1>
             <ul className="list-disc pl-4">
-              <li>Bedroom area 20 sq.m.</li>
-              <li>Jacuzzi area of 7.5 sq.m.</li>
-              <li>Bathroom measuring 4.5 sq.m.</li>
+              <li>Dining room measuring 63 square meters</li>
+              <li>
+                Recreation room measuring 80 square meters, equipped with an LED
+                screen, two microphones, a pool table, and a wine cooler.
+              </li>
+              <li>
+                Fitness room measuring 27 square meters, equipped with exercise
+                apparatus, including a treadmill.
+              </li>
+              <li>Shared bathroom and toilet, 24 square meters.</li>
+              <li>
+                Swimming pool dimensions: 6.0 x 12.0 meters (saltwater system)
+              </li>
+              <li>Meadow</li>
             </ul>
           </div>
-          <div className="py-4">
-            <h4 className="text-base text-[#2970FF] font-bold">
-              Bedroom3<span className="text-[#344054]">: 34 sq.m.</span>
-            </h4>
-            <h4 className="text-base text-[#344054] pb-5">
-              King-size bed, shower, rain shower, jacuzzi
-            </h4>
-            <ul className="list-disc pl-4">
-              <li>Bedroom area 20 sq.m.</li>
-              <li>Jacuzzi area of 7 sq.m.</li>
-              <li>Bathroom measuring 7 sq.m.</li>
-            </ul>
+          {/* Upper level */}
+          <div className="">
+            <h1 className="text-xl font-bold ">
+              Upper level{" "}
+              <span className="text-[#344054] font-normal">
+                - Private Quarters
+              </span>
+            </h1>
+            <div className="py-4">
+              <h4 className="text-base text-[#2970FF] font-bold">
+                Bedroom1<span className="text-[#344054]">: 33 sq.m.</span>
+              </h4>
+              <h4 className="text-base text-[#344054] pb-5">
+                King-size bed, shower, rain shower, jacuzzi
+              </h4>
+              <ul className="list-disc pl-4">
+                <li>Bedroom area 21 sq.m.</li>
+                <li>Jacuzzi area of 7.5 sq.m.</li>
+                <li>Bathroom measuring 4.5 sq.m.</li>
+              </ul>
+            </div>
+            <div className="py-4">
+              <h4 className="text-base text-[#2970FF] font-bold">
+                Bedroom2<span className="text-[#344054]">: 32 sq.m.</span>
+              </h4>
+              <h4 className="text-base text-[#344054] pb-5">
+                King-size bed, shower, rain shower, jacuzzi
+              </h4>
+              <ul className="list-disc pl-4">
+                <li>Bedroom area 20 sq.m.</li>
+                <li>Jacuzzi area of 7.5 sq.m.</li>
+                <li>Bathroom measuring 4.5 sq.m.</li>
+              </ul>
+            </div>
+            <div className="py-4">
+              <h4 className="text-base text-[#2970FF] font-bold">
+                Bedroom3<span className="text-[#344054]">: 34 sq.m.</span>
+              </h4>
+              <h4 className="text-base text-[#344054] pb-5">
+                King-size bed, shower, rain shower, jacuzzi
+              </h4>
+              <ul className="list-disc pl-4">
+                <li>Bedroom area 20 sq.m.</li>
+                <li>Jacuzzi area of 7 sq.m.</li>
+                <li>Bathroom measuring 7 sq.m.</li>
+              </ul>
+            </div>
+            <div className="py-4">
+              <h4 className="text-base text-[#2970FF] font-bold">
+                Bedroom4<span className="text-[#344054]">: 46 sq.m.</span>
+              </h4>
+              <h4 className="text-base text-[#344054] pb-5">
+                King-size bed, shower, rain shower, jacuzzi
+              </h4>
+              <ul className="list-disc pl-4">
+                <li>Bedroom area 33 sq.m.</li>
+                <li>Jacuzzi area of 6 sq.m.</li>
+                <li>Bathroom measuring 7 sq.m.</li>
+              </ul>
+            </div>
+            <div className="py-4">
+              <h4 className="text-base text-[#2970FF] font-bold">
+                Bedroom5<span className="text-[#344054]">: 62 sq.m.</span>
+              </h4>
+              <h4 className="text-base text-[#344054] pb-5">
+                King-size bed, shower, rain shower, jacuzzi
+              </h4>
+              <ul className="list-disc pl-4">
+                <li>Bedroom area 43 sq.m.</li>
+                <li>Jacuzzi area of 12 sq.m.</li>
+                <li>Bathroom measuring 7 sq.m.</li>
+              </ul>
+            </div>
           </div>
-          <div className="py-4">
-            <h4 className="text-base text-[#2970FF] font-bold">
-              Bedroom4<span className="text-[#344054]">: 46 sq.m.</span>
-            </h4>
-            <h4 className="text-base text-[#344054] pb-5">
-              King-size bed, shower, rain shower, jacuzzi
-            </h4>
-            <ul className="list-disc pl-4">
-              <li>Bedroom area 33 sq.m.</li>
-              <li>Jacuzzi area of 6 sq.m.</li>
-              <li>Bathroom measuring 7 sq.m.</li>
-            </ul>
-          </div>
-          <div className="py-4">
-            <h4 className="text-base text-[#2970FF] font-bold">
-              Bedroom5<span className="text-[#344054]">: 62 sq.m.</span>
-            </h4>
-            <h4 className="text-base text-[#344054] pb-5">
-              King-size bed, shower, rain shower, jacuzzi
-            </h4>
-            <ul className="list-disc pl-4">
-              <li>Bedroom area 43 sq.m.</li>
-              <li>Jacuzzi area of 12 sq.m.</li>
-              <li>Bathroom measuring 7 sq.m.</li>
-            </ul>
-          </div>
-        </div>
 
-        <div className="flex">
-          <Link
-            href={link}
-            className="py-4 px-6 bg-white border border-[#344054] rounded-lg text-xl text-[#344054] flex items-center gap-3"
-          >
-            <ListIcon color="#344054" width="20" height="20" />
-            <span>Show all photos</span>
-          </Link>
+          <div className="flex">
+            <Link
+              href={link}
+              className="py-4 px-6 bg-white border border-[#344054] rounded-lg text-xl text-[#344054] flex items-center gap-3"
+            >
+              <ListIcon color="#344054" width="20" height="20" />
+              <span>Show all photos</span>
+            </Link>
+          </div>
         </div>
         <GalleryShow />
         <AmenitiesSection />

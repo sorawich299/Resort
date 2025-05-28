@@ -14,7 +14,7 @@ export default function Gallery({ images, link }: GalleryProps) {
 
     return (
         <div className="relative">
-            <div className="flex gap-2  p-4 lg:h-[600px]  flex-col lg:flex-row">
+            <div className="flex gap-2 lg:h-[600px]  flex-col lg:flex-row">
                 {/* รูปใหญ่ (กินพื้นที่ซ้ายครึ่งหนึ่ง) */}
                 <div className="flex-1">
                     <Image

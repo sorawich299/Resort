@@ -17,10 +17,13 @@ export default function Home() {
         Infinity5, // รูปใหญ่
     ];
     return (
-        <div className="container m-auto p-4  pt-20">
-            <div className="header">
-                <h1 className="text-[#344054] text-5xl font-semibold">The Infinity Villa</h1>
+        <div className="pt-16">
+            <div className="flex flex-col px-16 py-14 gap-3">
+                <h1 className="text-[#344054] text-5xl/15 font-semibold">The Infinity Villa</h1>
                 <span className="text-[#344054] text-lg font-medium">10 guests ・ 5 bedrooms・5 beds・5 toilets・5 baths・5 Jacuzzi</span>
+                
+            </div>
+            <div className="max-w-[1274px] mx-auto w-full px-16">
                 <Gallery images={images} link={'/Infinity/Gallery'}/>
             </div>
             <InformationVilla link={'/Infinity/Gallery'}/>

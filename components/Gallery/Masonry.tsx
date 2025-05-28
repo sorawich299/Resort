@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
-import Image, { StaticImageData } from 'next/image';
-import { useState, useEffect } from 'react';
-import styles from './Masonry.module.css';
-import lightboxStyles from './Lightbox.module.css';
+import Image, { StaticImageData } from "next/image";
+import { useState, useEffect } from "react";
+import styles from "./Masonry.module.css";
+import lightboxStyles from "./Lightbox.module.css";
+import Lightbox from "../LightBox";
 
 interface MasonryProps {
   images: (string | StaticImageData)[];
@@ -44,7 +45,7 @@ const Masonry: React.FC<MasonryProps> = ({ images, columns = 3 }) => {
         (img) =>
           new Promise<ImgWithHeight>((resolve) => {
             let srcStr: string;
-            if (typeof img === 'string') {
+            if (typeof img === "string") {
               srcStr = img;
             } else {
               srcStr = img.src;
@@ -54,7 +55,8 @@ const Masonry: React.FC<MasonryProps> = ({ images, columns = 3 }) => {
             imageObj.onload = () => {
               // กำหนด width เป็น 300 ตามที่เราแสดง แล้วคำนวณ height ตามสัดส่วนจริง
               const fixedWidth = 300;
-              const height = (imageObj.naturalHeight / imageObj.naturalWidth) * fixedWidth;
+              const height =
+                (imageObj.naturalHeight / imageObj.naturalWidth) * fixedWidth;
               resolve({ src: img, height });
             };
             imageObj.onerror = () => {
@@ -78,11 +80,11 @@ const Masonry: React.FC<MasonryProps> = ({ images, columns = 3 }) => {
   }, [imagesWithHeight, columns]);
 
   const flatImageList = imagesWithHeight.map((img) =>
-    typeof img.src === 'string' ? img.src : img.src.src
+    typeof img.src === "string" ? img.src : img.src.src
   );
 
   const handleImageClick = (src: string | StaticImageData) => {
-    const srcStr = typeof src === 'string' ? src : src.src;
+    const srcStr = typeof src === "string" ? src : src.src;
     const index = flatImageList.indexOf(srcStr);
     if (index !== -1) {
       setCurrentIndex(index);
@@ -105,16 +107,20 @@ const Masonry: React.FC<MasonryProps> = ({ images, columns = 3 }) => {
                 key={imgIndex}
                 className={styles.imageWrapper}
                 onClick={() => handleImageClick(image.src)}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: "pointer" }}
               >
                 <Image
                   src={image.src}
                   alt="Gallery image"
                   width={300}
                   height={Math.round(image.height)}
-                  style={{ objectFit: 'cover' }}
-                  placeholder={typeof image.src === 'string' ? 'empty' : 'blur'}
-                  priority={flatImageList.indexOf(typeof image.src === 'string' ? image.src : image.src.src) === 0}
+                  style={{ objectFit: "cover" }}
+                  placeholder={typeof image.src === "string" ? "empty" : "blur"}
+                  priority={
+                    flatImageList.indexOf(
+                      typeof image.src === "string" ? image.src : image.src.src
+                    ) === 0
+                  }
                 />
               </div>
             ))}
@@ -123,33 +129,15 @@ const Masonry: React.FC<MasonryProps> = ({ images, columns = 3 }) => {
       </div>
 
       {lightboxOpen && (
-        <div className={lightboxStyles.overlay} onClick={() => setLightboxOpen(false)}>
-          <div className={lightboxStyles.content} onClick={(e) => e.stopPropagation()}>
-            <button className={lightboxStyles.close} onClick={() => setLightboxOpen(false)}>×</button>
-            <button
-              className={lightboxStyles.prev}
-              onClick={() => setCurrentIndex((currentIndex - 1 + flatImageList.length) % flatImageList.length)}
-            >
-              ‹
-            </button>
-            <div className={lightboxStyles.imageWrapper}>
-              <Image
-                src={flatImageList[currentIndex]}
-                alt={`Image ${currentIndex}`}
-                fill
-                sizes="100vw"
-                style={{ objectFit: 'contain' }}
-                priority
-              />
-            </div>
-            <button
-              className={lightboxStyles.next}
-              onClick={() => setCurrentIndex((currentIndex + 1) % flatImageList.length)}
-            >
-              ›
-            </button>
-          </div>
-        </div>
+        <Lightbox
+          images={flatImageList.map((src, index) => ({
+            src,
+            alt: `Image ${index + 1}`, // ✅ หรือใส่ชื่อภาพจริงถ้ามี
+          }))}
+          currentIndex={currentIndex}
+          onClose={() => setLightboxOpen(false)}
+          setCurrentIndex={setCurrentIndex}
+        />
       )}
     </>
   );

@@ -35,23 +35,23 @@ export default function Header() {
     if (menuOpen) {
       return isActive
         ? "text-[#F79009] lg:hover:text-[#F79009] font-bold"
-        : "text-black/50 lg:hover:text-[#F79009] font-bold";
+        : "text-black/50 lg:hover:text-[#F79009] font-medium hover:font-bold";
     }
     if (scrolled) {
       return isActive
         ? "text-[#F79009] lg:hover:text-[#F79009] font-bold"
-        : "text-black/50 lg:hover:text-[#F79009] font-bold";
+        : "text-black/50 lg:hover:text-[#F79009] font-medium hover:font-bold";
     }
 
     if (activeLabel === "Home") {
       return isActive
         ? "text-white lg:hover:text-white font-bold"
-        : "text-white/30 lg:hover:text-white font-bold";
+        : "text-white/30 lg:hover:text-white font-medium hover:font-bold";
     }
 
     return isActive
       ? "text-[#F79009] lg:hover:text-[#F79009] font-bold"
-      : "text-black/50 lg:hover:text-[#F79009] font-bold";
+      : "text-black/50 lg:hover:text-[#F79009] font-medium hover:font-bold";
   };
 
   useEffect(() => {
