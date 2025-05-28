@@ -1,3 +1,7 @@
+import EmailIcon from "@/public/icons/EmailIcon";
+import LocationAddressIcon from "@/public/icons/LocationAddressIcon";
+import PhoneIcon from "@/public/icons/PhoneIcon";
+
 export default function Contact() {
     return (
         <section className="container max-w-[1200px] w-full mx-auto px-[120px] py-28 flex flex-col gap-20">
@@ -9,11 +13,7 @@ export default function Contact() {
 
                     {/* Email */}
                     <div className="flex flex-col gap-4">
-                        <div className="text-blue-600">
-                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M2 4v16h20V4H2zm18 2v2H4V6h16zm0 4v8H4v-8h16z" />
-                            </svg>
-                        </div>
+                        <EmailIcon color="#2970FF"/>
                         <div className="flex flex-col gap-2"  style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>
                             <h1 className="text-xl font-bold text-black" >Email</h1>
                             <p className="text-lg font-normal text-black">Lorem ipsum dolor sit amet.</p>
@@ -23,11 +23,7 @@ export default function Contact() {
 
                     {/* Phone */}
                     <div className="flex flex-col gap-4">
-                        <div className="text-blue-600">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5h2l.4 2M7 10h10M7 16h10m1-8h2a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2h2" />
-                            </svg>
-                        </div>
+                        <PhoneIcon color="#2970FF"/>
                         <div className="flex flex-col gap-2"  style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>
                             <h1 className="text-xl font-bold text-black">Phone</h1>
                             <p className="text-lg font-normal text-black">Lorem ipsum dolor sit amet.</p>
@@ -37,11 +33,7 @@ export default function Contact() {
 
                     {/* Address */}
                     <div className="flex flex-col gap-4">
-                        <div className="text-blue-600">
-                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
-                            </svg>
-                        </div>
+                        <LocationAddressIcon color="#2970FF"/>
                         <div className="flex flex-col gap-2"  style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>
                             <h1 className="text-xl font-bold text-black">PBB SAILOM SEA BEACH</h1>
                             <p className="text-lg font-normal text-black">Bang Sare, Sattahip, Chon Buri 20250</p>

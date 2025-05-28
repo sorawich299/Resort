@@ -1,4 +1,6 @@
+import EmailIcon from "@/public/icons/EmailIcon"
 import LogoIcon from "@/public/icons/LogoIcon"
+import PhoneIcon from "@/public/icons/PhoneIcon"
 
 export default function Footer() {
     return (
@@ -19,15 +21,11 @@ export default function Footer() {
 
                         <div className="flex items-center gap-4">
                             <div className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M2 4v16h20V4H2zm18 2v2H4V6h16zm0 4v8H4v-8h16z"></path>
-                                </svg>
+                                <EmailIcon color="#000000" width="20" height="16"/>
                                 <span>hello@relume.io</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h2l.4 2M7 10h10M7 16h10m1-8h2a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2h2"></path>
-                                </svg>
+                                <PhoneIcon color="#000000" width="20" height="16"/>
                                 <span>+1 (555) 000-0000</span>
                             </div>
                         </div>
