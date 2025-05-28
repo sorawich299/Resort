@@ -134,7 +134,7 @@ export default function Home() {
         subtitle="The Infinity Villa and The Horizon Retreat"
         imageSrc={Private}
         features={[
-          { icon: <SunIcon color="#2970FF" width="44" height="44"/>, label: 'Ocean View' },
+          { icon: <SunIcon color="#2970FF" width="44" height="44" />, label: 'Ocean View' },
           { icon: <PoolIcon color="#2970FF" width="44" height="44" />, label: 'Private Infinity Pool' },
         ]}
         reverse={false} // ลองเปลี่ยนเป็น true เพื่อสลับฝั่ง
@@ -157,36 +157,39 @@ export default function Home() {
         ]}
         reverse={false} // ลองเปลี่ยนเป็น true เพื่อสลับฝั่ง
       />
-      <PrivateQuarters
-        title="Private Quarters"
-        subtitle="The Infinity Villa and The Horizon Retreat"
-        amenities={[
-          { icon: <SunIcon color="#2970FF" />, label: 'Ocean View' },
-          { icon: <WifiIcon color="#2970FF" />, label: 'Free Wi-Fi' },
-          { icon: <AirConditionerIcon color="#2970FF" />, label: 'Air conditioner' },
-          { icon: <PoolIcon color="#2970FF" />, label: 'Private Infinity Pool' },
-          { icon: <LivingRoomIcon color="#2970FF" />, label: 'Living room' },
-          { icon: <HomeTheaterIcon color="#2970FF" />, label: 'Home theater' },
-          { icon: <DiningIcon color="#2970FF" />, label: 'Dining room' },
-          { icon: <PrivateBarIcon color="#2970FF" />, label: 'Private Bar' },
-          { icon: <PrivateFitnessGymIcon color="#2970FF" />, label: 'Private fitness gym' },
-          { icon: <PoolTableIcon color="#2970FF" />, label: 'Pool-table' },
-          { icon: <ToiletIcon color="#2970FF" />, label: 'Toilets' },
-          { icon: <ButlerIcon color="#2970FF" />, label: 'Butler Assistant' },
-        ]}
-      />
-      <PrivateQuarters
-        title="En-suite Bedrooms"
-        subtitle=""
-        amenities={[
-          { icon: <BedroomIcon color="#2970FF" />, label: '5 Bedrooms' },
-          { icon: <KingSizeIcon color="#2970FF" />, label: '5 King size' },
-          { icon: <AirConditionerIcon color="#2970FF" />, label: 'Air conditioner' },
-          { icon: <BathroomIcon color="#2970FF" />, label: '5 bathrooms' },
-          { icon: <JacuzziIcon color="#2970FF" />, label: '5 Jacuzzi' },
-          { icon: <SunIcon color="#2970FF" />, label: '5 Ocean View' },
-        ]}
-      />
+      <div className="container mx-auto py-28 px-16 max-w-[1200px] flex flex-col gap-20">
+        <PrivateQuarters
+          title="Private Quarters"
+          subtitle="The Infinity Villa and The Horizon Retreat"
+          amenities={[
+            { icon: <SunIcon color="#2970FF" width="44" height="44" />, label: 'Ocean View' },
+            { icon: <WifiIcon color="#2970FF" width="44" height="44" />, label: 'Free Wi-Fi' },
+            { icon: <AirConditionerIcon color="#2970FF" width="44" height="44" />, label: 'Air conditioner' },
+            { icon: <PoolIcon color="#2970FF" width="44" height="44" />, label: 'Private Infinity Pool' },
+            { icon: <LivingRoomIcon color="#2970FF" width="44" height="44" />, label: 'Living room' },
+            { icon: <HomeTheaterIcon color="#2970FF" width="44" height="44" />, label: 'Home theater' },
+            { icon: <DiningIcon color="#2970FF" width="44" height="44" />, label: 'Dining room' },
+            { icon: <PrivateBarIcon color="#2970FF" width="44" height="44" />, label: 'Private Bar' },
+            { icon: <PrivateFitnessGymIcon color="#2970FF" width="44" height="44" />, label: 'Private fitness gym' },
+            { icon: <PoolTableIcon color="#2970FF" width="44" height="44" />, label: 'Pool-table' },
+            { icon: <ToiletIcon color="#2970FF" width="44" height="44" />, label: 'Toilets' },
+            { icon: <ButlerIcon color="#2970FF" width="44" height="44" />, label: 'Butler Assistant' },
+          ]}
+        />
+        <PrivateQuarters
+          title="En-suite Bedrooms"
+          subtitle=""
+          amenities={[
+            { icon: <BedroomIcon color="#2970FF" width="44" height="44" />, label: '5 Bedrooms' },
+            { icon: <KingSizeIcon color="#2970FF" width="44" height="44" />, label: '5 King size' },
+            { icon: <AirConditionerIcon color="#2970FF" width="44" height="44" />, label: 'Air conditioner' },
+            { icon: <BathroomIcon color="#2970FF" width="44" height="44" />, label: '5 bathrooms' },
+            { icon: <JacuzziIcon color="#2970FF" width="44" height="44" />, label: '5 Jacuzzi' },
+            { icon: <SunIcon color="#2970FF" width="44" height="44" />, label: '5 Ocean View' },
+          ]}
+        />
+      </div>
+
       <ImageGallery />
       <ReviewResort title="The Infinity Villa" subTitle="Experience the ultimate beachfront luxury at our exclusive 5-bedroom villa — where every room boasts a private jacuzzi overlooking the ocean." image={Infinity} />
       <ReviewResort title="The Horizon Retreat" subTitle="Experience the ultimate beachfront luxury at our exclusive 5-bedroom villa — where every room boasts a private jacuzzi overlooking the ocean." image={Horizon} />

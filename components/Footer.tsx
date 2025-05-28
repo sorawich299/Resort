@@ -2,17 +2,22 @@ import LogoIcon from "@/public/icons/LogoIcon"
 
 export default function Footer() {
     return (
-        <footer className="bg-white  text-sm text-gray-600">
-            <div className="container mx-auto px-4 py-10">
-                <div className="flex flex-col sm:flex-row justify-between gap-8">
+        <footer className="bg-white  text-sm text-gray-600"  style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>
+            <div className=" mx-auto px-[84px] py-20 flex flex-col gap-20">
+                <div className="flex flex-col sm:flex-row justify-between ">
                     {/* Logo and Address */}
-                    <div className="flex flex-col gap-2">
-                        <LogoIcon color="black"/>
+                    <div className="flex flex-col gap-6">
+                        <div className="flex flex-col gap-5">
+                            <LogoIcon color="black" />
 
-                        <div className="font-bold text-black">PBB SAILOM SEA BEACH</div>
-                        <div>Bang Sare, Sattahip, Chon Buri 20250</div>
+                            <div className="flex flex-col gap-2">
+                                <div className="font-bold text-black">PBB SAILOM SEA BEACH</div>
+                                <div>Bang Sare, Sattahip, Chon Buri 20250</div>
+                            </div>
+                        </div>
 
-                        <div className="flex items-center gap-4 mt-2">
+
+                        <div className="flex items-center gap-4">
                             <div className="flex items-center gap-2">
                                 <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M2 4v16h20V4H2zm18 2v2H4V6h16zm0 4v8H4v-8h16z"></path>
@@ -29,14 +34,16 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <hr className="my-8 border-t border-gray-300" />
+                <div className="flex flex-col gap-8">
+                    <hr className="border border-gray-300" />
 
-                <div className="flex flex-col sm:flex-row justify-between items-center text-sm">
-                    <div>2025 appworks. All right reserved.</div>
-                    <div className="flex gap-4 mt-2 sm:mt-0">
-                        <a href="#" className="hover:underline">Privacy Policy</a>
-                        <a href="#" className="hover:underline">Terms of Service</a>
-                        <a href="#" className="hover:underline">Cookies Settings</a>
+                    <div className="flex flex-col sm:flex-row justify-between items-center text-sm">
+                        <div>2025 All right reserved.</div>
+                        <div className="flex gap-4 mt-2 sm:mt-0">
+                            <a href="#" className="underline">Privacy Policy</a>
+                            <a href="#" className="underline">Terms of Service</a>
+                            <a href="#" className="underline">Cookies Settings</a>
+                        </div>
                     </div>
                 </div>
             </div>
