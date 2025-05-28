@@ -91,7 +91,7 @@ export default function Home() {
       <div className="h-[64px]"></div> {/* Header spacer */}
       <div className="container mx-auto px-4 md:px-20 py-[120px] max-w-[1200px] relative">
         {/* Fixed Navigation */}
-        <div className="fixed top-[120px] left-[350px] z-50 w-[275px] px-4">
+        <div className="fixed top-[120px] left-50 z-50 w-[275px] px-4">
           <div className="flex flex-col space-y-2">
             <h1 className="text-5xl font-semibold text-[#344054] mb-4">Gallery</h1>
             <Link
