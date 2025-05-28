@@ -26,7 +26,7 @@ export default function Home() {
             <div className="max-w-[1274px] mx-auto w-full px-16">
                 <Gallery images={images} link={'/Infinity/Gallery'}/>
             </div>
-            <InformationVilla link={'/Infinity/Gallery'}/>
+            <InformationVilla villa="The Infinity Villa" link={'/Infinity/Gallery'}/>
             <hr className="border-gray-300 mt-20"/>
             <NearbySection/>
             <Information/>

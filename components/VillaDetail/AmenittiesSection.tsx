@@ -18,7 +18,7 @@ import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 
 const amenitiesData = [
-  { icon: Waves, name: "Ocean View" },
+  { icon: Waves, name: "Routine Maintenance" },
   { icon: Wifi, name: "Free Wi-Fi" },
   { icon: AirVent, name: "Air conditioner" },
   { icon: Pool, name: "Private Infinity Pool" },
@@ -48,11 +48,9 @@ export default function AmenitiesSection() {
   const displayedAmenities = showAll ? [...amenitiesData, ...additionalAmenities] : amenitiesData
 
   return (
-    <div className="p-6 mt-8">
+    <div className="flex flex-col gap-4">
       {/* Header */}
-      <div className="pb-4 mb-6">
         <h3 className="text-2xl font-bold text-gray-800">Amenities</h3>
-      </div>
 
       {/* Amenities Grid with animation */}
       <motion.div
@@ -71,7 +69,10 @@ export default function AmenitiesSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="flex items-center gap-3 py-2"
+                className="flex items-center gap-3"
+                style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
               >
                 <IconComponent className="h-6 w-6 text-blue-600 flex-shrink-0" />
                 <span className="text-gray-800 font-medium">{amenity.name}</span>
@@ -82,7 +83,7 @@ export default function AmenitiesSection() {
       </motion.div>
 
       {/* Show More Button */}
-      <div className="pt-4">
+      <div className="">
         <button
           onClick={() => setShowAll(!showAll)}
           className="text-gray-600 hover:text-blue-600 p-0 h-auto font-normal"

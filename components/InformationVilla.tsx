@@ -7,8 +7,9 @@ import ListIcon from "@/public/icons/ListIcon";
 
 interface InformationVillaProps {
   link: string;
+  villa: string;
 }
-export default function InformationVilla({ link }: InformationVillaProps) {
+export default function InformationVilla({ link, villa }: InformationVillaProps) {
   return (
     <div className="flex flex-col lg:flex-row h-fit transition duration-300 ease-in-out max-w-[1200px] w-full pt-28 mx-auto gap-10">
       {/* Information */}
@@ -16,7 +17,7 @@ export default function InformationVilla({ link }: InformationVillaProps) {
         <div>
           <div className="flex flex-col gap-[8px] py-4">
             <h1 className="text-3xl/9.5 text-[#344054] font-bold">
-              The Infinity Villa
+              {villa}
             </h1>
             <span className="text-lg text-[#667085] font-medium">
               10 guests ・ 5 bedrooms・5 beds・5 toilets・5 baths・5 Jacuzzi
@@ -80,110 +81,292 @@ export default function InformationVilla({ link }: InformationVillaProps) {
         <hr className="border-gray-300" />
         <div className="flex flex-col gap-4">
           {/* Detail */}
-          <div className=" ">
-            <h1 className="text-xl font-bold ">Detail</h1>
-            <ul className="list-disc pl-4">
-              <li>2-storey area / total 473 square meters</li>
-              <li>5 bedrooms, king size beds</li>
-              <li>10 guests</li>
-            </ul>
-          </div>
-          {/* Ground level */}
-          <div className="">
-            <h1 className="text-xl font-bold ">
-              Ground level{" "}
-              <span className="text-[#344054] font-normal">
-                - Private Quarters
+          <h1 className="text-xl font-bold ">Detail</h1>
+          <ul className=" list-inside text-base text-[#1a1a1a] leading-normal">
+            <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+              <span
+                style={{
+                  fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                }}
+              >
+                2-storey area / total 473 square meters
               </span>
-            </h1>
-            <ul className="list-disc pl-4">
-              <li>Dining room measuring 63 square meters</li>
-              <li>
+            </li>
+            <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+              <span
+                style={{
+                  fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                }}
+              >
+                5 bedrooms, king size beds
+              </span>
+            </li>
+            <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+              <span
+                style={{
+                  fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                }}
+              >
+                10 guests
+              </span>
+            </li>
+          </ul>
+          {/* Ground level */}
+          <h1 className="text-xl font-bold ">
+            Ground level{" "}
+            <span className="text-[#344054] font-normal">
+              - Private Quarters
+            </span>
+          </h1>
+          <ul className=" list-inside text-base text-[#1a1a1a] leading-normal">
+            <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+              <span
+                style={{
+                  fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                }}
+              >
+                Dining room measuring 63 square meters
+              </span>
+            </li>
+            <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+              <span
+                style={{
+                  fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                }}
+              >
                 Recreation room measuring 80 square meters, equipped with an LED
                 screen, two microphones, a pool table, and a wine cooler.
-              </li>
-              <li>
+              </span>
+            </li>
+            <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+              <span
+                style={{
+                  fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                }}
+              >
                 Fitness room measuring 27 square meters, equipped with exercise
                 apparatus, including a treadmill.
-              </li>
-              <li>Shared bathroom and toilet, 24 square meters.</li>
-              <li>
+              </span>
+            </li>
+            <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+              <span
+                style={{
+                  fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                }}
+              >
+                Shared bathroom and toilet, 24 square meters.
+              </span>
+            </li>
+            <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+              <span
+                style={{
+                  fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                }}
+              >
                 Swimming pool dimensions: 6.0 x 12.0 meters (saltwater system)
-              </li>
-              <li>Meadow</li>
-            </ul>
-          </div>
+              </span>
+            </li>
+            <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+              <span
+                style={{
+                  fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                }}
+              >
+                Meadow
+              </span>
+            </li>
+          </ul>
           {/* Upper level */}
-          <div className="">
+          <div className="flex flex-col gap-4 ">
             <h1 className="text-xl font-bold ">
               Upper level{" "}
               <span className="text-[#344054] font-normal">
                 - Private Quarters
               </span>
             </h1>
-            <div className="py-4">
+            <div className="">
               <h4 className="text-base text-[#2970FF] font-bold">
                 Bedroom1<span className="text-[#344054]">: 33 sq.m.</span>
               </h4>
               <h4 className="text-base text-[#344054] pb-5">
                 King-size bed, shower, rain shower, jacuzzi
               </h4>
-              <ul className="list-disc pl-4">
-                <li>Bedroom area 21 sq.m.</li>
-                <li>Jacuzzi area of 7.5 sq.m.</li>
-                <li>Bathroom measuring 4.5 sq.m.</li>
+              <ul className=" list-inside text-base text-[#1a1a1a] leading-normal">
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Bedroom area 21 sq.m.
+                  </span>
+                </li>
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Jacuzzi area of 7.5 sq.m.
+                  </span>
+                </li>
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Bathroom measuring 4.5 sq.m.
+                  </span>
+                </li>
               </ul>
             </div>
-            <div className="py-4">
+            <div className="">
               <h4 className="text-base text-[#2970FF] font-bold">
                 Bedroom2<span className="text-[#344054]">: 32 sq.m.</span>
               </h4>
               <h4 className="text-base text-[#344054] pb-5">
                 King-size bed, shower, rain shower, jacuzzi
               </h4>
-              <ul className="list-disc pl-4">
-                <li>Bedroom area 20 sq.m.</li>
-                <li>Jacuzzi area of 7.5 sq.m.</li>
-                <li>Bathroom measuring 4.5 sq.m.</li>
+              <ul className=" list-inside text-base text-[#1a1a1a] leading-normal">
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Bedroom area 20 sq.m.
+                  </span>
+                </li>
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Jacuzzi area of 7.5 sq.m.
+                  </span>
+                </li>
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Bathroom measuring 4.5 sq.m.
+                  </span>
+                </li>
               </ul>
             </div>
-            <div className="py-4">
+            <div className="">
               <h4 className="text-base text-[#2970FF] font-bold">
                 Bedroom3<span className="text-[#344054]">: 34 sq.m.</span>
               </h4>
               <h4 className="text-base text-[#344054] pb-5">
                 King-size bed, shower, rain shower, jacuzzi
               </h4>
-              <ul className="list-disc pl-4">
-                <li>Bedroom area 20 sq.m.</li>
-                <li>Jacuzzi area of 7 sq.m.</li>
-                <li>Bathroom measuring 7 sq.m.</li>
+              <ul className=" list-inside text-base text-[#1a1a1a] leading-normal">
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Bedroom area 20 sq.m.
+                  </span>
+                </li>
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Jacuzzi area of 7 sq.m.
+                  </span>
+                </li>
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Bathroom measuring 7 sq.m.
+                  </span>
+                </li>
               </ul>
             </div>
-            <div className="py-4">
+            <div className="">
               <h4 className="text-base text-[#2970FF] font-bold">
                 Bedroom4<span className="text-[#344054]">: 46 sq.m.</span>
               </h4>
               <h4 className="text-base text-[#344054] pb-5">
                 King-size bed, shower, rain shower, jacuzzi
               </h4>
-              <ul className="list-disc pl-4">
-                <li>Bedroom area 33 sq.m.</li>
-                <li>Jacuzzi area of 6 sq.m.</li>
-                <li>Bathroom measuring 7 sq.m.</li>
+              <ul className=" list-inside text-base text-[#1a1a1a] leading-normal">
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Bedroom area 33 sq.m.
+                  </span>
+                </li>
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Jacuzzi area of 6 sq.m.
+                  </span>
+                </li>
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Bathroom measuring 7 sq.m.
+                  </span>
+                </li>
               </ul>
             </div>
-            <div className="py-4">
+            <div className="">
               <h4 className="text-base text-[#2970FF] font-bold">
                 Bedroom5<span className="text-[#344054]">: 62 sq.m.</span>
               </h4>
               <h4 className="text-base text-[#344054] pb-5">
                 King-size bed, shower, rain shower, jacuzzi
               </h4>
-              <ul className="list-disc pl-4">
-                <li>Bedroom area 43 sq.m.</li>
-                <li>Jacuzzi area of 12 sq.m.</li>
-                <li>Bathroom measuring 7 sq.m.</li>
+              <ul className=" list-inside text-base text-[#1a1a1a] leading-normal">
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Bedroom area 43 sq.m.
+                  </span>
+                </li>
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Jacuzzi area of 12 sq.m.
+                  </span>
+                </li>
+                <li className="relative pl-6 before:content-['•'] before:absolute before:left-2 before:top-0.25  before:text-base">
+                  <span
+                    style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}
+                  >
+                    Bathroom measuring 7 sq.m.
+                  </span>
+                </li>
               </ul>
             </div>
           </div>
@@ -198,21 +381,27 @@ export default function InformationVilla({ link }: InformationVillaProps) {
             </Link>
           </div>
         </div>
+        <hr className="border-gray-300" />
         <GalleryShow />
+        <hr className="border-gray-300" />
         <AmenitiesSection />
       </div>
       {/* Button Sticky */}
       <div className="flex flex-1  justify-center">
         <div className="relative">
-          <div className="sticky top-20 left-0 border py-5 px-10 rounded-lg gap-5 flex flex-col justify-center text-center">
-            <h1 className="text-[#344054] font-bold text-2xl">
-              ✨ Reserve your private seaside escape
-            </h1>
-            <p className="text-[#344054] font-normal text-lg">
-              Our dedicated team is ready to assist you with every detail.
-            </p>
+          <div className="sticky top-20 left-0 border py-6 px-5 rounded-lg gap-6 flex flex-col justify-center text-center">
+            <div className="flex flex-col gap-2.5">
+              <h1 className="text-[#344054] font-bold text-2xl">
+                ✨ Reserve your private seaside escape
+              </h1>
+              <p className="text-[#344054] font-normal text-lg" style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}>
+                Our dedicated team is ready to assist you with every detail.
+              </p>
+            </div>
             <button className="p-4 bg-blue-600 border rounded-lg w-full text-white font-semibold text-lg">
-              Send Email
+              💌Send Email💌
             </button>
           </div>
         </div>

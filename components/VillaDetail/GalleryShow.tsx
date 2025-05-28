@@ -212,7 +212,7 @@ export default function GalleryShow() {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-white">
+    <div className="max-w-6xl mx-auto bg-white">
       <div className="flex items-center justify-between mb-8">
         <h1 className="text-3xl font-bold text-gray-800">Inside the Villa</h1>
         <div className="flex items-center gap-4">
