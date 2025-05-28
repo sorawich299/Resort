@@ -7,7 +7,7 @@ import LogoIcon from "@/public/icons/LogoIcon";
 
 export default function Information() {
   return (
-    <section className="bg-white text-center px-32 py-28 lg:h-[1016px] flex flex-col gap-20 items-center justify-center">
+    <section className="container mx-auto bg-white text-center px-32 py-28 lg:h-[1016px] flex flex-col gap-20 items-center justify-center">
       <div className="flex flex-col gap-6">
         <div className="text-4xl font-bold mb-2 flex justify-center">
           <LogoIcon color="black" width="160" height="64" />

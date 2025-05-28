@@ -134,8 +134,8 @@ export default function Home() {
         subtitle="The Infinity Villa and The Horizon Retreat"
         imageSrc={Private}
         features={[
-          { icon: <SunIcon color="#2970FF" />, label: 'Ocean View' },
-          { icon: <PoolIcon color="#2970FF" />, label: 'Private Infinity Pool' },
+          { icon: <SunIcon color="#2970FF" width="44" height="44"/>, label: 'Ocean View' },
+          { icon: <PoolIcon color="#2970FF" width="44" height="44" />, label: 'Private Infinity Pool' },
         ]}
         reverse={false} // ลองเปลี่ยนเป็น true เพื่อสลับฝั่ง
       />
@@ -144,7 +144,7 @@ export default function Home() {
         subtitle="The Infinity Villa and The Horizon Retreat"
         imageSrc={Jacuzzi}
         features={[
-          { icon: <JacuzziIcon color="#2970FF" />, label: 'Private Jacuzzi' },
+          { icon: <JacuzziIcon color="#2970FF" width="44" height="44" />, label: 'Private Jacuzzi' },
         ]}
         reverse={true} // ลองเปลี่ยนเป็น true เพื่อสลับฝั่ง
       />
@@ -153,7 +153,7 @@ export default function Home() {
         subtitle="The Infinity Villa and The Horizon Retreat"
         imageSrc={Dining}
         features={[
-          { icon: <DiningIcon color="#2970FF" />, label: 'Dining room' },
+          { icon: <DiningIcon color="#2970FF" width="44" height="44" />, label: 'Dining room' },
         ]}
         reverse={false} // ลองเปลี่ยนเป็น true เพื่อสลับฝั่ง
       />

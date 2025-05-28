@@ -37,7 +37,7 @@ export default function AnimatedFadeInUp({
         hidden: { opacity: 0, y: y },
         visible: { opacity: 1, y: 0 },
       }}
-      className={`relative overflow-hidden w-full h-full ${className}`}
+      className={`relative overflow-hidden h-full ${className}`}
       style={style}
     >
       {children}

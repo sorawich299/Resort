@@ -4,7 +4,7 @@ import Horizon from "../public/images/Information/Horizon.png";
 
 export default function  Reserve() {
   return (
-    <div className="flex gap-20 p-6 flex-col">
+    <div className="container mx-auto flex flex-col">
       <VillaCard
         title="The Infinity Villa"
         description="Experience the ultimate beachfront luxury at our exclusive 5-bedroom villa — where every room boasts a private jacuzzi overlooking the ocean."
