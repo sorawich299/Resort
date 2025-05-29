@@ -4,9 +4,9 @@ import PhoneIcon from "@/public/icons/PhoneIcon";
 
 export default function Contact() {
     return (
-        <section className="container max-w-[1200px] w-full mx-auto px-[120px] py-28 flex flex-col gap-20">
+        <section className="container max-w-[1200px] w-full mx-auto px-[60px] lg:px-[120px] py-14 lg:py-28 flex flex-col gap-20">
             <h2 className="text-5xl font-medium text-black">Contact us</h2>
-            <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
                 {/* Contact Info */}
                 <div className="flex flex-col gap-10">
 

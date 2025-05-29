@@ -23,7 +23,7 @@ const VillaCard: React.FC<VillaCardProps> = ({
   features,
 }) => {
   return (
-    <div className="py-28 px-16 flex gap-20 flex-col lg:flex-row items-center lg:justify-center">
+    <div className="py-14 px-8 lg:py-28 lg:px-16 flex gap-20 flex-col lg:flex-row items-center lg:justify-center">
       {/* Image Section */}
       <div className="relative w-full max-w-[560px] aspect-square overflow-hidden rounded-lg flex justify-center items-center">
         <AnimatedFadeInUp className="w-full">

@@ -150,7 +150,7 @@ export default function Home() {
         ]}
         reverse={false} // ลองเปลี่ยนเป็น true เพื่อสลับฝั่ง
       />
-      <div className="container mx-auto py-28 px-16 max-w-[1200px] flex flex-col gap-20">
+      <div className="container mx-auto py-14 lg:py-28 px-8 lg:px-16 max-w-[1200px] flex flex-col gap-20">
         <PrivateQuarters
           title="Private Quarters"
           subtitle="The Infinity Villa and The Horizon Retreat"

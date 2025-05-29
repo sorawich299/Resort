@@ -5,7 +5,7 @@ import PhoneIcon from "@/public/icons/PhoneIcon"
 export default function Footer() {
     return (
         <footer className="bg-white  text-sm text-gray-600"  style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>
-            <div className=" mx-auto px-[84px] py-20 flex flex-col gap-20">
+            <div className=" mx-auto px-[42px] lg:px-[84px] py-10 lg:py-20 flex flex-col gap-20">
                 <div className="flex flex-col sm:flex-row justify-between ">
                     {/* Logo and Address */}
                     <div className="flex flex-col gap-6">

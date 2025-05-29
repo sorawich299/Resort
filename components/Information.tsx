@@ -1,30 +1,33 @@
-import Image, { StaticImageData } from "next/image";
-import AnimatedFadeInUp from "./AnimationFadeUp";
-import Infinity from "../public/images/Information/Infinity.png";
+import Image from "next/image";
+import Infinity from '../public/images/Information/Infinity.png';
+
 import Horizon from "../public/images/Information/Horizon.png";
 import Link from "next/link";
 import LogoIcon from "@/public/icons/LogoIcon";
+import AnimatedFadeInUp from "./AnimationFadeUp";
 
 export default function Information() {
   return (
-    <section className="container mx-auto bg-white text-center px-32 py-28 lg:h-[1016px] flex flex-col gap-20 items-center justify-center">
-      <div className="flex flex-col gap-6">
-        <div className="text-4xl font-bold mb-2 flex justify-center">
-          <LogoIcon color="black" width="160" height="64" />
+    <section className="bg-white text-center px-4 sm:px-6 md:px-12 lg:px-32 py-12 sm:py-20 lg:py-28 flex flex-col gap-12 sm:gap-16 items-center justify-center">
+      {/* Header */}
+      <div className="flex flex-col gap-4 sm:gap-5">
+        <div className="text-2xl sm:text-3xl font-bold flex justify-center mb-2">
+          <LogoIcon color="black" width="120" height="48" />
         </div>
-        <h1 className="text-6xl text-black font-semibold">Solunar.</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black font-semibold">
+          Solunar.
+        </h1>
         <p
-          className="text-lg mt-4 text-black"
+          className="text-sm sm:text-base md:text-lg mt-2 sm:mt-4 text-black max-w-xl mx-auto"
           style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
         >
-          Each private suite is a sanctuary of comfort, complete with a sea-view
-          jacuzzi and floor-to-ceiling windows.
+          Each private suite is a sanctuary of comfort, complete with a sea-view jacuzzi and floor-to-ceiling windows.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 container mx-auto max-w-[1200px]">
+      {/* Card Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 w-full max-w-6xl px-2 sm:px-4">
         {[
-          // แสดง 2 card ด้วย map เพื่อรองรับ animation delay ทีละตัว
           {
             alt: "The Infinity Villa",
             label: "The Infinity Villa",
@@ -38,29 +41,33 @@ export default function Information() {
             image: Horizon,
           },
         ].map((villa, index) => (
-          <AnimatedFadeInUp key={villa.alt} delay={index * 0.25} y={300} className="flex justify-center">
-            <div className="relative w-full max-w-[580px] aspect-square overflow-hidden rounded-xl shadow-md">
+          <AnimatedFadeInUp
+            key={villa.alt}
+            delay={index * 0.25}
+            y={300}
+            className="flex justify-center"
+          >
+            <Link
+              href={villa.slug}
+              className="group relative block w-full max-w-[440px] aspect-[4/3] sm:aspect-[5/4] md:aspect-square overflow-hidden rounded-xl shadow-md transition-transform duration-300"
+            >
               <Image
                 src={villa.image}
                 alt={villa.alt}
                 fill
-                className="object-cover"
+                className="object-cover transition duration-300 group-hover:brightness-110"
               />
 
-              {/* Overlay ดำโปร่งแสง */}
-              <div className="absolute inset-0 bg-black/40 z-10" />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 z-10" />
 
-              {/* ข้อความทับภาพ */}
-              <div className="absolute inset-0 z-20 flex justify-center items-center md:items-end">
-                <Link
-                  href={villa.slug}
-                  className="text-4xl font-semibold text-white text-center whitespace-nowrap mb-0 md:mb-6"
-                >
+              <div className="absolute inset-0 bottom-10 z-20 flex justify-center items-center md:items-end">
+                <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-white text-center mb-0 md:mb-6">
                   {villa.label}
-                </Link>
+                </div>
               </div>
-            </div>
+            </Link>
           </AnimatedFadeInUp>
+
         ))}
       </div>
     </section>

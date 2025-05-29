@@ -5,7 +5,7 @@ import PoolIcon from "@/public/icons/PoolIcon";
 
 export default function VillaRetreatOverview() {
     return (
-        <section className="container mx-auto py-28 px-16 flex flex-col gap-20 max-w-[1200px]">
+        <section className="container mx-auto  py-14 px-8 lg:py-28 lg:px-16 flex flex-col gap-10 lg:gap-20 max-w-[1200px]">
             <div className="flex flex-col gap-4 max-w-[570px]">
                 <h2 className="text-base font-normal text-black" style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>The Infinity Villa and The Horizon Retreat</h2>
                 <div className="flex flex-col gap-6">
