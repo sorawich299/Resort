@@ -10,7 +10,7 @@ export default function  Reserve() {
         description="Experience the ultimate beachfront luxury at our exclusive 5-bedroom villa — where every room boasts a private jacuzzi overlooking the ocean."
         image={Infinity}
         features={{
-          subtitle: "The Infinity Villa and The Horizon Retreat",
+          subtitle: "Solunar.",
           view: "Ocean View",
           bedrooms: 5,
         }}
@@ -21,8 +21,8 @@ export default function  Reserve() {
         description="Nestled atop a secluded cliff, this villa offers breathtaking mountain and ocean views, perfect for a romantic getaway."
         image={Horizon}
         features={{
-          subtitle: "Horizon Luxury",
-          view: "Mountain View",
+          subtitle: "Solunar.",
+          view: "Ocean View",
           bedrooms: 3,
         }}
       />
