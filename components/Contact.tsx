@@ -35,8 +35,8 @@ export default function Contact() {
                     <div className="flex flex-col gap-4">
                         <LocationAddressIcon color="#2970FF"/>
                         <div className="flex flex-col gap-2"  style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>
-                            <h1 className="text-xl font-bold text-black">PBB SAILOM SEA BEACH</h1>
-                            <p className="text-lg font-normal text-black">Bang Sare, Sattahip, Chon Buri 20250</p>
+                            <h1 className="text-xl font-bold text-black">Solunar.</h1>
+                            <p className="text-lg font-normal text-black">129 moo 2 Bang Sare, Sattahip, Chon Buri 20250</p>
                             <a href="#" className="text-base text-black mt-4 inline-flex items-center underline"  style={{ fontFamily: '"Roboto", sans-serif' }}>
                                 Get Directions
                                 <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">

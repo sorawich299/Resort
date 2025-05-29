@@ -13,8 +13,8 @@ export default function Footer() {
                             <LogoIcon color="black" />
 
                             <div className="flex flex-col gap-2">
-                                <div className="font-bold text-black">PBB SAILOM SEA BEACH</div>
-                                <div>Bang Sare, Sattahip, Chon Buri 20250</div>
+                                <div className="font-bold text-black">Solunar.</div>
+                                <div>129 moo 2 Bang Sare, Sattahip, Chon Buri 20250</div>
                             </div>
                         </div>
 
