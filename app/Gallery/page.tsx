@@ -92,7 +92,7 @@ export default function Home() {
 
   <div className="container flex flex-row mx-auto px-4 md:px-20 py-[120px] max-w-[1200px] relative">
     {/* Fixed Navigation */}
-    <div className="fixed py-6 md:py-0 top-[64px] md:top-[120px] md:left-1/8 lg:letf-1/2 z-50 w-full md:w-[275px] px-4 bg-white md:bg-transparent">
+    <div className="fixed py-6 md:py-0 top-[64px] md:top-[120px] md:left-1/8 lg:letf-1/2 z-50 w-full md:w-[275px] left-0 px-4 bg-white md:bg-transparent">
       <div className="flex flex-col space-y-2">
         <h1 className="text-5xl font-semibold text-[#344054] mb-4">Gallery</h1>
         <Link
