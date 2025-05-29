@@ -37,7 +37,7 @@ export default function Gallery({ images, link }: GalleryProps) {
                     ))}
                 </div>
             </div>
-            <div className="absolute bottom-125 lg:bottom-10 right-10">
+            <div className="absolute -bottom-16 md:bottom-125 lg:bottom-10 right-1 md:right-10">
                 <Link
                     className="cursor-pointer p-4 bg-white border border-[#344054] rounded-lg text-[#344054] z-100 flex items-center gap-2"
                     href={link}

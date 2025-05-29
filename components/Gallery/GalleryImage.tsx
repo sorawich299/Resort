@@ -6,7 +6,7 @@ interface GalleryImageProps {
     images: string[] | StaticImageData[]
 }
 export default function GalleryImage({ title, subtitle = "", images }: GalleryImageProps) {
-    return (<div className="py-28 px-16 flex flex-col gap-8 max-w-[1200px] mx-auto">
+    return (<div className="py-14 md:py-28 px-8 lg:px-16 flex flex-col gap-8 max-w-[1200px] mx-auto">
         <h1 className="text-3xl md:text-5xl font-bold text-orange-400">{title} {subtitle === "" ? "" : (<span className="text-[#344054] font-semibold">{'- ' + subtitle}</span>)}</h1>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             {images.map((src, imgIndex) => (

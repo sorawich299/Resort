@@ -62,7 +62,7 @@ export default function Header() {
   return (
     <header
       style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
-      className={`fixed top-0 left-0 right-0 h-[72px] z-50 ${
+      className={`fixed top-0 left-0 right-0 h-[72px] z-500 ${
         scrolled ? "bg-white" : "bg-transparent"
       }`}
     >

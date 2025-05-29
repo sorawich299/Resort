@@ -11,7 +11,7 @@ interface InformationVillaProps {
 }
 export default function InformationVilla({ link, villa }: InformationVillaProps) {
   return (
-    <div className="flex flex-col lg:flex-row h-fit transition duration-300 ease-in-out max-w-[1200px] w-full pt-28 mx-auto gap-10">
+    <div className="flex flex-col lg:flex-row h-fit transition duration-300 ease-in-out max-w-[1200px] w-full pt-20 md:pt-28 px-10 md:px-20 lg:px-0 mx-auto gap-10">
       {/* Information */}
       <div className="flex-1 flex flex-col gap-10">
         <div>
