@@ -33,7 +33,7 @@ export default function Gallery() {
     <>
       <div className="container m-auto p-4  pt-20">
         {/* Header */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4">
           {/* Back */}
           <div
             className="flex justify-center items-center font-bold text-2xl text-[#2970FF]  cursor-pointer w-[48px] h-[48px]"

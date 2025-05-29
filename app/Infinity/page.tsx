@@ -18,12 +18,12 @@ export default function Home() {
     ];
     return (
         <div className="pt-16">
-            <div className="flex flex-col px-16 py-14 gap-3">
+            <div className="flex flex-col px-8 py-7 md:px-16 md:py-14 gap-3">
                 <h1 className="text-[#344054] text-5xl/15 font-semibold">The Infinity Villa</h1>
                 <span className="text-[#344054] text-lg font-medium">10 guests ・ 5 bedrooms・5 beds・5 toilets・5 baths・5 Jacuzzi</span>
                 
             </div>
-            <div className="max-w-[1274px] mx-auto w-full px-16">
+            <div className="max-w-[1274px] mx-auto w-full px-8 md:px-16 ">
                 <Gallery images={images} link={'/Infinity/Gallery'}/>
             </div>
             <InformationVilla villa="The Infinity Villa" link={'/Infinity/Gallery'}/>
