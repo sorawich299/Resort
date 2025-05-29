@@ -88,32 +88,34 @@ const images = [
 export default function Home() {
   return (
     <>
-      <div className="h-[64px]"></div> {/* Header spacer */}
-      <div className="container mx-auto px-4 md:px-20 py-[120px] max-w-[1200px] relative">
-        {/* Fixed Navigation */}
-        <div className="fixed top-[120px] left-50 z-50 w-[275px] px-4">
-          <div className="flex flex-col space-y-2">
-            <h1 className="text-5xl font-semibold text-[#344054] mb-4">Gallery</h1>
-            <Link
-              href={"/Infinity/Gallery"}
-              className="ibm-plex-sans-thai-looped text-[#00000080] hover:text-[#F79009] font-medium hover:font-bold text-sm"
-            >
-              The Infinity Villa
-            </Link>
-            <Link
-              href={"/Horizon/Gallery"}
-              className="ibm-plex-sans-thai-looped text-[#00000080] hover:text-[#F79009] font-medium hover:font-bold text-sm"
-            >
-              The Horizon Retreat
-            </Link>
-          </div>
-        </div>
+  <div className="h-[64px]" /> {/* Header spacer */}
 
-        {/* Image Section */}
-        <div className="pl-[300px]"> {/* Padding to make space for fixed nav */}
-          <Masonry images={images} />
-        </div>
+  <div className="container flex flex-row mx-auto px-4 md:px-20 py-[120px] max-w-[1200px] relative">
+    {/* Fixed Navigation */}
+    <div className="fixed py-6 md:py-0 top-[64px] md:top-[120px] md:left-1/8 lg:letf-1/2 z-50 w-full md:w-[275px] px-4 bg-white md:bg-transparent">
+      <div className="flex flex-col space-y-2">
+        <h1 className="text-5xl font-semibold text-[#344054] mb-4">Gallery</h1>
+        <Link
+          href={"/Infinity/Gallery"}
+          className="ibm-plex-sans-thai-looped text-[#00000080] hover:text-[#F79009] font-medium hover:font-bold text-sm"
+        >
+          The Infinity Villa
+        </Link>
+        <Link
+          href={"/Horizon/Gallery"}
+          className="ibm-plex-sans-thai-looped text-[#00000080] hover:text-[#F79009] font-medium hover:font-bold text-sm"
+        >
+          The Horizon Retreat
+        </Link>
       </div>
-    </>
+    </div>
+
+    {/* Image Section */}
+    <div className="pt-[100px] md:pt-0 md:pl-[300px]"> {/* Padding to make space for fixed nav */}  
+      <Masonry images={images} />
+    </div>
+  </div>
+</>
+
   );
 }
