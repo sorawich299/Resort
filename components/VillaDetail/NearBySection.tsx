@@ -67,12 +67,12 @@ export default function NearbySection() {
             title="Google Map"
             width="100%"
             height="100%"
-            frameBorder="16px"
-            // style={{ border: 15 }}
+            frameBorder="0"
+            style={{ border: 0 }}
             referrerPolicy="no-referrer-when-downgrade"
             loading="lazy"
             allowFullScreen
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.392418054667!2d100.89170247490333!3d12.757624118365043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102f729a8c3bcb9%3A0xf9b7481e2c4d14b0!2sBang%20Sare%2C%20Sattahip%2C%20Chon%20Buri%2020250!5e0!3m2!1sen!2sth!4v1716218015676!5m2!1sen!2sth"
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d5395.794992286238!2d100.901945!3d12.775116999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDQ2JzMwLjQiTiAxMDDCsDU0JzA3LjAiRQ!5e1!3m2!1sth!2sth!4v1748511134104!5m2!1sth!2sth"
           ></iframe>
         </div>
 
