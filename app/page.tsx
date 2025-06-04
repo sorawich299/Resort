@@ -75,11 +75,11 @@ export default function Home() {
         imageSrc={Private}
         features={[
           {
-            icon: <SunIcon color="#2970FF" width="44" height="44" />,
+            icon: <SunIcon color="var(--color-icon-primary)" width="44" height="44" />,
             label: "Ocean View",
           },
           {
-            icon: <PoolIcon color="#2970FF" width="44" height="44" />,
+            icon: <PoolIcon color="var(--color-icon-primary)" width="44" height="44" />,
             label: "Private Infinity Pool",
           },
         ]}
@@ -91,7 +91,7 @@ export default function Home() {
         imageSrc={Jacuzzi}
         features={[
           {
-            icon: <JacuzziIcon color="#2970FF" width="44" height="44" />,
+            icon: <JacuzziIcon color="var(--color-icon-primary)" width="44" height="44" />,
             label: "Private Jacuzzi",
           },
         ]}
@@ -103,7 +103,7 @@ export default function Home() {
         imageSrc={Dining}
         features={[
           {
-            icon: <DiningIcon color="#2970FF" width="44" height="44" />,
+            icon: <DiningIcon color="var(--color-icon-primary)" width="44" height="44" />,
             label: "Dining room",
           },
         ]}
@@ -115,55 +115,55 @@ export default function Home() {
           subtitle="The Infinity Villa and The Horizon Retreat"
           amenities={[
             {
-              icon: <SunIcon color="#2970FF" width="44" height="44" />,
+              icon: <SunIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "Ocean View",
             },
             {
-              icon: <WifiIcon color="#2970FF" width="44" height="44" />,
+              icon: <WifiIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "Free Wi-Fi",
             },
             {
               icon: (
-                <AirConditionerIcon color="#2970FF" width="44" height="44" />
+                <AirConditionerIcon color="var(--color-icon-primary)" width="44" height="44" />
               ),
               label: "Air conditioner",
             },
             {
-              icon: <PoolIcon color="#2970FF" width="44" height="44" />,
+              icon: <PoolIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "Private Infinity Pool",
             },
             {
-              icon: <LivingRoomIcon color="#2970FF" width="44" height="44" />,
+              icon: <LivingRoomIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "Living room",
             },
             {
-              icon: <HomeTheaterIcon color="#2970FF" width="44" height="44" />,
+              icon: <HomeTheaterIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "Home theater",
             },
             {
-              icon: <DiningIcon color="#2970FF" width="44" height="44" />,
+              icon: <DiningIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "Dining room",
             },
             {
-              icon: <PrivateBarIcon color="#2970FF" width="44" height="44" />,
+              icon: <PrivateBarIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "Private Bar",
             },
             {
               icon: (
-                <PrivateFitnessGymIcon color="#2970FF" width="44" height="44" />
+                <PrivateFitnessGymIcon color="var(--color-icon-primary)" width="44" height="44" />
               ),
               label: "Private fitness gym",
             },
             {
-              icon: <PoolTableIcon color="#2970FF" width="44" height="44" />,
+              icon: <PoolTableIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "Pool-table",
             },
             {
-              icon: <ToiletIcon color="#2970FF" width="44" height="44" />,
+              icon: <ToiletIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "Toilets",
             },
             {
-              icon: <ButlerIcon color="#2970FF" width="44" height="44" />,
+              icon: <ButlerIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "Butler Assistant",
             },
           ]}
@@ -173,29 +173,29 @@ export default function Home() {
           subtitle=""
           amenities={[
             {
-              icon: <BedroomIcon color="#2970FF" width="44" height="44" />,
+              icon: <BedroomIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "5 Bedrooms",
             },
             {
-              icon: <KingSizeIcon color="#2970FF" width="44" height="44" />,
+              icon: <KingSizeIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "5 King size",
             },
             {
               icon: (
-                <AirConditionerIcon color="#2970FF" width="44" height="44" />
+                <AirConditionerIcon color="var(--color-icon-primary)" width="44" height="44" />
               ),
               label: "Air conditioner",
             },
             {
-              icon: <BathroomIcon color="#2970FF" width="44" height="44" />,
+              icon: <BathroomIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "5 bathrooms",
             },
             {
-              icon: <JacuzziIcon color="#2970FF" width="44" height="44" />,
+              icon: <JacuzziIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "5 Jacuzzi",
             },
             {
-              icon: <SunIcon color="#2970FF" width="44" height="44" />,
+              icon: <SunIcon color="var(--color-icon-primary)" width="44" height="44" />,
               label: "5 Ocean View",
             },
           ]}

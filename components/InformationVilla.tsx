@@ -67,13 +67,13 @@ export default function InformationVilla({ link, villa }: InformationVillaProps)
         <div className="flex gap-6">
           <div className="flex flex-col p-5 border rounded-xl w-full max-w-[264px] gap-5">
             <span className="text-3xl text-blue-600">
-              <SunIcon color="#2970FF" />
+              <SunIcon color="var(--color-icon-primary)" />
             </span>
             <p className="font-medium text-xl">5 Ocean View</p>
           </div>
           <div className="flex flex-col p-5 border rounded-xl w-full max-w-[264px] gap-5">
             <span className="text-3xl text-blue-600">
-              <PoolIcon color="#2970FF" />
+              <PoolIcon color="var(--color-icon-primary)" />
             </span>
             <p className="font-medium text-xl">Private Infinity Pool</p>
           </div>
@@ -185,7 +185,7 @@ export default function InformationVilla({ link, villa }: InformationVillaProps)
               </span>
             </h1>
             <div className="">
-              <h4 className="text-base text-[#2970FF] font-bold">
+              <h4 className="text-base text-[var(--color-icon-primary)] font-bold">
                 Bedroom1<span className="text-[#344054]">: 33 sq.m.</span>
               </h4>
               <h4 className="text-base text-[#344054] pb-5">
@@ -222,7 +222,7 @@ export default function InformationVilla({ link, villa }: InformationVillaProps)
               </ul>
             </div>
             <div className="">
-              <h4 className="text-base text-[#2970FF] font-bold">
+              <h4 className="text-base text-[var(--color-icon-primary)] font-bold">
                 Bedroom2<span className="text-[#344054]">: 32 sq.m.</span>
               </h4>
               <h4 className="text-base text-[#344054] pb-5">
@@ -259,7 +259,7 @@ export default function InformationVilla({ link, villa }: InformationVillaProps)
               </ul>
             </div>
             <div className="">
-              <h4 className="text-base text-[#2970FF] font-bold">
+              <h4 className="text-base text-[var(--color-icon-primary)] font-bold">
                 Bedroom3<span className="text-[#344054]">: 34 sq.m.</span>
               </h4>
               <h4 className="text-base text-[#344054] pb-5">
@@ -296,7 +296,7 @@ export default function InformationVilla({ link, villa }: InformationVillaProps)
               </ul>
             </div>
             <div className="">
-              <h4 className="text-base text-[#2970FF] font-bold">
+              <h4 className="text-base text-[var(--color-icon-primary)] font-bold">
                 Bedroom4<span className="text-[#344054]">: 46 sq.m.</span>
               </h4>
               <h4 className="text-base text-[#344054] pb-5">
@@ -333,7 +333,7 @@ export default function InformationVilla({ link, villa }: InformationVillaProps)
               </ul>
             </div>
             <div className="">
-              <h4 className="text-base text-[#2970FF] font-bold">
+              <h4 className="text-base text-[var(--color-icon-primary)] font-bold">
                 Bedroom5<span className="text-[#344054]">: 62 sq.m.</span>
               </h4>
               <h4 className="text-base text-[#344054] pb-5">

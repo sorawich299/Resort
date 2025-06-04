@@ -99,7 +99,7 @@ export default function NearbySection() {
                 >
                   <div className="flex gap-2">
                     <span className="text-sm">
-                      {<NearByIcon color="#2970FF" />}
+                      {<NearByIcon color="var(--color-icon-primary)" />}
                     </span>
                     <span className="text-sm text-gray-700 transition-colors">
                       {item.name}
@@ -134,7 +134,7 @@ export default function NearbySection() {
                 >
                   <div className="flex gap-2">
                     <span className="text-sm">
-                      {<NearByIcon color="#2970FF" />}
+                      {<NearByIcon color="var(--color-icon-primary)" />}
                     </span>
                     <span className="text-sm text-gray-700 transition-colors">
                       {item.name}
@@ -169,7 +169,7 @@ export default function NearbySection() {
                 >
                   <div className="flex gap-2">
                     <span className="text-sm">
-                      {<NearByIcon color="#2970FF" />}
+                      {<NearByIcon color="var(--color-icon-primary)" />}
                     </span>
                     <span className="text-sm text-gray-700 transition-colors">
                       {item.name}

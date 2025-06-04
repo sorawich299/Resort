@@ -28,7 +28,7 @@ export default function PrivateQuarters({ title, subtitle, amenities }: PrivateQ
             className="flex flex-col border border-gray-300 rounded-2xl max-w-[264px] w-full gap-5 p-5"
           >
             {item.icon}
-            <p className="text-xl font-medium text-black">{item.label}</p>
+            <p className="text-xl font-medium text-[var(--color-secondary)]">{item.label}</p>
           </div>
         ))}
       </div>

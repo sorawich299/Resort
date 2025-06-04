@@ -18,7 +18,7 @@ export default function Information() {
           Solunar.
         </h1>
         <p
-          className="text-sm sm:text-base md:text-lg mt-2 sm:mt-4 text-black max-w-xl mx-auto"
+          className="text-sm sm:text-base md:text-lg mt-2 sm:mt-4 text-[var(--color-secondary)] max-w-xl mx-auto"
           style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
         >
           Each private suite is a sanctuary of comfort, complete with a sea-view jacuzzi and floor-to-ceiling windows.

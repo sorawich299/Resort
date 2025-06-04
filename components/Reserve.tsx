@@ -18,12 +18,12 @@ export default function  Reserve() {
 
       <VillaCard
         title="The Horizon Retreat"
-        description="Nestled atop a secluded cliff, this villa offers breathtaking mountain and ocean views, perfect for a romantic getaway."
+        description="Experience panoramic ocean views from every room of this 5-bedroom villa, featuring a private infinity pool, a personal fitness studio, and a refined minimalist design. Bask in gloden sunsets, embrace the privacy, and unwind in your own seaside escape."
         image={Horizon}
         features={{
           subtitle: "Solunar.",
           view: "Ocean View",
-          bedrooms: 3,
+          bedrooms: 5,
         }}
       />
     </div>

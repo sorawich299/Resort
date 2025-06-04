@@ -1,6 +1,7 @@
 import EmailIcon from "@/public/icons/EmailIcon";
 import LocationAddressIcon from "@/public/icons/LocationAddressIcon";
 import PhoneIcon from "@/public/icons/PhoneIcon";
+import VectorMap from "./common/VectorMap";
 
 export default function Contact() {
     return (
@@ -13,7 +14,7 @@ export default function Contact() {
 
                     {/* Email */}
                     <div className="flex flex-col gap-4">
-                        <EmailIcon color="#2970FF"/>
+                        <EmailIcon color="var(--color-icon-primary)"/>
                         <div className="flex flex-col gap-2"  style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>
                             <h1 className="text-xl font-bold text-black" >Email</h1>
                             <p className="text-lg font-normal text-black">Lorem ipsum dolor sit amet.</p>
@@ -23,7 +24,7 @@ export default function Contact() {
 
                     {/* Phone */}
                     <div className="flex flex-col gap-4">
-                        <PhoneIcon color="#2970FF"/>
+                        <PhoneIcon color="var(--color-icon-primary)"/>
                         <div className="flex flex-col gap-2"  style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>
                             <h1 className="text-xl font-bold text-black">Phone</h1>
                             <p className="text-lg font-normal text-black">Lorem ipsum dolor sit amet.</p>
@@ -33,7 +34,7 @@ export default function Contact() {
 
                     {/* Address */}
                     <div className="flex flex-col gap-4">
-                        <LocationAddressIcon color="#2970FF"/>
+                        <LocationAddressIcon color="var(--color-icon-primary)"/>
                         <div className="flex flex-col gap-2"  style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>
                             <h1 className="text-xl font-bold text-black">Solunar.</h1>
                             <p className="text-lg font-normal text-black">129 moo 2 Bang Sare, Sattahip, Chon Buri 20250</p>
@@ -49,6 +50,7 @@ export default function Contact() {
 
                 {/* Map / Placeholder */}
                 <div className="w-full h-64 md:h-80 rounded-lg overflow-hidden ">
+                    <VectorMap />
                     <iframe
                         title="Google Map"
                         width="100%"

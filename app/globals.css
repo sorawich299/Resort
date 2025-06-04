@@ -5,6 +5,12 @@
  :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --color-primary: #000000;
+  --color-secondary: #344054;
+
+
+  --color-icon-primary: #2970FF;
 }
 
 /*
@@ -207,3 +213,6 @@ body {
 }
 
 
+.react-datepicker-wrapper{
+  width: 100%;
+}
