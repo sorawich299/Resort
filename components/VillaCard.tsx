@@ -5,6 +5,7 @@ import SunIcon from "@/public/icons/SunIcon";
 import BedroomIcon from "@/public/icons/BedroomIcon";
 import Modal from "./Modal";
 import { useState } from "react";
+import ModalDetail from "./common/ModalDetail";
 
 interface Features {
   subtitle?: string;
@@ -82,8 +83,7 @@ const VillaCard: React.FC<VillaCardProps> = ({
       </div>
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(!isOpen)}>
-        <h2 className="text-xl font-bold mb-4">Hello from Modal</h2>
-        <p>This is a simple modal component in Next.js.</p>
+        <ModalDetail/>
       </Modal>
     </div>
   );

@@ -34,13 +34,13 @@ export default function Header() {
 
     if (menuOpen) {
       return isActive
-        ? "text-[#F79009] lg:hover:text-[#F79009] font-bold"
-        : "text-black/50 lg:hover:text-[#F79009] font-medium hover:font-bold";
+        ? "text-[var(--color-logo)] lg:hover:text-[var(--color-logo)] font-bold"
+        : "text-black/50 lg:hover:text-[var(--color-logo)] font-medium hover:font-bold";
     }
     if (scrolled) {
       return isActive
-        ? "text-[#F79009] lg:hover:text-[#F79009] font-bold"
-        : "text-black/50 lg:hover:text-[#F79009] font-medium hover:font-bold";
+        ? "text-[var(--color-logo)] lg:hover:text-[var(--color-logo)] font-bold"
+        : "text-black/50 lg:hover:text-[var(--color-logo)] font-medium hover:font-bold";
     }
 
     if (activeLabel === "Home") {
@@ -50,8 +50,8 @@ export default function Header() {
     }
 
     return isActive
-      ? "text-[#F79009] lg:hover:text-[#F79009] font-bold"
-      : "text-black/50 lg:hover:text-[#F79009] font-medium hover:font-bold";
+      ? "text-[var(--color-logo)] lg:hover:text-[var(--color-logo)] font-bold"
+      : "text-black/50 lg:hover:text-[var(--color-logo)] font-medium hover:font-bold";
   };
 
   useEffect(() => {
@@ -70,11 +70,11 @@ export default function Header() {
         <div className="site-logo">
           <Link href={"/"}>
             {scrolled ? (
-              <LogoIcon color="#f79009" />
+              <LogoIcon color="var(--color-logo)" />
             ) : activeLabel === "Home" ? (
               <LogoIcon />
             ) : (
-              <LogoIcon color="#F79009" />
+              <LogoIcon color="var(--color-logo)" />
             )}
           </Link>
         </div>

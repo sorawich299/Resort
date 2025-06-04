@@ -16,7 +16,7 @@ type DateBoxProps = {
 const DateBox: React.FC<DateBoxProps> = ({ label, name, control, required }) => {
     return (
         <div>
-            <label className="text-sm font-medium text-orange-600 block mb-1">{label}</label>
+            <label className="text-sm font-medium text-[var(--color-logo)] block mb-1">{label}</label>
             <Controller
                 control={control}
                 name={name}
@@ -28,7 +28,7 @@ const DateBox: React.FC<DateBoxProps> = ({ label, name, control, required }) => 
                         startDate={field.value ? field.value[0] : null}
                         endDate={field.value ? field.value[1] : null}
                         selectsRange
-                        dateFormat="EEE, dd MMM"
+                        dateFormat="EEE, dd MMM YYYY"
                         placeholderText="Select a date range"
                         className="w-full border-b p-2"
                     />

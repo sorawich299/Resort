@@ -97,13 +97,13 @@ export default function Home() {
         <h1 className="text-5xl font-semibold text-[#344054] mb-4">Gallery</h1>
         <Link
           href={"/Infinity/Gallery"}
-          className="ibm-plex-sans-thai-looped text-[#00000080] hover:text-[#F79009] font-medium hover:font-bold text-sm"
+          className="ibm-plex-sans-thai-looped text-[#00000080] hover:text-[var(--color-logo)] font-medium hover:font-bold text-sm"
         >
           The Infinity Villa
         </Link>
         <Link
           href={"/Horizon/Gallery"}
-          className="ibm-plex-sans-thai-looped text-[#00000080] hover:text-[#F79009] font-medium hover:font-bold text-sm"
+          className="ibm-plex-sans-thai-looped text-[#00000080] hover:text-[var(--color-logo)] font-medium hover:font-bold text-sm"
         >
           The Horizon Retreat
         </Link>

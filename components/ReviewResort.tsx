@@ -12,7 +12,7 @@ interface ReviewResortProps {
     subTitle: string;
 }
 export default function ReviewResort({ image, title, subTitle }: ReviewResortProps) {
-    const [isOpen, setIsOpen] = useState<boolean>(true);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
     return (
         <>
             <AnimatedFadeInUp>

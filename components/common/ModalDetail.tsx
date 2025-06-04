@@ -1,6 +1,7 @@
 import DateBox from "./DateBox";
 import SelectBox from "./SelectBox";
 import { useForm } from "react-hook-form";
+import TextField from "./TextField";
 
 
 
@@ -23,7 +24,7 @@ export default function ModalDetail() {
                         ]}
                     />
                     <DateBox label="Date" name="checkIn" control={control} required />
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-0">
                         <div className="flex flex-row justify-between gap-4">
                             <SelectBox
                                 label="Adults"
@@ -60,10 +61,51 @@ export default function ModalDetail() {
                                 ]}
                             />
                         </div>
+
+                        <span className="text-[var(--color-secondary)] text-sm">Maximum occupancy: 10 guests</span>
                     </div>
+                    <TextField label=""
+                        name="message"
+                        register={register}
+                        required
+                        multiline
+                        rows={4}
+                        placeholder="Special requests or notes for your stay" />
+                    {/* <textarea className="border rounded-2xl border-gray-300 p-4 font-normal text-[var(--color-secondary)]" rows={6} placeholder="Special requests or notes for your stay." /> */}
                 </div>
             </div>
-            <div className="flex-1 flex flex-col gap-4">2</div>
+            <div className="flex-1 flex flex-col gap-4">
+                {/* Header */}
+                <h1 className="text-black font-bold text-lg">Contact Info</h1>
+                {/* Description */}
+                <div className="flex flex-col gap-4">
+                    <TextField label="Legal name"
+                        name="name"
+                        register={register}
+                        required
+                        placeholder="First anme - Last name"
+
+                        subText="Make sure this matches the name on your government ID" />
+                    <TextField label="Phone number"
+                        name="name"
+                        register={register}
+                        required
+                        placeholder="First anme - Last name"
+                    />
+                    <TextField label="Email"
+                        name="name"
+                        register={register}
+                        required
+                        type='email'
+                        placeholder="email@example.com" />
+                    <div className="w-full flex">
+                        <button className=" bg-blue-500 text-white text-xl py-3.5 px-7 font-medium rounded-lg hover:bg-blue-600 w-full" >
+                            Reserve
+                        </button>
+                    </div>
+
+                </div>
+            </div>
 
 
         </div>

@@ -28,7 +28,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
           {/* Header */}
           <div className="flex justify-between items-center p-8">
             <div className="flex flex-col gap-4                               ">
-              <h2 className="text-2xl font-semibold text-orange-600">
+              <h2 className="text-2xl font-semibold  text-[var(--color-logo)]">
                 Request a Reservation
               </h2>
               <p className="text-gray-600">

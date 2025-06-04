@@ -17,7 +17,7 @@ type SelectBoxProps = {
 const SelectBox: React.FC<SelectBoxProps> = ({ label, name, options, register, required }) => {
   return (
     <div className="flex-1">
-      <label className="text-sm font-medium text-orange-600 block mb-1">{label}</label>
+      <label className="text-sm font-medium text-[var(--color-logo)] block mb-1">{label}</label>
       <select
         {...register(name, { required })}
         className="w-full border-b p-2 focus:outline-none "
