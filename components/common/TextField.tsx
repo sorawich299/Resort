@@ -11,6 +11,7 @@ type TextFieldProps = {
   multiline?: boolean; // for multi-line text input
   rows?: number; // number of rows for multi-line input
   subText?: string;
+  rules?: object;
 };
 
 const TextField: React.FC<TextFieldProps> = ({
@@ -23,6 +24,7 @@ const TextField: React.FC<TextFieldProps> = ({
   multiline = false,
   rows,
   subText,
+  rules
 }) => {
   return (
     <div className="flex-1">
@@ -31,14 +33,14 @@ const TextField: React.FC<TextFieldProps> = ({
       </label>
       {multiline ? (
         <textarea
-          {...register(name, { required })}
+          {...register(name, { required, ...rules })}
           className="w-full border p-2  rounded-lg border-gray-300"
           placeholder={placeholder}
           rows={rows}
         />
       ) : (
         <input
-          {...register(name, { required })}
+          {...register(name, { required , ...rules })}
           type={type}
           className="w-full border-b p-2 "
           placeholder={placeholder}

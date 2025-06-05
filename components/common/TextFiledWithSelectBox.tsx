@@ -16,6 +16,8 @@ type TextFieldProps = {
   selectLabel?: string; // label for the SelectBox
   selectName?: string; // name for the SelectBox
   selectOptions?: { value: string; label: string }[]; // options for the SelectBox
+  rules?: object;
+  selectRules?: object;
 };
 
 const TextField: React.FC<TextFieldProps> = ({
@@ -33,6 +35,8 @@ const TextField: React.FC<TextFieldProps> = ({
   selectLabel,
   selectName,
   selectOptions,
+  rules,
+  selectRules
 }) => {
   return (
     <div className="flex-1">
@@ -42,7 +46,7 @@ const TextField: React.FC<TextFieldProps> = ({
       <div className="flex items-center border-b border-gray-300">
         {showSelect && selectOptions && (
           <select
-            {...register(selectName || "select", { required })}
+            {...register(selectName || "select", { required, ...selectRules })}
             className="p-2 w-28 bg-transparent focus:outline-none"
           >
             <option value="">Select</option>
@@ -54,7 +58,7 @@ const TextField: React.FC<TextFieldProps> = ({
           </select>
         )}
         <input
-          {...register(name, { required })}
+          {...register(name, { required, ...rules })}
           type={type}
           className="flex-1 p-2 bg-transparent focus:outline-none"
           placeholder={placeholder}
