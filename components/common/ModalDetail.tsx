@@ -2,13 +2,16 @@ import DateBox from "./DateBox";
 import SelectBox from "./SelectBox";
 import { useForm } from "react-hook-form";
 import TextField from "./TextField";
+import TextFiledWithSelectBox from "./TextFiledWithSelectBox";
 
 
 
 export default function ModalDetail() {
     const { register, control, handleSubmit } = useForm();
     return (
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4" style={{
+                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
+                    }}>
             <div className="flex-1 flex flex-col gap-4">
                 {/* Header */}
                 <h1 className="text-black font-bold text-lg">Detail</h1>
@@ -86,11 +89,20 @@ export default function ModalDetail() {
                         placeholder="First anme - Last name"
 
                         subText="Make sure this matches the name on your government ID" />
-                    <TextField label="Phone number"
-                        name="name"
+                    <TextFiledWithSelectBox
+                        label="Phone number"
+                        name="phoneNumber"
                         register={register}
                         required
-                        placeholder="First anme - Last name"
+                        placeholder="Your phone number"
+                        showSelect
+                        type="phone"
+                        selectName="countryCode"
+                        selectOptions={[
+                            { value: "TH", label: "TH +66" },
+                            { value: "US", label: "US +1" },
+                            { value: "UK", label: "UK +44" },
+                        ]}
                     />
                     <TextField label="Email"
                         name="name"

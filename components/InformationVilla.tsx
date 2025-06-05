@@ -1,15 +1,20 @@
+'use client';
 import Link from "next/link";
 import AmenitiesSection from "./VillaDetail/AmenittiesSection";
 import GalleryShow from "./VillaDetail/GalleryShow";
 import SunIcon from "@/public/icons/SunIcon";
 import PoolIcon from "@/public/icons/PoolIcon";
 import ListIcon from "@/public/icons/ListIcon";
+import Modal from "./Modal";
+import ModalDetail from "./common/ModalDetail";
+import { useState } from "react";
 
 interface InformationVillaProps {
   link: string;
   villa: string;
 }
 export default function InformationVilla({ link, villa }: InformationVillaProps) {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <div className="flex flex-col lg:flex-row h-fit transition duration-300 ease-in-out max-w-[1200px] w-full pt-20 md:pt-28 px-10 md:px-20 lg:px-0 mx-auto gap-10">
       {/* Information */}
@@ -400,12 +405,15 @@ export default function InformationVilla({ link, villa }: InformationVillaProps)
                 Our dedicated team is ready to assist you with every detail.
               </p>
             </div>
-            <button className="p-4 bg-blue-600 border rounded-lg w-full text-white font-semibold text-lg">
+            <button className="p-4 bg-blue-600 border rounded-lg w-full text-white font-semibold text-lg cursor-pointer" onClick={()=>setIsOpen(!isOpen)}>
               💌Send Email💌
             </button>
           </div>
         </div>
       </div>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(!isOpen)}>
+        <ModalDetail/>
+      </Modal>
     </div>
   );
 }
