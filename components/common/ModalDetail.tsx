@@ -4,10 +4,12 @@ import SelectBox from "./SelectBox";
 import { useForm } from "react-hook-form";
 import TextField from "./TextField";
 import TextFiledWithSelectBox from "./TextFiledWithSelectBox";
+import DateRangeBox from "./DateBox";
 
-interface FormValues {
+export interface FormValues {
     villaType: string;
-    checkIn: string;
+    startDate: Date | null;
+    endDate: Date | null;
     adults: string;
     children: string;
     message: string;
@@ -23,7 +25,13 @@ export default function ModalDetail() {
         handleSubmit,
         control,
         formState: { errors },
-    } = useForm<FormValues>();
+        watch 
+    } = useForm<FormValues>({
+        defaultValues: {
+            startDate: null,
+            endDate: null,
+        },
+    });
 
     const onSubmit = (data: FormValues) => {
         console.log("Form Data Submitted:", data);
@@ -35,6 +43,7 @@ export default function ModalDetail() {
             className="flex flex-row gap-4"
             style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
             onSubmit={handleSubmit(onSubmit)}
+            autoComplete="off"
         >
             <div className="flex-1 flex flex-col gap-4">
                 <h1 className="text-black font-bold text-lg">Detail</h1>
@@ -54,8 +63,16 @@ export default function ModalDetail() {
                         <span className="text-red-500">{errors.villaType.message}</span>
                     )}
 
-                    <DateBox label="Date" name="checkIn" control={control} required />
-                    {errors.checkIn && <span className="text-red-500">Date is required</span>}
+                    {/* <DateBox label="Date" name="checkIn" control={control} required /> */}
+                    <DateRangeBox<FormValues>
+                        label="Select Date Range"
+                        startDateName="startDate"
+                        endDateName="endDate"
+                        control={control}
+                        watch={watch}
+                        required
+                    />
+                    {/* {errors.checkIn && <span className="text-red-500">Date is required</span>} */}
 
                     <div className="flex flex-col gap-0">
                         <div className="flex flex-row justify-between gap-4">
@@ -96,8 +113,8 @@ export default function ModalDetail() {
                         label=""
                         name="message"
                         register={register}
-                        // rules={{ required: "Message is required" }}
-                        // required
+                        rules={{ required: "Message is required" }}
+                        required
                         multiline
                         rows={4}
                         placeholder="Special requests or notes for your stay"
@@ -134,11 +151,7 @@ export default function ModalDetail() {
                         type="phone"
                         selectName="countryCode"
                         selectRules={{ required: "Country code is required" }}
-                        selectOptions={[
-                            { value: "TH", label: "TH +66" },
-                            { value: "US", label: "US +1" },
-                            { value: "UK", label: "UK +44" },
-                        ]}
+                        
                     />
                     {errors.countryCode && (
                         <span className="text-red-500">{errors.countryCode.message}</span>
@@ -147,7 +160,7 @@ export default function ModalDetail() {
                     {errors.phoneNumber && (
                         <span className="text-red-500">{errors.phoneNumber.message}</span>
                     )}
-                    
+
                     <TextField
                         label="Email"
                         name="email"
