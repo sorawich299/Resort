@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
   assetPrefix: process.env.NODE_ENV === 'production' ? `/${repoName}/` : '',
   basePath: process.env.NODE_ENV === 'production' ? `/${repoName}` : '',
   distDir: 'out',
+  
 };
 
 export default nextConfig;

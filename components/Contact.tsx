@@ -1,7 +1,9 @@
+'use client';
 import EmailIcon from "@/public/icons/EmailIcon";
 import LocationAddressIcon from "@/public/icons/LocationAddressIcon";
 import PhoneIcon from "@/public/icons/PhoneIcon";
-import VectorMap from "./common/VectorMap";
+import dynamic from 'next/dynamic';
+import React from "react";
 
 export default function Contact() {
     return (
@@ -50,7 +52,7 @@ export default function Contact() {
 
                 {/* Map / Placeholder */}
                 <div className="w-full h-64 md:h-80 rounded-lg overflow-hidden ">
-                    <VectorMap />
+                    {/* <DynamicVectorMap /> */}
                     <iframe
                         title="Google Map"
                         width="100%"

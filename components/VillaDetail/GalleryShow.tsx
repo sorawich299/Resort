@@ -207,8 +207,12 @@ export default function GalleryShow() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeModal();
     };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }
+
   }, []);
 
   return (

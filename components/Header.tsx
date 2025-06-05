@@ -22,11 +22,14 @@ export default function Header() {
     menuItems.find((item) => cleanPath.startsWith(item.link))?.label || "Home";
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    if (typeof window !== "undefined") {
+      const handleScroll = () => {
+        setScrolled(window.scrollY > 50);
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
   }, []);
 
   const getLinkClass = (label: string) => {
@@ -62,9 +65,8 @@ export default function Header() {
   return (
     <header
       style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
-      className={`fixed top-0 left-0 right-0 h-[72px] z-500 ${
-        scrolled ? "bg-white" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 h-[72px] z-500 ${scrolled ? "bg-white" : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto flex justify-between items-center px-4 py-4">
         <div className="site-logo">
@@ -80,15 +82,14 @@ export default function Header() {
         </div>
         <nav className="site-link">
           <div
-            className={`${scrolled ? ('text-black') : (activeLabel==='Home' ? 'text-white' : 'text-black')} flex lg:hidden text-sm cursor-pointer transition duration-300 ease-in-out`}
+            className={`${scrolled ? ('text-black') : (activeLabel === 'Home' ? 'text-white' : 'text-black')} flex lg:hidden text-sm cursor-pointer transition duration-300 ease-in-out`}
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? "✖" : "☰"}
           </div>
           <ul
-            className={`${
-              menuOpen ? "" : "hidden"
-            } lg:flex flex-col items-center justify-center text-center lg:flex-row gap-4 lg:gap-[50px] text-sm absolute lg:static top-18 right-4 bg-white border-[3px] border-gray-200 shadow-lg rounded-lg z-50 lg:z-auto lg:shadow-none lg:border-none lg:bg-transparent w-[200px] lg:w-auto`}
+            className={`${menuOpen ? "" : "hidden"
+              } lg:flex flex-col items-center justify-center text-center lg:flex-row gap-4 lg:gap-[50px] text-sm absolute lg:static top-18 right-4 bg-white border-[3px] border-gray-200 shadow-lg rounded-lg z-50 lg:z-auto lg:shadow-none lg:border-none lg:bg-transparent w-[200px] lg:w-auto`}
           >
             {[
               { label: "Home", link: "/" },
@@ -98,9 +99,8 @@ export default function Header() {
             ].map((item, i) => (
               <li
                 key={i}
-                className={`border-b border-gray-200 lg:border-0 py-2 ${
-                  i === 3 ? "border-none" : ""
-                }`}
+                className={`border-b border-gray-200 lg:border-0 py-2 ${i === 3 ? "border-none" : ""
+                  }`}
               >
                 <Link
                   href={item.link}

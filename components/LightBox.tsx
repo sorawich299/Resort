@@ -33,9 +33,11 @@ const Lightbox: React.FC<LightboxProps> = ({ images, currentIndex, onClose, setC
       else if (e.key === 'ArrowLeft') handlePrev();
       else if (e.key === 'ArrowRight') handleNext();
     };
+    if (typeof window !== "undefined") {
+      window.addEventListener('keydown', handleKey);
+      return () => window.removeEventListener('keydown', handleKey);
+    }
 
-    window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
   }, [currentIndex, total]);
 
   return (
