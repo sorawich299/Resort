@@ -1,6 +1,5 @@
+'use client';
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import HeroSection from "@/components/Hero";
 import ImageGallery from "@/components/ImageGallery";
 import Infomation from "@/components/Information";
@@ -50,17 +49,43 @@ import ButlerIcon from "@/public/icons/ButlerIcon";
 import BedroomIcon from "@/public/icons/BedroomIcon";
 import KingSizeIcon from "@/public/icons/KingSizeIcon";
 import BathroomIcon from "@/public/icons/BathroomIcon";
+import { useEffect, useState } from "react";
+import ConsentBanner from "@/components/common/ConsentBanner";
 
 const images = [
-  [{ src: SECTION1, width: 362, height: 204}, { src: SECTION2, width: 362, height: 204}, { src: SECTION3, width: 362, height: 362}],
-  [{ src: SECTION4, width: 362, height: 362}, { src: SECTION5, width: 362, height: 362}],
-  [{ src: SECTION6, width: 362, height: 204}, { src: SECTION7, width: 362, height: 362}, { src: SECTION8, width: 362, height: 204}],
-  [{ src: SECTION9, width: 362, height: 362}, { src: SECTION10, width: 362, height: 362}],
-  [{ src: SECTION11, width: 362, height: 204}, { src: SECTION12, width: 362, height: 204}, { src: SECTION13, width: 362, height: 362}],
-  [{ src: SECTION14, width: 362, height: 362}, { src: SECTION15, width: 362, height: 362}],
+  [{ src: SECTION1, width: 362, height: 204 }, { src: SECTION2, width: 362, height: 204 }, { src: SECTION3, width: 362, height: 362 }],
+  [{ src: SECTION4, width: 362, height: 362 }, { src: SECTION5, width: 362, height: 362 }],
+  [{ src: SECTION6, width: 362, height: 204 }, { src: SECTION7, width: 362, height: 362 }, { src: SECTION8, width: 362, height: 204 }],
+  [{ src: SECTION9, width: 362, height: 362 }, { src: SECTION10, width: 362, height: 362 }],
+  [{ src: SECTION11, width: 362, height: 204 }, { src: SECTION12, width: 362, height: 204 }, { src: SECTION13, width: 362, height: 362 }],
+  [{ src: SECTION14, width: 362, height: 362 }, { src: SECTION15, width: 362, height: 362 }],
 ];
 
 export default function Home() {
+  const [isConsentGiven, setIsConsentGiven] = useState<boolean | null>(null);
+  const [isBannerClosed, setIsBannerClosed] = useState(false);
+
+  useEffect(() => {
+    // ตรวจสอบค่าจาก localStorage เมื่อโหลดหน้าเว็บ
+    const consent = localStorage.getItem("consentGiven");
+    setIsConsentGiven(consent === "true");
+  }, []);
+
+  const handleConsentAccept = () => {
+    // บันทึกการยินยอมใน localStorage
+    localStorage.setItem("consentGiven", "true");
+    setIsConsentGiven(true);
+  };
+
+  const handleBannerClose = () => {
+    // ปิดแบนเนอร์โดยไม่บันทึกการยินยอม
+    setIsBannerClosed(true);
+  };
+
+  // ระหว่างรอโหลดค่า localStorage ไม่แสดงแบนเนอร์หรือหน้าเพจที่ผิดพลาด
+  if (isConsentGiven === null) {
+    return null; // หรืออาจเพิ่ม Loading Indicator
+  }
   return (
     <div>
       <HeroSection />
@@ -214,6 +239,12 @@ export default function Home() {
         image={Horizon}
       />
       <Contact />
+      {!isConsentGiven && !isBannerClosed && (
+        <ConsentBanner
+          onAccept={handleConsentAccept}
+          onClose={handleBannerClose}
+        />
+      )}
     </div>
   );
 }
