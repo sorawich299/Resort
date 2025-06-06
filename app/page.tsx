@@ -49,8 +49,6 @@ import ButlerIcon from "@/public/icons/ButlerIcon";
 import BedroomIcon from "@/public/icons/BedroomIcon";
 import KingSizeIcon from "@/public/icons/KingSizeIcon";
 import BathroomIcon from "@/public/icons/BathroomIcon";
-import { useEffect, useState } from "react";
-import ConsentBanner from "@/components/common/ConsentBanner";
 
 const images = [
   [{ src: SECTION1, width: 362, height: 204 }, { src: SECTION2, width: 362, height: 204 }, { src: SECTION3, width: 362, height: 362 }],
@@ -62,30 +60,7 @@ const images = [
 ];
 
 export default function Home() {
-  const [isConsentGiven, setIsConsentGiven] = useState<boolean | null>(null);
-  const [isBannerClosed, setIsBannerClosed] = useState(false);
-
-  useEffect(() => {
-    // ตรวจสอบค่าจาก localStorage เมื่อโหลดหน้าเว็บ
-    const consent = localStorage.getItem("consentGiven");
-    setIsConsentGiven(consent === "true");
-  }, []);
-
-  const handleConsentAccept = () => {
-    // บันทึกการยินยอมใน localStorage
-    localStorage.setItem("consentGiven", "true");
-    setIsConsentGiven(true);
-  };
-
-  const handleBannerClose = () => {
-    // ปิดแบนเนอร์โดยไม่บันทึกการยินยอม
-    setIsBannerClosed(true);
-  };
-
-  // ระหว่างรอโหลดค่า localStorage ไม่แสดงแบนเนอร์หรือหน้าเพจที่ผิดพลาด
-  if (isConsentGiven === null) {
-    return null; // หรืออาจเพิ่ม Loading Indicator
-  }
+  
   return (
     <div>
       <HeroSection />
@@ -239,12 +214,7 @@ export default function Home() {
         image={Horizon}
       />
       <Contact />
-      {!isConsentGiven && !isBannerClosed && (
-        <ConsentBanner
-          onAccept={handleConsentAccept}
-          onClose={handleBannerClose}
-        />
-      )}
+      
     </div>
   );
 }

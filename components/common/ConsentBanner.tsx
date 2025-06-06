@@ -1,11 +1,12 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 interface ConsentBannerProps {
   onAccept?: () => void;
   onClose?: () => void;
+  isVisibleValue?: boolean;
 }
 
-const ConsentBanner: FC<ConsentBannerProps> = ({ onAccept, onClose }) => {
+const ConsentBanner: FC<ConsentBannerProps> = ({ onAccept, onClose, isVisibleValue }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   const handleAccept = () => {
@@ -21,6 +22,7 @@ const ConsentBanner: FC<ConsentBannerProps> = ({ onAccept, onClose }) => {
       onClose();
     }
   };
+
 
   return (
     isVisible && (

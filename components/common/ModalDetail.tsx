@@ -25,7 +25,7 @@ export default function ModalDetail() {
         handleSubmit,
         control,
         formState: { errors },
-        watch 
+        watch
     } = useForm<FormValues>({
         defaultValues: {
             startDate: null,
@@ -58,21 +58,21 @@ export default function ModalDetail() {
                             { label: "The Infinity Villa", value: "infinity" },
                             { label: "The Horizon Retreat", value: "horizon" },
                         ]}
+                        error={errors.villaType?.message as string | undefined}
                     />
-                    {errors.villaType && (
-                        <span className="text-red-500">{errors.villaType.message}</span>
-                    )}
+
 
                     {/* <DateBox label="Date" name="checkIn" control={control} required /> */}
-                    <DateRangeBox<FormValues>
+
+                    <DateRangeBox
                         label="Select Date Range"
                         startDateName="startDate"
                         endDateName="endDate"
                         control={control}
                         watch={watch}
                         required
+                        error={errors.startDate?.message || errors.endDate?.message}
                     />
-                    {/* {errors.checkIn && <span className="text-red-500">Date is required</span>} */}
 
                     <div className="flex flex-col gap-0">
                         <div className="flex flex-row justify-between gap-4">
@@ -85,6 +85,7 @@ export default function ModalDetail() {
                                     label: (i + 1).toString(),
                                     value: (i + 1).toString(),
                                 }))}
+                                error={errors.adults?.message as string | undefined}
                             />
                             <SelectBox
                                 label="Children"
@@ -95,14 +96,10 @@ export default function ModalDetail() {
                                     label: (i + 1).toString(),
                                     value: (i + 1).toString(),
                                 }))}
+                                error={errors.children?.message as string | undefined}
                             />
                         </div>
-                        {errors.adults && (
-                            <span className="text-red-500">{errors.adults.message}</span>
-                        )}
-                        {errors.children && (
-                            <span className="text-red-500">{errors.children.message}</span>
-                        )}
+                        
 
                         <span className="text-[var(--color-secondary)] text-sm">
                             Maximum occupancy: 10 guests
@@ -118,10 +115,8 @@ export default function ModalDetail() {
                         multiline
                         rows={4}
                         placeholder="Special requests or notes for your stay"
+                        error={errors.message?.message as string | undefined}
                     />
-                    {errors.message && (
-                        <span className="text-red-500">{errors.message.message}</span>
-                    )}
                 </div>
             </div>
             <div className="flex-1 flex flex-col gap-4">
@@ -135,10 +130,8 @@ export default function ModalDetail() {
                         required
                         placeholder="First name - Last name"
                         subText="Make sure this matches the name on your government ID"
+                        error={errors.name?.message as string | undefined}
                     />
-                    {errors.name && (
-                        <span className="text-red-500">{errors.name.message}</span>
-                    )}
 
                     <TextFiledWithSelectBox
                         label="Phone number"
@@ -151,15 +144,9 @@ export default function ModalDetail() {
                         type="phone"
                         selectName="countryCode"
                         selectRules={{ required: "Country code is required" }}
-                        
+                        error={errors.phoneNumber?.message as string | undefined}
                     />
-                    {errors.countryCode && (
-                        <span className="text-red-500">{errors.countryCode.message}</span>
-                    )}
-
-                    {errors.phoneNumber && (
-                        <span className="text-red-500">{errors.phoneNumber.message}</span>
-                    )}
+                    
 
                     <TextField
                         label="Email"
@@ -169,10 +156,8 @@ export default function ModalDetail() {
                         required
                         type="email"
                         placeholder="email@example.com"
+                        error={errors.email?.message as string | undefined}
                     />
-                    {errors.email && (
-                        <span className="text-red-500">{errors.email.message}</span>
-                    )}
 
                     <div className="w-full flex">
                         <button

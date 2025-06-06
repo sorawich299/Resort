@@ -1,25 +1,26 @@
 import React, { useState } from "react";
-
-
 import countries from "../../public/data/CountryCodes.json";
+
 type Option = { value: string; label: string };
 
 type TextFieldProps = {
-    label: string;
-    name: string;
-    register: any; // React Hook Form register function
-    required?: boolean;
-    type?: string; // e.g., "text", "email", "password", etc.
-    placeholder?: string;
-    multiline?: boolean; // for multi-line text input
-    rows?: number; // number of rows for multi-line input
-    subText?: string;
-    options?: { value: string; label: string }[]; // for select box options
-    showSelect?: boolean; // whether to show a SelectBox alongside the TextField
-    selectLabel?: string; // label for the SelectBox
-    selectName?: string; // name for the SelectBox
-    rules?: object;
-    selectRules?: object;
+  label: string;
+  name: string;
+  register: any; // React Hook Form register function
+  required?: boolean;
+  type?: string; // e.g., "text", "email", "password", etc.
+  placeholder?: string;
+  multiline?: boolean; // for multi-line text input
+  rows?: number; // number of rows for multi-line input
+  subText?: string;
+  options?: { value: string; label: string }[]; // for select box options
+  showSelect?: boolean; // whether to show a SelectBox alongside the TextField
+  selectLabel?: string; // label for the SelectBox
+  selectName?: string; // name for the SelectBox
+  rules?: object;
+  selectRules?: object;
+  error?: string; // Error message for the main input
+  selectError?: string; // Error message for the select box
 };
 
 const TextFiledWithSelectBox: React.FC<TextFieldProps> = ({
@@ -37,6 +38,8 @@ const TextFiledWithSelectBox: React.FC<TextFieldProps> = ({
   selectName,
   rules,
   selectRules,
+  error,
+  selectError,
 }) => {
   const selectOptions = countries.map((country) => ({
     value: country.code,
@@ -55,7 +58,7 @@ const TextFiledWithSelectBox: React.FC<TextFieldProps> = ({
 
   const handleOptionClick = (value: string, label: string) => {
     setSelectedValue(value);
-    setInputValue(label); // set input text ให้ตรงกับ label ของ option ที่เลือก
+    setInputValue(label); // Set input text ให้ตรงกับ label ของ option ที่เลือก
     setDropdownOpen(false);
   };
 
@@ -64,13 +67,19 @@ const TextFiledWithSelectBox: React.FC<TextFieldProps> = ({
       <label className="text-sm font-medium text-[var(--color-logo)] block mb-1">
         {label}
       </label>
-      <div className="flex items-center border-b border-gray-300">
+      <div
+        className={`flex items-center border-b-1 ${
+          selectError || error ? "border-red-300" : "border-gray-300"
+        }`}
+      >
         {showSelect && (
           <div className="relative">
             <input
               {...register(selectName || "select", { required, ...selectRules })}
               type="text"
-              className="p-2 w-40 bg-transparent focus:outline-none"
+              className={`p-2 w-40 bg-transparent focus:outline-none ${
+                selectError ? "border-red-300" : ""
+              }`}
               placeholder="Search or Select..."
               value={inputValue}
               onChange={handleInputChange}
@@ -102,11 +111,15 @@ const TextFiledWithSelectBox: React.FC<TextFieldProps> = ({
         <input
           {...register(name, { required, ...rules })}
           type={type}
-          className="flex-1 p-2 bg-transparent focus:outline-none"
+          className={`flex-1 p-2 bg-transparent focus:outline-none ${
+            error ? "border-red-300" : ""
+          }`}
           placeholder={placeholder}
           autoComplete="off"
         />
       </div>
+      {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
+      {selectError && <p className="text-red-500 text-xs mt-1">{selectError}</p>}
       {subText && <span className="text-sm text-[var(--color-secondary)]">{subText}</span>}
     </div>
   );

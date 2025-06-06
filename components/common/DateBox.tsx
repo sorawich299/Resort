@@ -10,6 +10,7 @@ type DateRangeBoxProps<T extends FieldValues> = {
     control: Control<T>;
     watch: UseFormWatch<T>;
     required?: boolean;
+    error?: string | undefined;
 };
 
 const DateRangeBox = <T extends FieldValues>({
@@ -19,16 +20,15 @@ const DateRangeBox = <T extends FieldValues>({
     control,
     watch,
     required,
+    error, // รับ error prop
 }: DateRangeBoxProps<T>) => {
-    // ใช้ watch เพื่อให้ component รู้ว่าค่าที่เปลี่ยนแปลงคืออะไร
     const startDate = watch(startDateName);
     const endDate = watch(endDateName);
 
     return (
         <div>
             <label className="text-sm font-medium text-[var(--color-logo)] block mb-1">{label}</label>
-            <div className="flex gap-2">
-                {/* Start Date */}
+            <div className={`flex gap-2 items-center border-b ${error ? "border-red-500" : "border-black"}`}>
                 <Controller
                     control={control}
                     name={startDateName}
@@ -42,11 +42,11 @@ const DateRangeBox = <T extends FieldValues>({
                             endDate={endDate as Date}
                             dateFormat="EEE, dd MMM yyyy"
                             placeholderText="Start Date"
-                            className="w-full border-b p-2"
+                            className="w-full p-2"
                         />
                     )}
                 />
-                {/* End Date */}
+                <span className="px-2">-</span>
                 <Controller
                     control={control}
                     name={endDateName}
@@ -61,13 +61,17 @@ const DateRangeBox = <T extends FieldValues>({
                             minDate={startDate as Date}
                             dateFormat="EEE, dd MMM yyyy"
                             placeholderText="End Date"
-                            className="w-full border-b p-2"
+                            className="w-full p-2"
                         />
                     )}
                 />
             </div>
+            {error !== undefined && (
+                <p className="text-red-500 text-xs mt-1">{error}</p>
+            )}
         </div>
     );
 };
+
 
 export default DateRangeBox;
