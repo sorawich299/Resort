@@ -49,6 +49,7 @@ import ButlerIcon from "@/public/icons/ButlerIcon";
 import BedroomIcon from "@/public/icons/BedroomIcon";
 import KingSizeIcon from "@/public/icons/KingSizeIcon";
 import BathroomIcon from "@/public/icons/BathroomIcon";
+import ReservationForm from "@/components/common/ReservationForm";
 
 const images = [
   [{ src: SECTION1, width: 362, height: 204 }, { src: SECTION2, width: 362, height: 204 }, { src: SECTION3, width: 362, height: 362 }],
@@ -64,6 +65,7 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
+      <ReservationForm />
       <Infomation />
       <VideoPlayer videoId="Erflio-agG4" />
       <Reserve />

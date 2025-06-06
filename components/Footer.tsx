@@ -4,11 +4,15 @@ import LogoIcon from "@/public/icons/LogoIcon";
 import PhoneIcon from "@/public/icons/PhoneIcon";
 import { useEffect, useState } from "react";
 import ConsentBanner from "./common/ConsentBanner";
+import PrivacyPolicyModal from "./common/ModalPrivacyPolicy";
+import ModalTermsOfService from "./common/ModalTermsOfService";
 
 export default function Footer() {
     const [isConsentGiven, setIsConsentGiven] = useState<boolean | null>(null);
     const [isBannerClosed, setIsBannerClosed] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
+    const [isOpenPrivacyPolicy, setIsOpenPrivacyPolicy] = useState<boolean>(false);
+    const [isOpenTermsOfService, setIsOpenTermsOfService] = useState<boolean>(false);
 
     useEffect(() => {
         // ตรวจสอบค่าจาก localStorage เมื่อโหลดหน้าเว็บ
@@ -73,8 +77,8 @@ export default function Footer() {
                     <div className="flex flex-col sm:flex-row justify-between items-center text-sm">
                         <div>2025 All right reserved.</div>
                         <div className="flex gap-4 mt-2 sm:mt-0">
-                            <button className="underline cursor-pointer">Privacy Policy</button>
-                            <button className="underline cursor-pointer">Terms of Service</button>
+                            <button onClick={() => setIsOpenPrivacyPolicy(!isOpenPrivacyPolicy)} className="underline cursor-pointer">Privacy Policy</button>
+                            <button onClick={() => setIsOpenTermsOfService(!isOpenTermsOfService)} className="underline cursor-pointer">Terms of Service</button>
                             <button onClick={handleOpenConsentSettings} className="underline cursor-pointer">
                                 Cookies Settings
                             </button>
@@ -89,6 +93,12 @@ export default function Footer() {
                     isVisibleValue={isVisible}
                 />
             )}
+            <PrivacyPolicyModal isOpen={isOpenPrivacyPolicy} onClose={() => setIsOpenPrivacyPolicy(!isOpenPrivacyPolicy)}>
+
+            </PrivacyPolicyModal>
+            <ModalTermsOfService isOpen={isOpenTermsOfService} onClose={() => setIsOpenTermsOfService(!isOpenTermsOfService)}>
+
+            </ModalTermsOfService>
         </footer>
     );
 }
