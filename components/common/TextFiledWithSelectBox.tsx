@@ -1,26 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import countries from "../../public/data/CountryCodes.json";
-
-type Option = { value: string; label: string };
+import { useFormContext } from "react-hook-form";
 
 type TextFieldProps = {
   label: string;
   name: string;
-  register: any; // React Hook Form register function
+  register: any;
   required?: boolean;
-  type?: string; // e.g., "text", "email", "password", etc.
+  type?: string;
   placeholder?: string;
-  multiline?: boolean; // for multi-line text input
-  rows?: number; // number of rows for multi-line input
+  multiline?: boolean;
+  rows?: number;
   subText?: string;
-  options?: { value: string; label: string }[]; // for select box options
-  showSelect?: boolean; // whether to show a SelectBox alongside the TextField
-  selectLabel?: string; // label for the SelectBox
-  selectName?: string; // name for the SelectBox
+  options?: { value: string; label: string }[];
+  showSelect?: boolean;
+  selectLabel?: string;
+  selectName?: string;
   rules?: object;
   selectRules?: object;
-  error?: string; // Error message for the main input
-  selectError?: string; // Error message for the select box
+  error?: string;
+  selectError?: string;
 };
 
 const TextFiledWithSelectBox: React.FC<TextFieldProps> = ({
@@ -49,6 +48,7 @@ const TextFiledWithSelectBox: React.FC<TextFieldProps> = ({
   const [inputValue, setInputValue] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState("");
+  const { setValue } = useFormContext();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
@@ -58,28 +58,30 @@ const TextFiledWithSelectBox: React.FC<TextFieldProps> = ({
 
   const handleOptionClick = (value: string, label: string) => {
     setSelectedValue(value);
-    setInputValue(label); // Set input text ให้ตรงกับ label ของ option ที่เลือก
+    setInputValue(label);
+    setValue(selectName || "select", value); // <- Key part
     setDropdownOpen(false);
   };
+
+  useEffect(() => {
+    if (selectedValue) {
+      const found = selectOptions.find((opt) => opt.value === selectedValue);
+      if (found) setInputValue(found.label);
+    }
+  }, [selectedValue]);
 
   return (
     <div className="flex-1">
       <label className="text-sm font-medium text-[var(--color-logo)] block mb-1">
         {label}
       </label>
-      <div
-        className={`flex items-center border-b-1 ${
-          selectError || error ? "border-red-300" : "border-gray-300"
-        }`}
-      >
+      <div className={`flex items-center border-b-1 ${selectError || error ? "border-red-300" : "border-gray-300"}`}>
         {showSelect && (
           <div className="relative">
             <input
               {...register(selectName || "select", { required, ...selectRules })}
               type="text"
-              className={`p-2 w-40 bg-transparent focus:outline-none ${
-                selectError ? "border-red-300" : ""
-              }`}
+              className={`p-2 w-40 bg-transparent focus:outline-none ${selectError ? "border-red-300" : ""}`}
               placeholder="Search or Select..."
               value={inputValue}
               onChange={handleInputChange}
@@ -87,14 +89,9 @@ const TextFiledWithSelectBox: React.FC<TextFieldProps> = ({
               autoComplete="off"
             />
             {dropdownOpen && (
-              <ul
-                className="absolute bg-white border border-gray-300 w-40 mt-1 max-h-40 overflow-y-auto z-10"
-                style={{ maxHeight: "200px" }}
-              >
+              <ul className="absolute bg-white border border-gray-300 w-40 mt-1 max-h-40 overflow-y-auto z-10">
                 {selectOptions
-                  .filter((option) =>
-                    option.label.toLowerCase().includes(inputValue.toLowerCase())
-                  )
+                  .filter((option) => option.label.toLowerCase().includes(inputValue.toLowerCase()))
                   .map((option) => (
                     <li
                       key={option.value}
@@ -111,9 +108,7 @@ const TextFiledWithSelectBox: React.FC<TextFieldProps> = ({
         <input
           {...register(name, { required, ...rules })}
           type={type}
-          className={`flex-1 p-2 bg-transparent focus:outline-none ${
-            error ? "border-red-300" : ""
-          }`}
+          className={`flex-1 p-2 bg-transparent focus:outline-none ${error ? "border-red-300" : ""}`}
           placeholder={placeholder}
           autoComplete="off"
         />

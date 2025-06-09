@@ -1,4 +1,3 @@
-// components/SelectBox.tsx
 import React from "react";
 
 type Option = {
@@ -10,11 +9,10 @@ type SelectBoxProps = {
   label: string;
   name: string;
   options: Option[];
-  register: any; // React Hook Form register function
+  register: any;
   rules?: object;
   required?: boolean;
-  defaultValue?: string; // เพิ่มตรงนี้
-  error?: string | undefined;
+  error?: string;
 };
 
 const SelectBox: React.FC<SelectBoxProps> = ({
@@ -24,16 +22,18 @@ const SelectBox: React.FC<SelectBoxProps> = ({
   register,
   rules,
   required,
-  defaultValue,
-  error,  // รับ error prop
+  error,
 }) => {
   return (
     <div className="flex-1">
-      <label className="text-sm font-medium text-[var(--color-logo)] block mb-1">{label}</label>
+      <label className="text-sm font-medium text-[var(--color-logo)] block mb-1">
+        {label}
+      </label>
       <select
         {...register(name, { required, ...rules })}
-        className={`w-full px-2 focus:outline-none border-b-1 ${error ? 'border-red-300' : 'border-gray-300'}`}
-        defaultValue={defaultValue}
+        className={`w-full px-2 py-2 border-b-1 focus:outline-none ${
+          error ? "border-red-500" : "border-gray-300"
+        }`}
       >
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>
@@ -41,10 +41,9 @@ const SelectBox: React.FC<SelectBoxProps> = ({
           </option>
         ))}
       </select>
-      {error && (
-        <p className="text-red-500 text-xs mt-1">{error}</p>
-      )}
+      {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
     </div>
   );
 };
+
 export default SelectBox;

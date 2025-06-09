@@ -1,18 +1,19 @@
 // components/TextField.tsx
 import React from "react";
+import { RegisterOptions, UseFormRegister } from "react-hook-form";
 
 type TextFieldProps = {
   label: string;
   name: string;
-  register: any; // React Hook Form register function
+  register: UseFormRegister<any>; // ใช้ type ของ react-hook-form โดยตรง
   required?: boolean;
-  type?: string; // e.g., "text", "email", "password", etc.
+  type?: string;
   placeholder?: string;
-  multiline?: boolean; // for multi-line text input
-  rows?: number; // number of rows for multi-line input
+  multiline?: boolean;
+  rows?: number;
   subText?: string;
-  rules?: object;
-  error?: string | undefined;
+  rules?: RegisterOptions;
+  error?: string;
 };
 
 const TextField: React.FC<TextFieldProps> = ({
@@ -23,38 +24,45 @@ const TextField: React.FC<TextFieldProps> = ({
   type = "text",
   placeholder = "",
   multiline = false,
-  rows,
+  rows = 3,
   subText,
-  rules,
+  rules = {},
   error,
 }) => {
+  const finalRules: RegisterOptions = {
+    required: required ? "This field is required" : false,
+    ...rules,
+  };
+
   return (
     <div className="flex-1 flex flex-col gap-0">
-      <label className="text-sm font-medium text-[var(--color-logo)] block mb-1">
-        {label}
-      </label>
+      {label && (
+        <label className="text-sm font-medium text-[var(--color-logo)] block mb-1">
+          {label}
+        </label>
+      )}
+
       {multiline ? (
         <textarea
-          {...register(name, { required, ...rules })}
-          className={`w-full border px-2  rounded-lg  ${error ? 'border-red-300' : 'border-gray-300'}`}
+          {...register(name, finalRules)}
+          className={`w-full border px-2 rounded-lg ${error ? "border-red-300" : "border-gray-300"}`}
           placeholder={placeholder}
           rows={rows}
         />
       ) : (
         <input
-          {...register(name, { required, ...rules })}
+          {...register(name, finalRules)}
           type={type}
-          className={`w-full border-b px-2 ${error ? 'border-red-300' : 'border-gray-300'}`}
+          className={`w-full border-b px-2 ${error ? "border-red-300" : "border-gray-300"}`}
           placeholder={placeholder}
         />
       )}
+
       {error ? (
         <p className="text-red-500 text-xs mt-1">{error}</p>
       ) : (
         subText && <span className="text-sm text-[var(--color-secondary)]">{subText}</span>
       )}
-
-
     </div>
   );
 };
