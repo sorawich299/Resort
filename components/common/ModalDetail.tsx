@@ -1,10 +1,12 @@
 'use client';
-import DateBox from "./DateBox";
 import SelectBox from "./SelectBox";
 import { FormProvider, useForm } from "react-hook-form";
 import TextField from "./TextField";
 import TextFiledWithSelectBox from "./TextFiledWithSelectBox";
 import DateRangeBox from "./DateBox";
+import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import { format } from "date-fns";
 
 export interface FormValues {
     villaType: string;
@@ -20,6 +22,7 @@ export interface FormValues {
 }
 
 export default function ModalDetail() {
+    const [sending, setSending] = useState(false);
     const methods = useForm<FormValues>({
         defaultValues: {
             villaType: "",
@@ -37,32 +40,73 @@ export default function ModalDetail() {
     });
 
     const onSubmit = async (data: FormValues) => {
+        let formattedStart = '-';
+        let formattedEnd = '-';
+        let stayNights = '0';
+
+        if (data.startDate && data.endDate) {
+            const start = new Date(data.startDate);
+            const end = new Date(data.endDate);
+            formattedStart = format(start, 'yyyy-MM-dd');
+            formattedEnd = format(end, 'yyyy-MM-dd');
+            const diffTime = end.getTime() - start.getTime();
+            stayNights = Math.max(1, Math.ceil(diffTime / (1000 * 60 * 60 * 24))).toString();
+        }
+
+        setSending(true);
         try {
-            const res = await fetch("http://localhost:3001/send-email", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
+            const formData = {
+                name: data.name,
+                email: data.email,
+                countryCode: data.countryCode,
+                phoneNumber: data.phoneNumber,
+                villaType: data.villaType,
+                startDate: formattedStart,
+                endDate: formattedEnd,
+                adults: data.adults,
+                children: data.children,
+                message: data.message,
+            };
 
-            const result = await res.json();
+            await emailjs.send(
+                'service_hgyjn9e',
+                'template_yb9kxof',
+                formData,
+                'w4jT__kyB1Xq52xiB'
+            );
 
-            if (res.ok) {
-                alert("✅ Email sent successfully!");
-            } else {
-                alert("❌ Failed to send email: " + result.error);
-            }
-        } catch (err) {
-            console.error("Network error:", err);
-            alert("❌ Network error occurred.");
+            const formDataReply = {
+                stayDate: stayNights,
+                name: data.name,
+                email: data.email,
+                villaType: data.villaType,
+                startDate: formattedStart,
+                endDate: formattedEnd,
+                adults: data.adults,
+                children: data.children,
+                message: data.message,
+            };
+
+            await emailjs.send(
+                'service_hgyjn9e',
+                'template_0ts40k9',
+                formDataReply,
+                'w4jT__kyB1Xq52xiB'
+            );
+
+            alert('Reservation submitted successfully');
+        } catch (error) {
+            console.error('Error sending email:', error);
+            alert('Something went wrong. Please try again.');
+        } finally {
+            setSending(false);
         }
     };
 
     return (
         <FormProvider {...methods}>
             <form
-                className="flex flex-row gap-4"
+                className="flex flex-col lg:flex-row gap-4"
                 style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
                 onSubmit={methods.handleSubmit(onSubmit)}
                 autoComplete="off"
@@ -82,7 +126,6 @@ export default function ModalDetail() {
                             ]}
                             error={methods.formState.errors.villaType?.message}
                         />
-
                         <DateRangeBox
                             label="Select Date Range"
                             startDateName="startDate"
@@ -95,16 +138,15 @@ export default function ModalDetail() {
                                 end: methods.formState.errors.endDate,
                             }}
                         />
-
                         <div className="flex flex-col gap-0">
-                            <div className="flex flex-row justify-between gap-4">
+                            <div className="flex flex-col md:flex-row justify-between gap-4">
                                 <SelectBox
                                     label="Adults"
                                     name="adults"
                                     register={methods.register}
                                     rules={{ required: "Number of adults is required" }}
                                     options={[
-                                        { label: "Please select", value: "" }, // ✅ Default
+                                        { label: "Please select", value: "" },
                                         ...[...Array(10).keys()].map((i) => ({
                                             label: (i + 1).toString(),
                                             value: (i + 1).toString(),
@@ -118,7 +160,7 @@ export default function ModalDetail() {
                                     register={methods.register}
                                     rules={{ required: "Number of children is required" }}
                                     options={[
-                                        { label: "Please select", value: "" }, // ✅ Default
+                                        { label: "Please select", value: "" },
                                         ...[...Array(10).keys()].map((i) => ({
                                             label: (i + 1).toString(),
                                             value: (i + 1).toString(),
@@ -131,7 +173,6 @@ export default function ModalDetail() {
                                 Maximum occupancy: 10 guests
                             </span>
                         </div>
-
                         <TextField
                             label=""
                             name="message"
@@ -158,7 +199,6 @@ export default function ModalDetail() {
                             subText="Make sure this matches the name on your government ID"
                             error={methods.formState.errors.name?.message}
                         />
-
                         <TextFiledWithSelectBox
                             label="Phone number"
                             name="phoneNumber"
@@ -172,7 +212,6 @@ export default function ModalDetail() {
                             selectRules={{ required: "Country code is required" }}
                             error={methods.formState.errors.phoneNumber?.message}
                         />
-
                         <TextField
                             label="Email"
                             name="email"
@@ -183,13 +222,13 @@ export default function ModalDetail() {
                             placeholder="email@example.com"
                             error={methods.formState.errors.email?.message}
                         />
-
                         <div className="w-full flex">
                             <button
                                 type="submit"
                                 className="bg-blue-500 text-white text-xl py-3.5 px-7 font-medium rounded-lg hover:bg-blue-600 w-full"
+                                disabled={sending}
                             >
-                                Reserve
+                                {sending ? 'Sending...' : 'Reserve'}
                             </button>
                         </div>
                     </div>

@@ -10,6 +10,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@lottiefiles/dotlottie-react": "^0.13.2",
     "@tanstack/react-table": "^8.21.2",
     "babel-plugin-inline-react-svg": "^2.0.2",
