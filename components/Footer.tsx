@@ -61,11 +61,11 @@ export default function Footer() {
                         <div className="flex items-center gap-4">
                             <div className="flex items-center gap-2">
                                 <EmailIcon color="#000000" width="20" height="16" />
-                                <span>hello@relume.io</span>
+                                <span>solunarvilla@gmail.com </span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <PhoneIcon color="#000000" width="20" height="16" />
-                                <span>+1 (555) 000-0000</span>
+                                <span>093-659-9815</span>
                             </div>
                         </div>
                     </div>

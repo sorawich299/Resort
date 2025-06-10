@@ -2,7 +2,6 @@
 import EmailIcon from "@/public/icons/EmailIcon";
 import LocationAddressIcon from "@/public/icons/LocationAddressIcon";
 import PhoneIcon from "@/public/icons/PhoneIcon";
-import dynamic from 'next/dynamic';
 import React from "react";
 
 export default function Contact() {
@@ -19,8 +18,8 @@ export default function Contact() {
                         <EmailIcon color="var(--color-icon-primary)"/>
                         <div className="flex flex-col gap-2"  style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>
                             <h1 className="text-xl font-bold text-black" >Email</h1>
-                            <p className="text-lg font-normal text-black">Lorem ipsum dolor sit amet.</p>
-                            <p className="text-lg font-normal text-black">hello@relume.io</p>
+                            {/* <p className="text-lg font-normal text-black">Lorem ipsum dolor sit amet.</p> */}
+                            <p className="text-lg font-normal text-black">solunarvilla@gmail.com </p>
                         </div>
                     </div>
 
@@ -29,8 +28,8 @@ export default function Contact() {
                         <PhoneIcon color="var(--color-icon-primary)"/>
                         <div className="flex flex-col gap-2"  style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>
                             <h1 className="text-xl font-bold text-black">Phone</h1>
-                            <p className="text-lg font-normal text-black">Lorem ipsum dolor sit amet.</p>
-                            <p className="text-lg font-normal text-black">+1 (555) 000-0000</p>
+                            {/* <p className="text-lg font-normal text-black">Lorem ipsum dolor sit amet.</p> */}
+                            <p className="text-lg font-normal text-black">093-659-9815 </p>
                         </div>
                     </div>
 
