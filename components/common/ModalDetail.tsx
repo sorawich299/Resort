@@ -66,6 +66,7 @@ export default function ModalDetail() {
                 adults: data.adults,
                 children: data.children,
                 message: data.message,
+                stayDate: stayNights,
             };
 
             await emailjs.send(
