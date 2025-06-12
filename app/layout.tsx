@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SeoHead from "@/components/SeoHead";
 
 export const metadata: Metadata = {
   title: "Solunar. | Bang Sare",
@@ -20,6 +21,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="th">
       <body>
+         <SeoHead
+          title="Solunar Villas | Beachfront Luxury Retreat"
+          description="Escape to paradise with Solunar's beachfront private pool villas in Thailand."
+          url="https://solunar.example.com"
+        />
         <Header />
         <main>{children}</main>
         <Footer />
