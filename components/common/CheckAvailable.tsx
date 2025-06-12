@@ -1,3 +1,4 @@
+import CalendarIcon from '@/public/icons/CalendarIcon';
 import React, { useState, useEffect, useRef } from 'react';
 
 type DateRangePickerProps = {
@@ -44,10 +45,10 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
       {/* Toggle button */}
       <button
         type="button"
-        className="flex items-center space-x-2 px-4 py-2 text-gray-700 bg-white"
+        className="flex items-center gap-5 py-2 text-gray-700 bg-white"
         onClick={() => setIsOpen((o) => !o)}
       >
-        <span className="text-lg">📅</span>
+        <span className="text-lg"><CalendarIcon color='#344054'/></span>
         <div className="flex flex-col">
           <span className="font-medium text-orange-500">{placeholder}</span>
           {start && end ? (

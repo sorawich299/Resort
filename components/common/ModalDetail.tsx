@@ -21,20 +21,30 @@ export interface FormValues {
     countryCode: string;
 }
 
-export default function ModalDetail() {
+export interface ModalDetailProps {
+    defaultValues?: Partial<FormValues>;
+}
+
+const defaultFormValues: FormValues = {
+    villaType: "",
+    startDate: null,
+    endDate: null,
+    adults: "",
+    children: "",
+    message: "",
+    name: "",
+    phoneNumber: "",
+    email: "",
+    countryCode: "",
+};
+
+
+export default function ModalDetail({ defaultValues = {} }: ModalDetailProps) {
     const [sending, setSending] = useState(false);
     const methods = useForm<FormValues>({
         defaultValues: {
-            villaType: "",
-            startDate: null,
-            endDate: null,
-            adults: "",
-            children: "",
-            message: "",
-            name: "",
-            phoneNumber: "",
-            email: "",
-            countryCode: "",
+            ...defaultFormValues,
+            ...defaultValues,
         },
         shouldUnregister: true,
     });

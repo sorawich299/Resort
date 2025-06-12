@@ -21,10 +21,18 @@ const SharedStyleWrapper: React.FC<{ children: React.ReactNode }> = ({ children 
   </div>
 );
 
+type ReservationData = {
+  villaType: string;
+  startDate: string; // Consider using Date if applicable
+  endDate: string;
+  adults: string;
+  children: string;
+};
+
 const ReservationForm: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const [defaultData, setDefaultData] = useState({
+  const [reservationData, setReservationData] = useState<ReservationData>({
     villaType: '',
     startDate: '',
     endDate: '',
@@ -40,7 +48,11 @@ const ReservationForm: React.FC = () => {
       style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
     >
       <SharedStyleWrapper>
-        <VillaType />
+        <VillaType
+          value={reservationData.villaType}
+          onChange={(value) =>
+            setReservationData(prev => ({ ...prev, villaType: value }))
+          } />
       </SharedStyleWrapper>
       <HorizontalLine />
       <VerticalLine />
@@ -49,12 +61,11 @@ const ReservationForm: React.FC = () => {
         <DateRangePicker
           placeholder="Check Available"
           onChange={(start, end) =>
-            // setDefaultData(old => ({
-            //   ...old,
-            //   startDate: start,
-            //   endDate: end,
-            // }))
-            console.log(start, end)
+            setReservationData(prev => ({
+              ...prev,
+              startDate: start,
+              endDate: end,
+            }))
           }
         />
       </SharedStyleWrapper>
@@ -62,7 +73,13 @@ const ReservationForm: React.FC = () => {
       <VerticalLine />
 
       <SharedStyleWrapper>
-        <GuestSelector />
+        <GuestSelector
+          adults={reservationData.adults}
+          children={reservationData.children}
+          onChange={(adults, children) =>
+            setReservationData(prev => ({ ...prev, adults, children }))
+          }
+        />
       </SharedStyleWrapper>
       <HorizontalLine />
       <VerticalLine />
@@ -72,7 +89,15 @@ const ReservationForm: React.FC = () => {
       </SharedStyleWrapper>
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(!isOpen)}>
-        <ModalDetail />
+        <ModalDetail
+          defaultValues={{
+            villaType: reservationData.villaType,
+            startDate: reservationData.startDate ? new Date(reservationData.startDate) : null,
+            endDate: reservationData.endDate ? new Date(reservationData.endDate) : null,
+            adults: reservationData.adults,
+            children: reservationData.children,
+          }}
+        />
       </Modal>
     </div>
   );
