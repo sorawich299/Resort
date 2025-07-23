@@ -188,12 +188,9 @@ export default function ModalDetail({ defaultValues = {} }: ModalDetailProps) {
                             label=""
                             name="message"
                             register={methods.register}
-                            rules={{ required: "Message is required" }}
-                            required
                             multiline
                             rows={4}
                             placeholder="Special requests or notes for your stay"
-                            error={methods.formState.errors.message?.message}
                         />
                     </div>
                 </div>
@@ -209,6 +206,7 @@ export default function ModalDetail({ defaultValues = {} }: ModalDetailProps) {
                             placeholder="First name - Last name"
                             subText="Make sure this matches the name on your government ID"
                             error={methods.formState.errors.name?.message}
+                            className={"p-3 max-h-[46px]"}
                         />
                         <TextFiledWithSelectBox
                             label="Phone number"
@@ -232,6 +230,7 @@ export default function ModalDetail({ defaultValues = {} }: ModalDetailProps) {
                             type="email"
                             placeholder="email@example.com"
                             error={methods.formState.errors.email?.message}
+                            className={"p-3 max-h-[46px]"}
                         />
                         <div className="w-full flex">
                             <button

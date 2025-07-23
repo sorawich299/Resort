@@ -61,7 +61,7 @@ const images = [
 ];
 
 export default function Home() {
-  
+
   return (
     <div>
       <HeroSection />
@@ -216,7 +216,7 @@ export default function Home() {
         image={Horizon}
       />
       <Contact />
-      
+
     </div>
   );
 }

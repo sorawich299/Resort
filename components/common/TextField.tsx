@@ -14,6 +14,7 @@ type TextFieldProps = {
   subText?: string;
   rules?: RegisterOptions;
   error?: string;
+  className?: string;
 };
 
 const TextField: React.FC<TextFieldProps> = ({
@@ -27,7 +28,8 @@ const TextField: React.FC<TextFieldProps> = ({
   rows = 3,
   subText,
   rules = {},
-  error,
+  error, 
+  className,
 }) => {
   const finalRules: RegisterOptions = {
     required: required ? "This field is required" : false,
@@ -35,7 +37,7 @@ const TextField: React.FC<TextFieldProps> = ({
   };
 
   return (
-    <div className="flex-1 flex flex-col gap-0">
+    <div className="flex-1 flex flex-col gap-0 ">
       {label && (
         <label className="text-sm font-medium text-[var(--color-logo)] block mb-1">
           {label}
@@ -53,7 +55,7 @@ const TextField: React.FC<TextFieldProps> = ({
         <input
           {...register(name, finalRules)}
           type={type}
-          className={`w-full border-b px-2 ${error ? "border-red-300" : "border-gray-300"}`}
+          className={`w-full border-b px-2 ${error ? "border-red-300" : "border-gray-300"} ${className}`}
           placeholder={placeholder}
         />
       )}

@@ -15,7 +15,6 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
   const [end, setEnd] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
@@ -30,10 +29,20 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isOpen]);
 
-  // Notify parent on change
-  useEffect(() => {
-    onChange && onChange(start, end);
-  }, [start, end, onChange]);
+  // ✅ Only notify parent when both dates are selected
+  const handleStartChange = (value: string) => {
+    setStart(value);
+    if (value && end) {
+      onChange?.(value, end);
+    }
+  };
+
+  const handleEndChange = (value: string) => {
+    setEnd(value);
+    if (start && value) {
+      onChange?.(start, value);
+    }
+  };
 
   const clearDates = () => {
     setStart('');
@@ -42,13 +51,12 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
 
   return (
     <div className="relative inline-block" ref={containerRef}>
-      {/* Toggle button */}
       <button
         type="button"
         className="flex items-center gap-5 py-2 text-gray-700 bg-white"
         onClick={() => setIsOpen((o) => !o)}
       >
-        <span className="text-lg"><CalendarIcon color='#344054'/></span>
+        <span className="text-lg"><CalendarIcon color='#344054' /></span>
         <div className="flex flex-col">
           <span className="font-medium text-orange-500">{placeholder}</span>
           {start && end ? (
@@ -60,36 +68,28 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
             <span className="font-medium text-black">{placeholder}</span>
           )}
         </div>
-
-
       </button>
 
-      {/* Dropdown */}
       {isOpen && (
         <div className="absolute z-10 mt-2 w-64 bg-white border rounded-lg shadow-lg p-4 space-y-4">
           <div className="flex flex-col">
-            <label className="text-sm text-orange-500 font-medium">
-              Check-in
-            </label>
+            <label className="text-sm text-orange-500 font-medium">Check-in</label>
             <input
               type="date"
               value={start}
-              onChange={(e) => setStart(e.target.value)}
+              onChange={(e) => handleStartChange(e.target.value)}
               className="mt-1 font-semibold bg-transparent border-b border-gray-300 text-gray-700 focus:outline-none focus:border-orange-500"
             />
           </div>
           <div className="flex flex-col">
-            <label className="text-sm text-orange-500 font-medium">
-              Check-out
-            </label>
+            <label className="text-sm text-orange-500 font-medium">Check-out</label>
             <input
               type="date"
               value={end}
-              onChange={(e) => setEnd(e.target.value)}
+              onChange={(e) => handleEndChange(e.target.value)}
               className="mt-1 font-semibold bg-transparent border-b border-gray-300 text-gray-700 focus:outline-none focus:border-orange-500"
             />
           </div>
-          {/* Clear button */}
           {(start || end) && (
             <button
               type="button"

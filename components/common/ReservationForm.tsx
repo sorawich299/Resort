@@ -16,14 +16,14 @@ const HorizontalLine: React.FC = () => (
 );
 
 const SharedStyleWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="flex flex-col items-center space-y-2 w-full lg:w-auto">
+  <div className="flex flex-col items-center space-y-2 w-full lg:w-fit">
     {children}
   </div>
 );
 
 type ReservationData = {
   villaType: string;
-  startDate: string; // Consider using Date if applicable
+  startDate: string;
   endDate: string;
   adults: string;
   children: string;
@@ -32,7 +32,7 @@ type ReservationData = {
 const ReservationForm: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const [reservationData, setReservationData] = useState<ReservationData>({
+  const [formData, setFormData] = useState<ReservationData>({
     villaType: '',
     startDate: '',
     endDate: '',
@@ -40,18 +40,16 @@ const ReservationForm: React.FC = () => {
     children: '',
   });
 
-
-
   return (
     <div
-      className="flex flex-col lg:flex-row items-center justify-center lg:space-x-6 p-4 gap-4"
+      className="flex flex-col lg:flex-row items-center justify-center lg:space-x-6 p-4"
       style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
     >
       <SharedStyleWrapper>
         <VillaType
-          value={reservationData.villaType}
+          value={formData.villaType}
           onChange={(value) =>
-            setReservationData(prev => ({ ...prev, villaType: value }))
+            setFormData(prev => ({ ...prev, villaType: value }))
           } />
       </SharedStyleWrapper>
       <HorizontalLine />
@@ -61,7 +59,7 @@ const ReservationForm: React.FC = () => {
         <DateRangePicker
           placeholder="Check Available"
           onChange={(start, end) =>
-            setReservationData(prev => ({
+            setFormData(prev => ({
               ...prev,
               startDate: start,
               endDate: end,
@@ -74,10 +72,10 @@ const ReservationForm: React.FC = () => {
 
       <SharedStyleWrapper>
         <GuestSelector
-          adults={reservationData.adults}
-          children={reservationData.children}
+          adults={formData.adults}
+          children={formData.children}
           onChange={(adults, children) =>
-            setReservationData(prev => ({ ...prev, adults, children }))
+            setFormData(prev => ({ ...prev, adults, children }))
           }
         />
       </SharedStyleWrapper>
@@ -85,17 +83,17 @@ const ReservationForm: React.FC = () => {
       <VerticalLine />
 
       <SharedStyleWrapper>
-        <ReserveButton onClick={() => setIsOpen(!isOpen)} />
+        <ReserveButton onClick={() => setIsOpen(true)} />
       </SharedStyleWrapper>
 
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(!isOpen)}>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <ModalDetail
           defaultValues={{
-            villaType: reservationData.villaType,
-            startDate: reservationData.startDate ? new Date(reservationData.startDate) : null,
-            endDate: reservationData.endDate ? new Date(reservationData.endDate) : null,
-            adults: reservationData.adults,
-            children: reservationData.children,
+            villaType: formData.villaType,
+            startDate: formData.startDate ? new Date(formData.startDate) : null,
+            endDate: formData.endDate ? new Date(formData.endDate) : null,
+            adults: formData.adults,
+            children: formData.children,
           }}
         />
       </Modal>
