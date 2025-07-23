@@ -50,10 +50,10 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
   };
 
   return (
-    <div className="relative inline-block" ref={containerRef}>
+    <div className="relative inline-block w-[240px] lg:w-auto" ref={containerRef}>
       <button
         type="button"
-        className="flex items-center gap-5 py-2 text-gray-700 bg-white"
+        className="flex items-center gap-5 py-2 text-gray-700 bg-white justify-between w-full"
         onClick={() => setIsOpen((o) => !o)}
       >
         <span className="text-lg"><CalendarIcon color='#344054' /></span>
