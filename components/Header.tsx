@@ -65,10 +65,10 @@ export default function Header() {
   return (
     <header
       style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
-      className={`fixed top-0 left-0 right-0 h-[72px] z-500 ${scrolled ? "bg-white" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 h-[80px] z-500 ${scrolled ? "bg-white" : "bg-transparent"
         }`}
     >
-      <div className="container mx-auto flex justify-between items-center px-4 py-4">
+      <div className="container mx-auto flex justify-between items-center px-6 py-8">
         <div className="site-logo">
           <Link href={"/"}>
             {scrolled ? (
@@ -82,7 +82,7 @@ export default function Header() {
         </div>
         <nav className="site-link">
           <div
-            className={`${scrolled ? ('text-black') : (activeLabel === 'Home' ? 'text-white' : 'text-black')} flex lg:hidden text-sm cursor-pointer transition duration-300 ease-in-out`}
+            className={`${scrolled ? ('text-black') : (activeLabel === 'Home' ? 'text-white' : 'text-black')} flex lg:hidden text-4xl cursor-pointer transition duration-300 ease-in-out`}
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? "✖" : "☰"}
@@ -96,6 +96,7 @@ export default function Header() {
               { label: "The Infinity Villa", link: "/Infinity" },
               { label: "The Horizon Retreat", link: "/Horizon" },
               { label: "Gallery", link: "/Gallery" },
+              { label: "Contact", link: "#contact" },
             ].map((item, i) => (
               <li
                 key={i}
