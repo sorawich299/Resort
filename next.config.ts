@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   assetPrefix: process.env.NODE_ENV === 'production' ? `/${repoName}/` : '',
   basePath: process.env.NODE_ENV === 'production' ? `/${repoName}` : '',
-  distDir: 'out',
+  // distDir: 'out',
   
 };
 

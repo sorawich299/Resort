@@ -83,7 +83,7 @@ const ReservationForm: React.FC = () => {
       <VerticalLine />
 
       <SharedStyleWrapper>
-        <ReserveButton onClick={() => setIsOpen(true)} />
+        <ReserveButton  onClick={() => window.location.href = "https://booking.solunarvilla.com/"}/>
       </SharedStyleWrapper>
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>

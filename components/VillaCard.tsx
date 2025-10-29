@@ -74,7 +74,7 @@ const VillaCard: React.FC<VillaCardProps> = ({
               </div>
             </div>
             <div>
-              <button className=" bg-blue-500 text-white text-xl py-3.5 px-7 font-medium rounded-lg hover:bg-blue-600 max-w-[178px] w-full" onClick={()=>setIsOpen(!isOpen)}>
+              <button className=" bg-blue-500 text-white text-xl py-3.5 px-7 font-medium rounded-lg hover:bg-blue-600 max-w-[178px] w-full" onClick={() => window.location.href = "https://booking.solunarvilla.com/"}>
                 Reserve
               </button>
             </div>

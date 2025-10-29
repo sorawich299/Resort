@@ -19,7 +19,7 @@ export default function Contact() {
                         <div className="flex flex-col gap-2"  style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>
                             <h1 className="text-xl font-bold text-black" >Email</h1>
                             {/* <p className="text-lg font-normal text-black">Lorem ipsum dolor sit amet.</p> */}
-                            <p className="text-lg font-normal text-black">solunarvilla@gmail.com </p>
+                            <p className="text-lg font-normal text-black">info@solunarvilla.com </p>
                         </div>
                     </div>
 

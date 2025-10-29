@@ -65,18 +65,18 @@ export default function Header() {
   return (
     <header
       style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
-      className={`fixed top-0 left-0 right-0 h-[80px] z-500 ${scrolled ? "bg-white" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0  z-500 ${scrolled ? "bg-white" : "bg-transparent"
         }`}
     >
-      <div className="container mx-auto flex justify-between items-center px-6 py-8">
+      <div className="container mx-auto flex justify-between items-center px-6 py-3">
         <div className="site-logo">
           <Link href={"/"}>
             {scrolled ? (
-              <LogoIcon color="var(--color-logo)" />
+              <LogoIcon color="var(--color-logo)" width="100" height="60"/>
             ) : activeLabel === "Home" ? (
-              <LogoIcon />
+              <LogoIcon  width="100" height="60"/>
             ) : (
-              <LogoIcon color="var(--color-logo)" />
+              <LogoIcon color="var(--color-logo)"  width="100" height="60"/>
             )}
           </Link>
         </div>

@@ -44,7 +44,7 @@ export default function Footer() {
         return null; // หรืออาจเพิ่ม Loading Indicator
     }
     return (
-        <footer className="bg-white text-sm text-gray-600" style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>
+        <footer id="contact" className="bg-white text-sm text-gray-600" style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>
             <div className="mx-auto px-[42px] lg:px-[84px] py-10 lg:py-20 flex flex-col gap-20">
                 <div className="flex flex-col sm:flex-row justify-between ">
                     {/* Logo and Address */}
@@ -61,7 +61,7 @@ export default function Footer() {
                         <div className="flex items-center gap-4">
                             <div className="flex items-center gap-2">
                                 <EmailIcon color="#000000" width="20" height="16" />
-                                <span>solunarvilla@gmail.com </span>
+                                <span>info@solunarvilla.com </span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <PhoneIcon color="#000000" width="20" height="16" />
