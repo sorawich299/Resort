@@ -10,7 +10,7 @@ export default function Information() {
   return (
     <section className="bg-white text-center px-4 sm:px-6 md:px-12 lg:px-32 py-12 sm:py-20 lg:py-28 flex flex-col gap-12 sm:gap-16 items-center justify-center">
       {/* Header */}
-      <div className="flex flex-col gap-4 sm:gap-5">
+      {/* <div className="flex flex-col gap-4 sm:gap-5">
         <div className="text-2xl sm:text-3xl font-bold flex justify-center mb-2">
           <LogoIcon color="black" width="120" height="48" />
         </div>
@@ -23,10 +23,10 @@ export default function Information() {
         >
           Each private suite is a sanctuary of comfort, complete with a sea-view jacuzzi and floor-to-ceiling windows.
         </p>
-      </div>
+      </div> */}
 
       {/* Card Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 w-full max-w-6xl px-2 sm:px-4">
+      {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 w-full max-w-6xl px-2 sm:px-4">
         {[
           {
             alt: "The Infinity Villa",
@@ -69,7 +69,7 @@ export default function Information() {
           </AnimatedFadeInUp>
 
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }

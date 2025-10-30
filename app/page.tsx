@@ -66,12 +66,12 @@ export default function Home() {
     <div>
       <HeroSection />
       <ReservationForm />
-      <Infomation />
+      {/* <Infomation /> */}
       <VideoPlayer videoId="Erflio-agG4" />
       <Reserve />
       <ImageSlider images={images} />
       <VillaRetreatOverview />
-      <SeasideEscape
+      {/* <SeasideEscape
         title="Your Private Seaside Escape Awaits"
         subtitle="The Infinity Villa and The Horizon Retreat"
         imageSrc={Private}
@@ -202,10 +202,10 @@ export default function Home() {
             },
           ]}
         />
-      </div>
+      </div> */}
 
       <ImageGallery />
-      <ReviewResort
+      {/* <ReviewResort
         title="The Infinity Villa"
         subTitle="Experience the ultimate beachfront luxury at our exclusive 5-bedroom villa — where every room boasts a private jacuzzi overlooking the ocean."
         image={Infinity}
@@ -214,7 +214,7 @@ export default function Home() {
         title="The Horizon Retreat"
         subTitle="Experience the ultimate beachfront luxury at our exclusive 5-bedroom villa — where every room boasts a private jacuzzi overlooking the ocean."
         image={Horizon}
-      />
+      /> */}
       <Contact />
 
     </div>

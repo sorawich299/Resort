@@ -5,6 +5,10 @@ import AnimatedFadeInUp from "./AnimationFadeUp";
 export default function HeroSection() {
   return (
     <section className="relative w-full flex items-center text-white px-4 sm:px-8 md:px-12 lg:px-20 min-h-screen">
+
+      <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover">
+
+      </video>
       <div className="absolute inset-0 z-0">
         <Image
           src={heroImage}

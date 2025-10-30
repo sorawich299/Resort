@@ -23,8 +23,8 @@ const SharedStyleWrapper: React.FC<{ children: React.ReactNode }> = ({ children 
 
 type ReservationData = {
   villaType: string;
-  startDate: string;
-  endDate: string;
+  startDate: string;   // ควรเก็บเป็น 'YYYY-MM-DD'
+  endDate: string;     // ควรเก็บเป็น 'YYYY-MM-DD'
   adults: string;
   children: string;
 };
@@ -33,12 +33,36 @@ const ReservationForm: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const [formData, setFormData] = useState<ReservationData>({
-    villaType: '',
-    startDate: '',
-    endDate: '',
-    adults: '',
-    children: '',
+    villaType: "",
+    startDate: "",
+    endDate: "",
+    adults: "",
+    children: "",
   });
+
+  // แปลง Date -> 'YYYY-MM-DD' (เผื่อกรณี DateRangePicker ส่ง Date object มาในอนาคต)
+  const toYMD = (d: Date | string | null) => {
+    if (!d) return "";
+    if (typeof d === "string") return d; // assume already 'YYYY-MM-DD'
+    const pad = (n: number) => n.toString().padStart(2, "0");
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  };
+
+  // ⤴ เมื่อกด Reserve: สร้าง URL พร้อม query
+  const handleReserve = () => {
+    const params = new URLSearchParams({
+      villaType: formData.villaType || "",
+      startDate: toYMD(formData.startDate as unknown as Date | string),
+      endDate: toYMD(formData.endDate as unknown as Date | string),
+      adults: formData.adults || "",
+      children: formData.children || "",
+    });
+
+    // เปลี่ยนปลายทางตามจริงของคุณ
+    const url = `https://booking.solunarvilla.com/?${params.toString()}`;
+    // window.location.href = url; // หรือ window.open(url, "_blank")
+    window.open(url, "_blank")
+  };
 
   return (
     <div
@@ -49,8 +73,9 @@ const ReservationForm: React.FC = () => {
         <VillaType
           value={formData.villaType}
           onChange={(value) =>
-            setFormData(prev => ({ ...prev, villaType: value }))
-          } />
+            setFormData((prev) => ({ ...prev, villaType: value }))
+          }
+        />
       </SharedStyleWrapper>
       <HorizontalLine />
       <VerticalLine />
@@ -59,9 +84,9 @@ const ReservationForm: React.FC = () => {
         <DateRangePicker
           placeholder="Check Available"
           onChange={(start, end) =>
-            setFormData(prev => ({
+            setFormData((prev) => ({
               ...prev,
-              startDate: start,
+              startDate: start, // ให้ DateRangePicker ส่งเป็น 'YYYY-MM-DD' จะง่ายสุด
               endDate: end,
             }))
           }
@@ -75,7 +100,7 @@ const ReservationForm: React.FC = () => {
           adults={formData.adults}
           children={formData.children}
           onChange={(adults, children) =>
-            setFormData(prev => ({ ...prev, adults, children }))
+            setFormData((prev) => ({ ...prev, adults, children }))
           }
         />
       </SharedStyleWrapper>
@@ -83,7 +108,8 @@ const ReservationForm: React.FC = () => {
       <VerticalLine />
 
       <SharedStyleWrapper>
-        <ReserveButton  onClick={() => window.location.href = "https://booking.solunarvilla.com/"}/>
+        {/* ใช้ฟังก์ชัน handleReserve แทน href ตรง ๆ */}
+        <ReserveButton onClick={handleReserve} />
       </SharedStyleWrapper>
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
