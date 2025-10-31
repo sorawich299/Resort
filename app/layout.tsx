@@ -33,15 +33,15 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico" },           // default
-      { url: "/favicon.ico", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.ico", sizes: "192x192", type: "image/png" },
-      { url: "/favicon.ico", type: "image/svg+xml" },
+      { url: "/Resort/favicon.ico" },           // default
+      { url: "/Resort/favicon.ico", sizes: "32x32", type: "image/png" },
+      { url: "/Resort/favicon.ico", sizes: "192x192", type: "image/png" },
+      { url: "/Resort/favicon.ico", type: "image/svg+xml" },
     ],
     apple: [
-      { url: "/favicon.ico", sizes: "180x180", type: "image/png" },
+      { url: "/Resort/favicon.ico", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: ["/favicon.ico"],
+    shortcut: ["/Resort/favicon.ico"],
   },
 };
 
