@@ -14,6 +14,7 @@ export default function  Reserve() {
           view: "Ocean View",
           bedrooms: 5,
         }}
+        href="/Infinity"
       />
 
       <VillaCard
@@ -25,6 +26,7 @@ export default function  Reserve() {
           view: "Ocean View",
           bedrooms: 5,
         }}
+        href="/Horizon"
       />
     </div>
   );

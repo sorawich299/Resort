@@ -18,6 +18,7 @@ interface VillaCardProps {
   description: string;
   image: string | StaticImageData; // รองรับทั้ง string และ StaticImageData
   features: Features;
+  href: string;
 }
 
 const VillaCard: React.FC<VillaCardProps> = ({
@@ -25,6 +26,7 @@ const VillaCard: React.FC<VillaCardProps> = ({
   description,
   image,
   features,
+  href = ''
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
@@ -128,6 +130,9 @@ const VillaCard: React.FC<VillaCardProps> = ({
                 focus:outline-none focus:ring-4 focus:ring-[#3B82F6]/30
                 active:scale-[.98]
                 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+                onClick={() =>
+                  (window.location.href = href)
+                }
               >
                 Discover More
               </button>

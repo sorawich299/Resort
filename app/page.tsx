@@ -67,7 +67,7 @@ export default function Home() {
       <HeroSection />
       <ReservationForm />
       {/* <Infomation /> */}
-      <VideoPlayer videoId="Erflio-agG4" />
+      {/* <VideoPlayer videoId="Erflio-agG4" /> */}
       <Reserve />
       <ImageSlider images={images} />
       <VillaRetreatOverview />
