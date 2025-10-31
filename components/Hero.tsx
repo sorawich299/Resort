@@ -48,6 +48,7 @@ export default function HeroSection() {
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
+        
         <source src="/public/video/videoplayback.mp4" type="video/mp4" />
       </video>
 
