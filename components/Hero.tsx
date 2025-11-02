@@ -63,7 +63,7 @@ export default function HeroSection() {
             Solunar.
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-normal">
-            🌙 - Between Light, Sea & Serenity.
+            🌙 - Between Light, Sea & Serenity.  
           </p></AnimatedFadeInUp>
         </div>
       </div>
