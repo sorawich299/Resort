@@ -49,8 +49,10 @@ export default function HeroSection() {
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
         
-        <source src="/public/video/videoplayback.mp4" type="video/mp4" />
+        <source src="/video/videoplayback.mp4" type="video/mp4" />
       </video>
+
+      {/* /public */}
 
       {/* 🔹 Overlay มืดเบา ๆ */}
       <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>

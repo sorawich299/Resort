@@ -6,6 +6,10 @@ import NUT6234 from '../public/images/Portrait/Preview_1400px/_NUT6234.jpg';
 import NUT5890 from '../public/images/Portrait/Preview_1400px/_NUT5890.jpg';
 import View from '../public/images/Drone/Preview_1400px/DJI_20241224061556_0006_D-HDR.jpg';
 
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
+
+
 const images = [
   NUT6023,
   NUT6234,
@@ -13,7 +17,23 @@ const images = [
   View,
 ];
 
-export default function ImageGallery() {
+
+const image = [
+  {
+    original: NUT6023,
+    thumbnail: NUT6023,
+  },
+  {
+    original: "https://picsum.photos/id/1015/1000/600/",
+    thumbnail: "https://picsum.photos/id/1015/250/150/",
+  },
+  {
+    original: "https://picsum.photos/id/1019/1000/600/",
+    thumbnail: "https://picsum.photos/id/1019/250/150/",
+  },
+];
+
+export default function ImageGallery2() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
@@ -34,6 +54,9 @@ export default function ImageGallery() {
 
   return (
     <div className="w-full max-w-7xl mx-auto">
+      <ImageGallery items={image} showPlayButton={false} showFullscreenButton={false}/>
+
+
       {/* กล่องรูปหลัก + ปุ่มซ้ายขวา */}
       <div className="flex items-center justify-center gap-4 mb-4">
         {/* ปุ่ม Previous */}
