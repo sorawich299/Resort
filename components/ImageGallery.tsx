@@ -149,7 +149,7 @@ export default function ImageGallery2() {
   }, [currentIndex]);
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-b from-white to-gray-100 text-gray-900 flex flex-col items-center justify-center py-12 px-4">
+    <div className="w-full min-h-screen  text-gray-900 flex flex-col items-center justify-center px-4">
       <div className="w-full max-w-7xl">
         {/* รูปหลัก + ปุ่ม */}
         <div className="relative flex items-center justify-center mb-12">

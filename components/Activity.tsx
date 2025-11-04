@@ -45,15 +45,14 @@ const activities = [
 // ---------- Layout Selector Component ----------
 export default function Activities() {
   const [layout, setLayout] = useState("masonry");
-  const [theme, setTheme] = useState("light");
 
   // ---------- Theme Styling ----------
-  const themeClasses: Record<string, string> = {
-    light: "bg-gray-50 text-gray-800",
-    dark: "bg-[#0a0a0a] text-gray-100",
-    ocean:
-      "bg-gradient-to-b from-[#001F3F] via-[#002B5B] to-[#003566] text-white",
-  };
+//   const themeClasses: Record<string, string> = {
+//     light: "bg-gray-50 text-gray-800",
+//     dark: "bg-[#0a0a0a] text-gray-100",
+//     ocean:
+//       "bg-gradient-to-b from-[#001F3F] via-[#002B5B] to-[#003566] text-white",
+//   };
 
   // ---------- Layout Renderer ----------
   const renderLayout = () => {
@@ -205,13 +204,13 @@ export default function Activities() {
 
                 {/* Overlay ตอน hover */}
                 <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center px-6">
-                  <h3 className="text-2xl font-semibold mb-3">{a.title}</h3>
+                  <h3 className="text-2xl font-semibold text-gray-200 mb-3">{a.title}</h3>
                   <p className="text-sm text-gray-200 mb-4">
                     Experience the best of {a.title.toLowerCase()} with top-tier
                     facilities and expert guidance.
                   </p>
                   <button
-                    className="px-5 py-2 bg-[#C5A45B] hover:bg-[#b6944f] text-black font-medium rounded-full transition"
+                    className="px-5 py-2 bg-[#C5A45B] hover:bg-[#b6944f] text-black font-medium rounded-full transition cursor-pointer"
                     onClick={() => alert(`Navigating to ${a.title}`)}
                   >
                     View Activity
@@ -326,7 +325,7 @@ export default function Activities() {
 
   return (
     <div
-      className={`min-h-screen py-16 px-6 transition-colors duration-500 ${themeClasses[theme]}`}
+      className={`min-h-screen py-16 px-6 transition-colors duration-500`}
     >
       {/* Header */}
       <div className="text-center mb-10">
@@ -335,7 +334,7 @@ export default function Activities() {
         </h1>
         <div className="w-24 h-[2px] bg-[#C5A45B] mx-auto mt-3 rounded-full"></div>
 
-        {/* Selectors */}
+        {/* Selectors
         <div className="flex flex-wrap justify-center gap-4 mt-8">
           <select
             value={layout}
@@ -352,22 +351,12 @@ export default function Activities() {
             <option value="split">Minimal Split</option>
             <option value="floating">3D Floating Cards</option>
           </select>
-
-          <select
-            value={theme}
-            onChange={(e) => setTheme(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg bg-white/10 focus:ring-2 focus:ring-[#C5A45B]"
-          >
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-            <option value="ocean">Ocean</option>
-          </select>
-        </div>
+        </div> */}
       </div>
 
       {/* Render Layout */}
       <motion.div
-        key={layout + theme}
+        key={layout}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
