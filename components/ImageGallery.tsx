@@ -156,7 +156,7 @@ export default function ImageGallery2() {
           {/* ปุ่ม Prev */}
           <button
             onClick={goToPrevious}
-            className="absolute left-4 md:left-8 bg-white/80 hover:bg-white shadow-lg text-gray-700 px-4 py-2 rounded-full transition-all duration-300 z-10"
+            className="absolute left-4 md:left-8 bg-white/80 hover:bg-white shadow-lg text-gray-700 px-4 py-2 rounded-full transition-all duration-300 z-10  cursor-pointer"
           >
             ◀
           </button>
@@ -173,7 +173,7 @@ export default function ImageGallery2() {
               src={images[currentIndex].src}
               alt={images[currentIndex].title}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
             />
 
             {/* Title ตอนปกติ */}
@@ -181,30 +181,18 @@ export default function ImageGallery2() {
               <h2 className="text-2xl font-semibold tracking-wide">
                 {images[currentIndex].title}
               </h2>
-            </div>
-
-            {/* Overlay ตอน hover */}
-            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-center items-center text-center px-6 backdrop-blur-sm">
-              <h2 className="text-3xl font-semibold mb-4 text-white">
-                {images[currentIndex].title}
-              </h2>
               <p className="text-gray-300 max-w-md mb-6 text-sm md:text-base">
                 Explore the emotion and story behind this frame. Crafted with
                 light, depth, and passion.
               </p>
-              <button
-                onClick={() => alert(`Viewing: ${images[currentIndex].title}`)}
-                className="px-6 py-2 bg-[#C5A45B] hover:bg-[#b6944f] text-black font-medium rounded-full transition-all duration-300"
-              >
-                View Activity
-              </button>
             </div>
+
           </motion.div>
 
           {/* ปุ่ม Next */}
           <button
             onClick={goToNext}
-            className="absolute right-4 md:right-8 bg-white/80 hover:bg-white shadow-lg text-gray-700 px-4 py-2 rounded-full transition-all duration-300 z-10"
+            className="absolute right-4 md:right-8 bg-white/80 hover:bg-white shadow-lg text-gray-700 px-4 py-2 rounded-full transition-all duration-300 z-10 cursor-pointer"
           >
             ▶
           </button>

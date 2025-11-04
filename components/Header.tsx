@@ -15,6 +15,7 @@ export default function Header() {
     { label: "The Infinity Villa", link: "Infinity" },
     { label: "The Horizon Retreat", link: "Horizon" },
     { label: "Gallery", link: "Gallery" },
+    { label: "Contact", link: "Contact" },
     { label: "Home", link: "" }, // "/" → ""
   ];
 
