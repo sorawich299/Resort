@@ -20,8 +20,8 @@ const images = [
 
 const image = [
   {
-    original: NUT6023,
-    thumbnail: NUT6023,
+    original: NUT6023.src,
+    thumbnail: NUT6023.src,
   },
   {
     original: "https://picsum.photos/id/1015/1000/600/",

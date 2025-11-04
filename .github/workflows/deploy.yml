@@ -3,10 +3,10 @@ name: Build and Deploy Next.js Static Site
 on:
   push:
     branches:
-      - main  # เปลี่ยนถ้าใช้ branch อื่น
+      - main
 
 permissions:
-  contents: write  # จำเป็นสำหรับการ push ไปยัง gh-pages
+  contents: write
 
 jobs:
   build-deploy:
@@ -26,6 +26,9 @@ jobs:
 
       - name: Build Next.js
         run: npm run build
+
+      - name: Disable Jekyll
+        run: touch out/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
