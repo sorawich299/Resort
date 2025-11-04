@@ -51,6 +51,7 @@ import KingSizeIcon from "@/public/icons/KingSizeIcon";
 import BathroomIcon from "@/public/icons/BathroomIcon";
 import ReservationForm from "@/components/common/ReservationForm";
 import Activity from "@/components/Activity";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const images = [
   [{ src: SECTION1, width: 362, height: 204 }, { src: SECTION2, width: 362, height: 204 }, { src: SECTION3, width: 362, height: 362 }],
@@ -62,6 +63,8 @@ const images = [
 ];
 
 export default function Home() {
+
+  
 
   return (
     <div>
@@ -217,6 +220,7 @@ export default function Home() {
         subTitle="Experience the ultimate beachfront luxury at our exclusive 5-bedroom villa — where every room boasts a private jacuzzi overlooking the ocean."
         image={Horizon}
       /> */}
+      <ScrollToTopButton />
       <Contact />
 
     </div>

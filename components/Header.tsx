@@ -97,7 +97,7 @@ export default function Header() {
               { label: "The Infinity Villa", link: "/Infinity" },
               { label: "The Horizon Retreat", link: "/Horizon" },
               { label: "Gallery", link: "/Gallery" },
-              { label: "Contact", link: "#contact" },
+              { label: "Contact", link: "/Contact" },
             ].map((item, i) => (
               <li
                 key={i}
