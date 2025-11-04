@@ -44,7 +44,7 @@ const activities = [
 
 // ---------- Layout Selector Component ----------
 export default function Activities() {
-  const [layout, setLayout] = useState("modern");
+  const [layout, setLayout] = useState("masonry");
   const [theme, setTheme] = useState("light");
 
   // ---------- Theme Styling ----------
