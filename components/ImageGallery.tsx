@@ -24,12 +24,12 @@ const image = [
     thumbnail: NUT6023.src,
   },
   {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
+    original: NUT6234.src,
+    thumbnail: NUT6234.src,
   },
   {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
+    original: NUT5890.src,
+    thumbnail: NUT5890.src,
   },
 ];
 
