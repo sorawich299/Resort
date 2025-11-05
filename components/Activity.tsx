@@ -21,7 +21,7 @@ export default function Activities() {
       {/* 🔹 BG Layer */}
       {/* <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg-light)] via-[#f8f9fa] to-[var(--color-bg-dark)]" /> */}
       <motion.div
-        className="absolute inset-0 bg-[url('https://image.makewebeasy.net/makeweb/m_1920x0/bL4zZ31F3/webp/S6_bg.webp?v=202405291424')] bg-cover bg-center opacity-70"
+        className="absolute inset-0 bg-[url('https://image.makewebeasy.net/makeweb/m_1920x0/bL4zZ31F3/webp/S6_bg.webp?v=202405291424')] bg-cover bg-center opacity-100"
         animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
         transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
       />
