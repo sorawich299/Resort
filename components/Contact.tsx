@@ -89,12 +89,12 @@ export default function ContactSection() {
         {/* Left Side - Contact Info */}
         <div className="space-y-8 text-gray-900">
           <h2 className="text-4xl font-semibold tracking-wide mb-8">
-            Contact <span className="text-[#C5A45B]">Us</span>
+            Contact <span className="text-[var(--color-logo)]">Us</span>
           </h2>
 
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <Mail className="text-[#C5A45B] w-6 h-6 mt-1" />
+              <Mail className="text-[var(--color-logo)] w-6 h-6 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg">Email</h3>
                 <p className="text-gray-700">info@solunarvilla.com</p>
@@ -102,7 +102,7 @@ export default function ContactSection() {
             </div>
 
             <div className="flex items-start gap-4">
-              <Phone className="text-[#C5A45B] w-6 h-6 mt-1" />
+              <Phone className="text-[var(--color-logo)] w-6 h-6 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg">Phone</h3>
                 <p className="text-gray-700">+6693-659-9815</p>
@@ -110,7 +110,7 @@ export default function ContactSection() {
             </div>
 
             <div className="flex items-start gap-4">
-              <MapPin className="text-[#C5A45B] w-6 h-6 mt-1" />
+              <MapPin className="text-[var(--color-logo)] w-6 h-6 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg">Solunar Villa</h3>
                 <p className="text-gray-700 leading-relaxed">
@@ -119,7 +119,7 @@ export default function ContactSection() {
                 <a
                   href="https://www.google.com/maps?ll=12.775117,100.901945&z=15&t=h&hl=th&gl=TH&mapclient=embed&q=12%C2%B046%2730.4%22N+100%C2%B054%2707.0%22E+12.775111,+100.901944@12.7751111,100.9019444"
                   target="_blank"
-                  className="text-[#C5A45B] hover:underline mt-1 inline-block"
+                  className="text-[var(--color-logo)] hover:underline mt-1 inline-block"
                 >
                   Get Directions →
                 </a>

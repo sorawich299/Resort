@@ -208,7 +208,7 @@ export default function ImageGallery2() {
               whileTap={{ scale: 0.95 }}
               className={`relative rounded-xl overflow-hidden shadow-md transition-all duration-300 border-2 ${
                 index === currentIndex
-                  ? "border-[#C5A45B] scale-105"
+                  ? "border-[var(--color-logo)] scale-105"
                   : "border-transparent"
               }`}
             >

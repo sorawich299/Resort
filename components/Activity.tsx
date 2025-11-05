@@ -75,7 +75,7 @@ export default function Activities() {
                 />
                 <div className="p-5 flex justify-between items-center">
                   <h3 className="text-lg font-medium">{a.title}</h3>
-                  <span className="text-[#C5A45B] text-sm">→</span>
+                  <span className="text-[var(--color-logo)] text-sm">→</span>
                 </div>
               </motion.div>
             ))}
@@ -210,7 +210,7 @@ export default function Activities() {
                     facilities and expert guidance.
                   </p>
                   <button
-                    className="px-5 py-2 bg-[#C5A45B] hover:bg-[#b6944f] text-black font-medium rounded-full transition cursor-pointer"
+                    className="px-5 py-2 bg-[var(--color-logo)] hover:bg-[#b6944f] text-black font-medium rounded-full transition cursor-pointer"
                     onClick={() => alert(`Navigating to ${a.title}`)}
                   >
                     View Activity
@@ -259,7 +259,7 @@ export default function Activities() {
                   height={600}
                   className="h-64 w-full object-cover opacity-90"
                 />
-                <div className="p-5 text-[#C5A45B] text-center font-medium">
+                <div className="p-5 text-[var(--color-logo)] text-center font-medium">
                   {a.title}
                 </div>
               </motion.div>
@@ -332,14 +332,14 @@ export default function Activities() {
         <h1 className="text-3xl md:text-4xl font-[Playfair_Display] font-semibold">
           Activities Playground
         </h1>
-        <div className="w-24 h-[2px] bg-[#C5A45B] mx-auto mt-3 rounded-full"></div>
+        <div className="w-24 h-[2px] bg-[var(--color-logo)] mx-auto mt-3 rounded-full"></div>
 
         {/* Selectors
         <div className="flex flex-wrap justify-center gap-4 mt-8">
           <select
             value={layout}
             onChange={(e) => setLayout(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg bg-white/10 focus:ring-2 focus:ring-[#C5A45B]"
+            className="px-4 py-2 border border-gray-300 rounded-lg bg-white/10 focus:ring-2 focus:ring-[var(--color-logo)]"
           >
             <option value="modern">Modern Luxury Grid</option>
             <option value="editorial">Editorial / Magazine</option>

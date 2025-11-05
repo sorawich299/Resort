@@ -42,8 +42,8 @@ export default function ScrollToTopButton() {
           aria-label="Scroll to top"
           className="
             fixed bottom-8 right-8 z-50
-            bg-[#C5A45B] text-white p-4 rounded-full shadow-xl
-            hover:bg-[#b3954f] transition-colors duration-300
+            bg-[var(--color-logo)] text-white p-4 rounded-full shadow-xl
+            hover:bg-[var(--color-logo)] transition-colors duration-300
           "
         >
           <ArrowUp size={22} />
