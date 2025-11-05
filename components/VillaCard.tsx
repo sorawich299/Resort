@@ -1,151 +1,53 @@
-"use client";
-import Image, { StaticImageData } from "next/image";
-import AnimatedFadeInUp from "./AnimationFadeUp";
-import SunIcon from "@/public/icons/SunIcon";
-import BedroomIcon from "@/public/icons/BedroomIcon";
-import Modal from "./Modal";
-import { useState } from "react";
-import ModalDetail from "./common/ModalDetail";
-
-interface Features {
-  subtitle?: string;
-  view?: string;
-  bedrooms?: number;
-}
+import Image from "next/image";
+import Link from "next/link";
 
 interface VillaCardProps {
   title: string;
   description: string;
-  image: string | StaticImageData; // รองรับทั้ง string และ StaticImageData
-  features: Features;
+  image: any;
   href: string;
+  reverse?: boolean;
 }
 
-const VillaCard: React.FC<VillaCardProps> = ({
+export default function VillaCard({
   title,
   description,
   image,
-  features,
-  href = ''
-}) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  href,
+  reverse = false,
+}: VillaCardProps) {
   return (
-    <div className="py-14 px-8 lg:py-28 lg:px-16 flex gap-20 flex-col lg:flex-row items-center lg:justify-center">
-      {/* Image Section */}
-      <div className="relative w-full max-w-[560px] aspect-square overflow-hidden rounded-lg flex justify-center items-center">
-        <AnimatedFadeInUp className="w-full">
-          <div className="w-full h-full relative">
-            <Image
-              src={image}
-              alt={title}
-              fill
-              className="object-cover rounded-lg"
-            />
-          </div>
-        </AnimatedFadeInUp>
+    <div
+      className={`flex flex-col md:flex-row ${
+        reverse ? "md:flex-row-reverse" : ""
+      } items-center justify-between w-full px-6 md:px-16 gap-8`}
+    >
+      {/* 🔹 รูปภาพ */}
+      <div className="relative w-full md:w-[50%] h-[30vh] md:h-[35vh] overflow-hidden rounded-3xl shadow-lg">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover hover:scale-105 transition-transform duration-700"
+          priority
+        />
       </div>
 
-      {/* Text Section */}
-      <div
-        className="flex flex-col justify-between w-full 
-                  lg:w-[616px]"
-      >
-        <AnimatedFadeInUp delay={0.25}>
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-8">
-              <div className="flex flex-col gap-4">
-                <h5
-                  className="text-base font-normal text-black"
-                  style={{
-                    fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
-                  }}
-                >
-                  {features.subtitle || "Featured Villa"}
-                </h5>
-                <div className="flex flex-col gap-6">
-                  <h2 className="text-4xl font-medium text-black">{title}</h2>
-                  <p
-                    className="text-[var(--color-secondary)] text-lg font-normal"
-                    style={{
-                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
-                    }}
-                  >
-                    {description}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-8 space-x-4 text-blue-500">
-                <div className="flex items-center gap-2">
-                  <span>
-                    <SunIcon
-                      color="var(--color-icon-primary)"
-                      width="22"
-                      height="22"
-                    />
-                  </span>
-                  <span
-                    className="text-lg font-normal text-black"
-                    style={{
-                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
-                    }}
-                  >
-                    {features.view || "Ocean View"}
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span>
-                    <BedroomIcon
-                      color="var(--color-icon-primary)"
-                      width="22"
-                      height="22"
-                    />
-                  </span>
-                  <span
-                    className="text-lg font-normal text-black"
-                    style={{
-                      fontFamily: '"IBM Plex Sans Thai Looped", sans-serif',
-                    }}
-                  >
-                    {features.bedrooms || "N/A"} bedrooms
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-2">
-              <button
-                className=" bg-blue-500 text-white text-xl py-3.5 px-7 font-medium rounded-lg hover:bg-blue-600 max-w-[178px] w-full cursor-pointer"
-                onClick={() =>
-                  (window.location.href = "https://booking.solunarvilla.com/")
-                }
-              >
-                Reserve
-              </button>
-              <button
-                className="inline-flex items-center justify-center
-                rounded-lg border-2 border-[#3B82F6] bg-white
-                px-5 py-3 text-base font-semibold text-[#3B82F6]
-                shadow-sm transition-colors duration-200
-                hover:bg-[#3B82F6] hover:text-white
-                focus:outline-none focus:ring-4 focus:ring-[#3B82F6]/30
-                active:scale-[.98]
-                disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
-                onClick={() =>
-                  (window.location.href = href)
-                }
-              >
-                Discover More
-              </button>
-            </div>
-          </div>
-        </AnimatedFadeInUp>
+      {/* 🔹 เนื้อหา */}
+      <div className="flex flex-col w-full md:w-[40%] text-left gap-4">
+        <h2 className="text-3xl md:text-4xl font-semibold text-gray-800">
+          {title}
+        </h2>
+        <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+          {description}
+        </p>
+        <Link
+          href={href}
+          className="mt-4 inline-block bg-[#C6A875] hover:bg-[#b59363] text-white px-6 py-3 rounded-full transition-all duration-300 self-start"
+        >
+          Explore Villa
+        </Link>
       </div>
-
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(!isOpen)}>
-        <ModalDetail />
-      </Modal>
     </div>
   );
-};
-
-export default VillaCard;
+}

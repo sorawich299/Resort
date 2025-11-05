@@ -66,7 +66,7 @@ export default function Header() {
   return (
     <header
       style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
-      className={`fixed top-0 left-0 right-0  z-500 ${scrolled ? "bg-white" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0  z-500 ${scrolled ? "bg-white" : "bg-black/20"
         }`}
     >
       <div className="container mx-auto flex justify-between items-center px-6 py-3">
