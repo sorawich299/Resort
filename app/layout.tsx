@@ -20,14 +20,14 @@ export const metadata: Metadata = {
     title:  "Solunar. | Bang Sare",
     description: "พูลวิลล่าติดทะเล บรรยากาศเป็นส่วนตัว",
     images: [
-      { url: absoluteUrl("/images/og/home.webp") }, // ต้องเป็น absolute เท่านั้น
+      { url: absoluteUrl("/Resort/og-img.jpg") }, // ต้องเป็น absolute เท่านั้น
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:  "Solunar. | Bang Sare",
     description: "พูลวิลล่าติดทะเล บรรยากาศเป็นส่วนตัว",
-    images: [absoluteUrl("/images/og/home.webp")],
+    images: [absoluteUrl("/Resort/og-img.jpg")],
     // (ไม่บังคับ) ใส่ handle เพื่อความสมบูรณ์
     // site: "@your_twitter",
     // creator: "@your_twitter",
