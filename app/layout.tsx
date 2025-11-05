@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import SeoHead from "@/components/SeoHead";
 
 import { absoluteUrl } from "@/lib/absoluteUrl";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 
 export const metadata: Metadata = {
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <Header />
         <main>{children}</main>
+        <ScrollToTopButton />
         <Footer />
       </body>
     </html>

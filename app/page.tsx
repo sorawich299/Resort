@@ -220,7 +220,7 @@ export default function Home() {
         subTitle="Experience the ultimate beachfront luxury at our exclusive 5-bedroom villa — where every room boasts a private jacuzzi overlooking the ocean."
         image={Horizon}
       /> */}
-      <ScrollToTopButton />
+      
       <Contact />
 
     </div>

@@ -41,7 +41,7 @@ export default function ScrollToTopButton() {
           onClick={scrollToTop}
           aria-label="Scroll to top"
           className="
-            fixed bottom-8 right-8 z-50
+            fixed bottom-20 right-8 z-50
             bg-[var(--color-logo)] text-white p-4 rounded-full shadow-xl
             hover:bg-[var(--color-logo)] transition-colors duration-300
           "
