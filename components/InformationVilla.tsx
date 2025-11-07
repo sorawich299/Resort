@@ -405,7 +405,7 @@ export default function InformationVilla({ link, villa }: InformationVillaProps)
                 Our dedicated team is ready to assist you with every detail.
               </p>
             </div>
-            <button className="p-4 bg-blue-600 border rounded-lg w-full text-white font-semibold text-lg cursor-pointer"  onClick={() => window.location.href = "https://booking.solunarvilla.com/"}>
+            <button className="p-4 bg-blue-600 border rounded-lg w-full text-white font-semibold text-lg cursor-pointer"  onClick={() => window.location.href = "http://localhost:8080/"}>
               Reserve
             </button>
           </div>

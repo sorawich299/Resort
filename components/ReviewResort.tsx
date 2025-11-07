@@ -31,7 +31,7 @@ export default function ReviewResort({ image, title, subTitle }: ReviewResortPro
                     {/* Overlay Content */}                <div className="relative py-14 lg:py-28 px-8 lg:px-16 z-10 text-center w-full h-full flex flex-col justify-center items-center gap-6">
                         <h1 className="text-5xl font-medium text-white">{title}</h1>
                         <p className="lg:max-w-[560px] text-lg font-normal text-white" style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}>{subTitle}</p>
-                        <button className="cursor-pointer px-7 py-3.5 bg-white text-black border border-gray-200 rounded-lg font-medium" onClick={() => window.location.href = "https://booking.solunarvilla.com/"}>
+                        <button className="cursor-pointer px-7 py-3.5 bg-white text-black border border-gray-200 rounded-lg font-medium" onClick={() => window.location.href = "http://localhost:8080/"}>
                             Reserve
                         </button>
                     </div>
