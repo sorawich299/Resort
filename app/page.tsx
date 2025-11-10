@@ -52,6 +52,7 @@ import BathroomIcon from "@/public/icons/BathroomIcon";
 import ReservationForm from "@/components/common/ReservationForm";
 import Activity from "@/components/Activity";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import PlaceRecommendClassic from "@/components/PlaceRecommend";
 
 const images = [
   [{ src: SECTION1, width: 362, height: 204 }, { src: SECTION2, width: 362, height: 204 }, { src: SECTION3, width: 362, height: 362 }],
@@ -62,12 +63,66 @@ const images = [
   [{ src: SECTION14, width: 362, height: 362 }, { src: SECTION15, width: 362, height: 362 }],
 ];
 
+
+const items = [
+  {
+    id: "1",
+    title: "Nongnooch Garden Pattaya",
+    imageUrl:
+      "https://www.nongnoochpattaya.com/uploads/images/202312/1cc59c50e70dc6d874cac40663db10cb.jpg",
+    minutes: 5,
+    href: "#",
+  },
+  {
+    id: "2",
+    title: "Columbia Picture Aquaverse",
+    imageUrl:
+      "https://columbiapicturesaquaverse.com/en/wp-content/uploads/2024/01/kvdesktop1.jpg",
+    minutes: 3,
+    href: "#",
+  },
+  {
+    id: "3",
+    title: "Max Muay Thai Stadium Pattaya",
+    imageUrl:
+      "https://maxmuaythai.co.th/wp-content/uploads/2024/04/3IMG_1078-2048x1365.jpg",
+    minutes: 10,
+    href: "#",
+  },
+];
+
+ const foodItems = [
+    {
+      id: "4",
+      title: "The Oxygen Pattaya",
+      imageUrl:
+        "https://scontent.fbkk22-2.fna.fbcdn.net/v/t39.30808-6/480220787_936846538635449_7193350373101981417_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=HA_Ail3DJn8Q7kNvwFdIXjs&_nc_oc=AdkJ737BuDV1sVMjca-llIv8_2mEtKahBJ-ax1C-IvVnSDOmZuwdjM_CkZZwQrCBUqE&_nc_zt=23&_nc_ht=scontent.fbkk22-2.fna&_nc_gid=n12JOH0Bb-bg7pUkQNCo7w&oh=00_Afip9u1V4ivDKXzgBARzvyP4DRjQLK4lBKoeOQVV56rQSw&oe=69178FC9",
+      minutes: 2,
+      href: "#",
+    },
+    {
+      id: "5",
+      title: "Castello Di Bellagio Pattaya",
+      imageUrl:
+        "https://scontent.fbkk22-2.fna.fbcdn.net/v/t39.30808-6/497709148_1100654288763266_6866494021417173089_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=qjy2JBDhZfoQ7kNvwGmoZIj&_nc_oc=Adk0p5zZWduSnHASmu6_3QNQ9tOqf8JffpoQzh2eszithY823oNOxFWuVfBch7RMeos&_nc_zt=23&_nc_ht=scontent.fbkk22-2.fna&_nc_gid=GVJ7T8UGp0iKrRnmE5P3eA&oh=00_Afg56y3OjM58Pfr8lfD0SmbtDFDGq6O5wKrKdRAQ-jfQfg&oe=69178E72",
+      minutes: 4,
+      href: "#",
+    },
+    {
+      id: "6",
+      title: "Horizon Rooftop Restaurant & Bar",
+      imageUrl:
+        "https://scontent.fbkk22-8.fna.fbcdn.net/v/t1.6435-9/155458395_2960615650835104_9166571135936235335_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=68gUnhGP5fUQ7kNvwGMACSe&_nc_oc=AdnLBENr4QV-KteZL4ZyHm9S_Ha_wv6-BzubLNeNwUhU2OMK_-ZnTXOM_zEWuXYziac&_nc_zt=23&_nc_ht=scontent.fbkk22-8.fna&_nc_gid=PKDPE8_sqX0jcsD-bm_jEg&oh=00_AfiyB36R6c1CAvaKEHEAiXEPWqgdy3R4lR0yZD02tYPHsA&oe=69392D3D",
+      minutes: 8,
+      href: "#",
+    },
+  ];
 export default function Home() {
 
   
 
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       <HeroSection />
       <ReservationForm />
       {/* <Infomation /> */}
@@ -210,6 +265,14 @@ export default function Home() {
 
       <ImageGallery />
       <Activity/>
+      <PlaceRecommendClassic items={items} />
+      <PlaceRecommendClassic
+        kicker="RESTAURANT"
+        heading="WE RECOMMEND"
+        sideLabel="RESTAURANT"
+        items={foodItems}
+        className="pt-12 bg-[#fffaf5]"
+      />
       {/* <ReviewResort
         title="The Infinity Villa"
         subTitle="Experience the ultimate beachfront luxury at our exclusive 5-bedroom villa — where every room boasts a private jacuzzi overlooking the ocean."
