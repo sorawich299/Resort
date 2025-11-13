@@ -25,7 +25,7 @@ type Props = {
 
 export default function PlaceRecommendCombined({ groups, className = "" }: Props) {
   return (
-    <section style={{ fontFamily: '"Cormorant Infant", sans-serif' }} className={`relative mx-auto max-w-8xl px-6 py-16 flex flex-col gap-4 min-h-screen ${className}`}>
+    <section style={{ fontFamily: '"Cormorant Infant", sans-serif' }} className={`relative mx-auto max-w-8xl px-6 py-16 flex flex-col gap-20 min-h-screen ${className}`}>
       {groups.map((group, groupIdx) => {
         const { kicker, heading, sideLabel, items, className: sectionClass } = group;
 
@@ -38,7 +38,7 @@ export default function PlaceRecommendCombined({ groups, className = "" }: Props
 
             {/* 🔹 หัวข้อ */}
             <div className="text-center mb-12">
-              {/* <div className="text-sm tracking-[0.35em] text-[#d8b08f] uppercase" style={{fontStyle: 'italic'}}>{kicker}</div> */}
+              
               <h2 className="mt-2 text-3xl md:text-4xl font-bold text-[#1f2d3d]" style={{fontStyle: 'italic'}}>{kicker}</h2>
               <div className="mx-auto mt-3 h-[2px] w-14 bg-[#d8b08f]" />
             </div>
