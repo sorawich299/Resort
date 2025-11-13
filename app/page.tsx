@@ -52,7 +52,7 @@ import BathroomIcon from "@/public/icons/BathroomIcon";
 import ReservationForm from "@/components/common/ReservationForm";
 import Activity from "@/components/Activity";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import PlaceRecommendClassic from "@/components/PlaceRecommend";
+import PlaceRecommendCombined from "@/components/PlaceRecommend";
 
 const images = [
   [{ src: SECTION1, width: 362, height: 204 }, { src: SECTION2, width: 362, height: 204 }, { src: SECTION3, width: 362, height: 362 }],
@@ -265,13 +265,22 @@ export default function Home() {
 
       <ImageGallery />
       <Activity/>
-      <PlaceRecommendClassic items={items} />
-      <PlaceRecommendClassic
-        kicker="RESTAURANT"
-        heading="WE RECOMMEND"
-        sideLabel="RESTAURANT"
-        items={foodItems}
-        className="pt-12 bg-[#fffaf5]"
+      <PlaceRecommendCombined
+        groups={[
+          {
+            kicker: "PLACE TRAVEL",
+            heading: "WE RECOMMEND",
+            sideLabel: "POOL VILLA",
+            items: items,
+          },
+          {
+            kicker: "RESTAURANT",
+            heading: "WE RECOMMEND",
+            sideLabel: "RESTAURANT",
+            items: foodItems,
+            className: "bg-[#fffaf5] pt-12 pb-12",
+          },
+        ]}
       />
       {/* <ReviewResort
         title="The Infinity Villa"
