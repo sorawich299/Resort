@@ -122,7 +122,7 @@ export default function Home() {
   
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-10">
       <HeroSection />
       <ReservationForm />
       {/* <Infomation /> */}
@@ -278,7 +278,6 @@ export default function Home() {
             heading: "WE RECOMMEND",
             sideLabel: "RESTAURANT",
             items: foodItems,
-            className: "bg-[#fffaf5] pt-12 pb-12",
           },
         ]}
       />

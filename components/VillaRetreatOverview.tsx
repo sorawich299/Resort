@@ -8,12 +8,12 @@ export default function VillaRetreatOverview() {
     return (
         <section style={{ fontFamily: '"Cormorant Infant", sans-serif' }} className="container mx-auto  py-14 px-8 lg:py-28 lg:px-16 flex flex-col gap-10 lg:gap-20 max-w-[1200px]">
             <div className="flex flex-col gap-4 max-w-[570px]">
-                <h2 className="text-base font-normal text-black" 
+                <h2 className="text-2xl font-semibold text-black" style={{fontStyle: 'italic'}} 
                 // style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
                 >The Infinity Villa and The Horizon Retreat</h2>
                 <div className="flex flex-col gap-6">
-                    <h1 className="text-4xl font-medium text-black">Host an unforgettable corporate retreat by the sea</h1>
-                    <p className="text-lg font-normal text-[var(--color-secondary)]" 
+                    <h1 className="text-4xl text-black font-bold">Host an unforgettable corporate retreat by the sea</h1>
+                    <p className="text-2xl font-semibold text-[var(--color-secondary)]" 
                     // style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
                     >Whether it’s a private mini party, a strategic meeting, or simply a luxurious reward trip — our villa offers the perfect blend of privacy, comfort, and stunning seaside views for your team.</p>
                 </div>

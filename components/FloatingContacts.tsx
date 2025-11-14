@@ -58,7 +58,7 @@ export default function FloatingContacts({ shiftUp = false }: FloatingContactsPr
 
       <button
         onClick={() => setOpen(!open)}
-        className="w-14 h-14 rounded-full bg-black text-white 
+        className="w-14 h-14 rounded-full bg-[#F79009] text-white 
                    shadow-xl flex items-center justify-center cursor-pointer"
       >
         <Contact size={26} />
