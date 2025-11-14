@@ -80,7 +80,8 @@ const ReservationForm: React.FC = () => {
   return (
     <div
       className="flex flex-col lg:flex-row items-center justify-center lg:space-x-6 p-4"
-      style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
+      // style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
+      style={{ fontFamily: '"Cormorant Infant", sans-serif' }}
     >
       <SharedStyleWrapper>
         <VillaType

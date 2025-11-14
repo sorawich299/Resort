@@ -35,10 +35,10 @@ export default function VillaCard({
 
       {/* 🔹 เนื้อหา */}
       <div className="flex flex-col w-full md:w-[40%] text-left gap-4">
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-800">
+        <h2 className="text-3xl md:text-5xl font-semibold text-gray-800">
           {title}
         </h2>
-        <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+        <p className="text-gray-600 text-base md:text-xl leading-relaxed" style={{fontStyle: 'italic'}}>
           {description}
         </p>
         <Link

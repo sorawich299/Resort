@@ -17,7 +17,7 @@ const activities = [
 
 export default function Activities() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+    <section style={{ fontFamily: '"Cormorant Infant", sans-serif' }} className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
       {/* 🔹 BG Layer */}
       {/* <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg-light)] via-[#f8f9fa] to-[var(--color-bg-dark)]" /> */}
       <motion.div
@@ -31,7 +31,7 @@ export default function Activities() {
       <div className="w-full max-w-7xl relative z-20">
         {/* 🔹 Header */}
         <div className="text-center pt-8 pb-4">
-          <h1 className="text-3xl md:text-4xl font-[Playfair_Display] font-semibold text-white">
+          <h1 className="text-3xl md:text-4xl  font-semibold text-white">
             Activities Playground
           </h1>
           <div className="w-24 h-[2px] bg-[var(--color-logo)] mx-auto mt-3 rounded-full"></div>
@@ -54,7 +54,13 @@ export default function Activities() {
                   height={300}
                   className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-semibold transition-opacity duration-500">
+
+                {/* Bottom text with background blur/40 */}
+                <div className="absolute bottom-0 left-0 right-0 
+                  bg-black/40 backdrop-blur-sm
+                  px-4 py-3 
+                  text-white text-lg font-semibold 
+                  flex items-center justify-center">
                   {a.title}
                 </div>
               </motion.div>
