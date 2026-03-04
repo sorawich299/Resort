@@ -52,6 +52,8 @@ import BathroomIcon from "@/public/icons/BathroomIcon";
 import ReservationForm from "@/components/common/ReservationForm";
 import Activity from "@/components/Activity";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import TomorrowlandThailand2026 from "@/components/TomorrowlandThailand2026";
+import VillaPricing from "@/components/VillaPricing";
 
 const images = [
   [{ src: SECTION1, width: 362, height: 204 }, { src: SECTION2, width: 362, height: 204 }, { src: SECTION3, width: 362, height: 362 }],
@@ -70,10 +72,12 @@ export default function Home() {
     <div>
       <HeroSection />
       <ReservationForm />
+      <VillaPricing/>
       {/* <Infomation /> */}
       {/* <VideoPlayer videoId="Erflio-agG4" /> */}
       <Reserve />
-      <ImageSlider images={images} />
+      {/* <ImageSlider images={images} /> */}
+      <TomorrowlandThailand2026/>
       <VillaRetreatOverview />
       {/* <SeasideEscape
         title="Your Private Seaside Escape Awaits"
