@@ -17,18 +17,16 @@ export default function HeroSection() {
       <img
         src="/assets/Hero_image.jpg" // 👈 เปลี่ยนเป็น path รูปคุณ เช่น /public/images/bg.jpg
         alt="Background placeholder"
-        className={`absolute top-0 left-auto w-full h-full object-cover transition-opacity duration-700 ${
-          isVideoReady ? "opacity-0" : "opacity-100"
-        }`}
+        className={`absolute top-0 left-auto w-full h-full object-cover transition-opacity duration-700 ${isVideoReady ? "opacity-0" : "opacity-100"
+          }`}
       />
 
       {/* 🔹 วิดีโอพื้นหลัง YouTube */}
       <div
-        className={`absolute top-0 left-0 w-full h-full overflow-hidden transition-opacity duration-700 ${
-          isVideoReady ? "opacity-100" : "opacity-0"
-        }`}
+        className={`absolute top-0 left-0 w-full h-full overflow-hidden transition-opacity duration-700 ${isVideoReady ? "opacity-100" : "opacity-0"
+          }`}
       >
-        <iframe
+        {/* <iframe
           src="https://www.youtube.com/embed/Erflio-agG4?autoplay=1&mute=1&loop=1&playlist=Erflio-agG4&controls=0&showinfo=0&modestbranding=1&fs=0&rel=0&iv_load_policy=3&disablekb=1&playsinline=1"
           title="Background video"
           allow="autoplay; encrypted-media"
@@ -40,7 +38,18 @@ export default function HeroSection() {
             objectFit: "cover",
             transform: "scale(1.2)",
           }}
-        ></iframe>
+        ></iframe> */}
+        <iframe 
+        id="video-player-secao2c" 
+        frameBorder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerPolicy="strict-origin-when-cross-origin" 
+        title="Sailom Sea Beach Pool Villa" 
+        width="1920" 
+        height="1080" 
+        src="https://www.youtube.com/embed/Erflio-agG4?autoplay=1&mute=1&loop=1&playlist=Erflio-agG4&controls=0&showinfo=0&modestbranding=1&fs=0&rel=0&iv_load_policy=3&disablekb=1&playsinline=1">
+
+        </iframe>
       </div>
       {/* 🔹 เนื้อหา hero */}
       <div className="relative z-10 flex flex-col items-start justify-center h-full text-left text-white pl-36">

@@ -35,15 +35,15 @@ export default function VillaCard({
 
       {/* 🔹 เนื้อหา */}
       <div className="flex flex-col w-full md:w-[40%] text-left gap-4">
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-800">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-800">
           {title}
         </h2>
-        <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+        <p className="text-gray-600 text-base md:text-2xl leading-relaxed font-semibold" style={{fontStyle: 'italic'}}>
           {description}
         </p>
         <Link
           href={href}
-          className="mt-4 inline-block bg-[#C6A875] hover:bg-[#b59363] text-white px-6 py-3 rounded-full transition-all duration-300 self-start"
+          className="mt-4 inline-block bg-[#C6A875] hover:bg-[#b59363] text-white px-6 py-3 rounded-full transition-all duration-300 self-start text-2xl"
         >
           Explore Villa
         </Link>

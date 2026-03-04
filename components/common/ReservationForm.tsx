@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState } from "react";
 import { VillaType } from "./VillaType";
 import { DateRangePicker } from "./CheckAvailable";
@@ -23,10 +23,10 @@ const SharedStyleWrapper: React.FC<{ children: React.ReactNode }> = ({ children 
 
 type ReservationData = {
   villaType: string;
-  startDate: string;   // ควรเก็บเป็น 'YYYY-MM-DD'
-  endDate: string;     // ควรเก็บเป็น 'YYYY-MM-DD'
-  adults: string;
-  children: string;
+  startDate: string;   // 'YYYY-MM-DD'
+  endDate: string;     // 'YYYY-MM-DD'
+  adults: string;      // เก็บเป็น string จาก <select>/<input>
+  children: string;    // เก็บเป็น string จาก <select>/<input>
 };
 
 const ReservationForm: React.FC = () => {
@@ -40,7 +40,7 @@ const ReservationForm: React.FC = () => {
     children: "",
   });
 
-  // แปลง Date -> 'YYYY-MM-DD' (เผื่อกรณี DateRangePicker ส่ง Date object มาในอนาคต)
+  // Date -> 'YYYY-MM-DD'
   const toYMD = (d: Date | string | null) => {
     if (!d) return "";
     if (typeof d === "string") return d; // assume already 'YYYY-MM-DD'
@@ -48,8 +48,22 @@ const ReservationForm: React.FC = () => {
     return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
   };
 
+  // ✅ สถานะพร้อมกด
+  const guestsCount =
+    (Number(formData.adults || "0") || 0) + (Number(formData.children || "0") || 0);
+  const hasDates = Boolean(formData.startDate && formData.endDate);
+  const validDateRange = hasDates
+    ? new Date(formData.startDate) <= new Date(formData.endDate)
+    : false;
+
+  // ถ้าต้องการให้ “ผู้ใหญ่ ≥ 1 คน” แทนรวมทั้งหมด ให้ใช้: Number(formData.adults || '0') > 0
+  const canReserve =
+    Boolean(formData.villaType) && hasDates && validDateRange && guestsCount > 0;
+
   // ⤴ เมื่อกด Reserve: สร้าง URL พร้อม query
   const handleReserve = () => {
+    if (!canReserve) return; // กันการลัดคลิกด้วย programmatic click
+
     const params = new URLSearchParams({
       villaType: formData.villaType || "",
       startDate: toYMD(formData.startDate as unknown as Date | string),
@@ -58,16 +72,16 @@ const ReservationForm: React.FC = () => {
       children: formData.children || "",
     });
 
-    // เปลี่ยนปลายทางตามจริงของคุณ
-    const url = `https://booking.solunarvilla.com/?${params.toString()}`;
-    // window.location.href = url; // หรือ window.open(url, "_blank")
-    window.open(url, "_blank")
+    // ปลายทางจริงของคุณ เช่น https://booking.solunarvilla.com
+    const url = `http://localhost:8080/?${params.toString()}`;
+    window.open(url, "_blank");
   };
 
   return (
     <div
       className="flex flex-col lg:flex-row items-center justify-center lg:space-x-6 p-4"
-      style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
+      // style={{ fontFamily: '"IBM Plex Sans Thai Looped", sans-serif' }}
+      style={{ fontFamily: '"Cormorant Infant", sans-serif' }}
     >
       <SharedStyleWrapper>
         <VillaType
@@ -86,8 +100,9 @@ const ReservationForm: React.FC = () => {
           onChange={(start, end) =>
             setFormData((prev) => ({
               ...prev,
-              startDate: start, // ให้ DateRangePicker ส่งเป็น 'YYYY-MM-DD' จะง่ายสุด
-              endDate: end,
+              // แนะนำให้ DateRangePicker ส่ง 'YYYY-MM-DD' มาจะง่ายสุด
+              startDate: start || "",
+              endDate: end || "",
             }))
           }
         />
@@ -108,8 +123,9 @@ const ReservationForm: React.FC = () => {
       <VerticalLine />
 
       <SharedStyleWrapper>
-        {/* ใช้ฟังก์ชัน handleReserve แทน href ตรง ๆ */}
-        <ReserveButton onClick={handleReserve} />
+        {/* ปุ่มจะ disabled ถ้าไม่ผ่านเงื่อนไข canReserve */}
+        <ReserveButton onClick={handleReserve} disabled={!canReserve} />
+        
       </SharedStyleWrapper>
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>

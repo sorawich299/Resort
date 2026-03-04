@@ -8,6 +8,8 @@ import SeoHead from "@/components/SeoHead";
 
 import { absoluteUrl } from "@/lib/absoluteUrl";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import FloatingContacts from "@/components/FloatingContacts";
+import FloatingComponent from "@/components/FloatingComponent";
 
 
 export const metadata: Metadata = {
@@ -48,6 +50,8 @@ export const metadata: Metadata = {
 
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+
+  
   return (
     <html lang="th">
       <body>
@@ -58,7 +62,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <Header />
         <main>{children}</main>
-        <ScrollToTopButton />
+        <FloatingComponent/>
         <Footer />
       </body>
     </html>

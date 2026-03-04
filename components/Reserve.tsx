@@ -4,7 +4,7 @@ import Horizon from "../public/images/Information/Horizon.png";
 
 export default function Reserve() {
   return (
-    <section className="relative flex flex-col justify-center overflow-hidden py-20">
+    <section style={{ fontFamily: '"Cormorant Infant", sans-serif' }} className="relative flex flex-col justify-center overflow-hidden py-20">
       
       {/* 🔹 เนื้อหาภายใน */}
       <div className="relative container mx-auto flex flex-col justify-center gap-12 px-8 md:px-16">

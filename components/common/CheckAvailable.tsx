@@ -50,22 +50,22 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
   };
 
   return (
-    <div className="relative inline-block w-[240px] lg:w-auto" ref={containerRef}>
+    <div className="relative inline-block w-[240px] lg:w-auto text-xl font-bold" ref={containerRef}>
       <button
         type="button"
         className="flex items-center gap-5 py-2 text-gray-700 bg-white justify-between w-full"
         onClick={() => setIsOpen((o) => !o)}
       >
-        <span className="text-lg"><CalendarIcon color='#344054' /></span>
+        <span className=""><CalendarIcon color='#344054' /></span>
         <div className="flex flex-col">
-          <span className="font-medium text-orange-500">{placeholder}</span>
+          <span className=" text-orange-500">{placeholder}</span>
           {start && end ? (
-            <div className="flex flex-col items-start leading-tight text-sm font-medium">
+            <div className="flex flex-col items-start leading-tight ">
               <span>{start}</span>
               <span>{end}</span>
             </div>
           ) : (
-            <span className="font-medium text-black">{placeholder}</span>
+            <span className=" text-black">{placeholder}</span>
           )}
         </div>
       </button>
@@ -73,7 +73,7 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
       {isOpen && (
         <div className="absolute z-10 mt-2 w-64 bg-white border rounded-lg shadow-lg p-4 space-y-4">
           <div className="flex flex-col">
-            <label className="text-sm text-orange-500 font-medium">Check-in</label>
+            <label className="text-orange-500 ">Check-in</label>
             <input
               type="date"
               value={start}
@@ -82,7 +82,7 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
             />
           </div>
           <div className="flex flex-col">
-            <label className="text-sm text-orange-500 font-medium">Check-out</label>
+            <label className="text-orange-500 ">Check-out</label>
             <input
               type="date"
               value={end}
@@ -94,7 +94,7 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
             <button
               type="button"
               onClick={clearDates}
-              className="w-full text-center text-sm text-gray-500 hover:text-gray-700"
+              className="w-full text-center text-gray-500 hover:text-gray-700"
             >
               Clear dates
             </button>
