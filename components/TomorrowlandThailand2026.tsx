@@ -1,88 +1,93 @@
-"use client";
-
 export default function TomorrowlandThailand2026() {
   return (
-    <section className="relative py-20 px-6" style={{ fontFamily: '"Cormorant Infant", sans-serif' }}>
+    <section className="py-6 px-6 bg-white text-neutral-900">
+      <div className="max-w-5xl mx-auto">
 
-      {/* Neon Background */}
-      <div className="absolute inset-0 bg-gradient-to-br 
-        from-purple-900 via-black to-indigo-900 opacity-95" />
+        {/* SECTION HEADER */}
+        <div className="text-center mb-14">
+          <h1
+            className="text-5xl md:text-6xl font-semibold tracking-wide"
+            style={{ fontFamily: '"Cormorant Infant", serif' }}
+          >
+            Up coming events !
+          </h1>
 
-      <div className="relative max-w-5xl mx-auto">
+          <div className="w-24 h-[2px] bg-neutral-900 mx-auto mt-4" />
+        </div>
 
-        <div className="rounded-3xl p-10
-          bg-white/5 backdrop-blur-xl
-          border border-white/10
-          shadow-[0_0_60px_rgba(168,85,247,0.4)]">
+        {/* EVENT CARD */}
+        <div className="rounded-3xl p-10 bg-white border border-neutral-200 shadow-sm">
 
           {/* TITLE */}
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-wide">
+          <h2
+            className="text-4xl md:text-5xl font-semibold tracking-wide"
+            style={{ fontFamily: '"Cormorant Infant", serif' }}
+          >
             Tomorrowland Thailand 2026
           </h2>
 
-          <p className="text-purple-300 mt-2 text-lg">
-            EDM Festival ครั้งแรกในเอเชีย • Concept “Consciencia”
+          <p className="text-neutral-500 mt-3 text-lg font-medium">
+            Asia’s First Tomorrowland Experience • Concept “Consciencia”
           </p>
 
           {/* Description */}
-          <p className="text-gray-300 mt-6 leading-relaxed">
-            เทศกาลดนตรีระดับโลก ณ Wisdom Valley พัทยา
-            คาดผู้เข้าร่วมกว่า
-            <span className="text-pink-400 font-bold"> 50,000 คนต่อวัน </span>
-            พร้อม 6 เวทีระดับตำนาน
+          <p className="text-neutral-700 mt-6 leading-relaxed text-base max-w-3xl">
+            A world-class electronic music festival held at Wisdom Valley,
+            Pattaya. Expected attendance of
+            <span className="font-semibold text-neutral-900">
+              {" "}50,000 visitors per day
+            </span>
+            , featuring multiple legendary stages and immersive experiences.
           </p>
 
           {/* INFO GRID */}
-          <div className="grid md:grid-cols-3 gap-6 mt-8">
+          <div className="grid md:grid-cols-3 gap-6 mt-10">
 
-            <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-              <p className="text-pink-400 font-semibold">วันจัดงาน</p>
-              <p className="text-white">11–13 ธันวาคม 2569</p>
+            <div className="rounded-xl p-5 border border-neutral-200">
+              <p className="text-sm text-neutral-500 mb-1">Event Dates</p>
+              <p className="font-semibold">
+                11–13 December 2026
+              </p>
             </div>
 
-            <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-              <p className="text-purple-400 font-semibold">สถานที่</p>
-              <p className="text-white">Wisdom Valley พัทยา</p>
+            <div className="rounded-xl p-5 border border-neutral-200">
+              <p className="text-sm text-neutral-500 mb-1">Location</p>
+              <p className="font-semibold">
+                Wisdom Valley, Pattaya
+              </p>
             </div>
 
-            <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-              <p className="text-cyan-400 font-semibold">Stages</p>
-              <p className="text-white">Mainstage • CORE • FREEDOM</p>
+            <div className="rounded-xl p-5 border border-neutral-200">
+              <p className="text-sm text-neutral-500 mb-1">Stages</p>
+              <p className="font-semibold">
+                Mainstage • CORE • Freedom
+              </p>
             </div>
 
           </div>
 
-          {/* TICKET */}
-          <div className="mt-10 bg-gradient-to-r
-            from-pink-500/20 to-purple-500/20
-            border border-pink-400/30
-            rounded-2xl p-6">
-
-            <p className="text-white font-semibold text-lg">
-              🎟 การจำหน่ายบัตร
+          {/* TICKET INFO */}
+          <div className="mt-10 rounded-2xl p-6 border border-neutral-200 bg-neutral-50">
+            <p className="text-lg font-semibold">
+              Ticket Sales
             </p>
 
-            <ul className="text-gray-200 mt-3 space-y-1">
-              <li>Hotel Package — 28 ก.พ. 2569 เวลา 16:00</li>
-              <li>General Ticket — 7 มี.ค. 2569 เวลา 16:00</li>
+            <ul className="text-neutral-700 mt-3 space-y-1">
+              <li>Hotel Packages — Feb 28, 2026 • 16:00</li>
+              <li>General Tickets — Mar 7, 2026 • 16:00</li>
             </ul>
-
           </div>
 
           {/* CTA */}
           <a
             href="https://thailand.tomorrowland.com/th/welcome/"
             target="_blank"
-            className="block mt-10 text-center
-            py-4 rounded-xl
-            font-bold text-lg
-            text-white
-            bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500
-            hover:scale-105
-            transition-all duration-300
-            shadow-[0_0_40px_rgba(236,72,153,0.8)]"
+            className="block mt-10 text-center py-4 rounded-xl
+            font-semibold text-lg text-white
+            bg-neutral-900 hover:bg-neutral-800
+            transition-all duration-300"
           >
-            ✨ ดูรายละเอียด & ลงทะเบียน
+            View Details & Register
           </a>
 
         </div>
