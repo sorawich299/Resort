@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Contact from "@/components/Contact";
 import HeroSection from "@/components/Hero";
 import ImageGallery from "@/components/ImageGallery";
@@ -57,14 +57,34 @@ import VillaPricing from "@/components/VillaPricing";
 import PlaceRecommendCombined from "@/components/PlaceRecommend";
 
 const images = [
-  [{ src: SECTION1, width: 362, height: 204 }, { src: SECTION2, width: 362, height: 204 }, { src: SECTION3, width: 362, height: 362 }],
-  [{ src: SECTION4, width: 362, height: 362 }, { src: SECTION5, width: 362, height: 362 }],
-  [{ src: SECTION6, width: 362, height: 204 }, { src: SECTION7, width: 362, height: 362 }, { src: SECTION8, width: 362, height: 204 }],
-  [{ src: SECTION9, width: 362, height: 362 }, { src: SECTION10, width: 362, height: 362 }],
-  [{ src: SECTION11, width: 362, height: 204 }, { src: SECTION12, width: 362, height: 204 }, { src: SECTION13, width: 362, height: 362 }],
-  [{ src: SECTION14, width: 362, height: 362 }, { src: SECTION15, width: 362, height: 362 }],
+  [
+    { src: SECTION1, width: 362, height: 204 },
+    { src: SECTION2, width: 362, height: 204 },
+    { src: SECTION3, width: 362, height: 362 },
+  ],
+  [
+    { src: SECTION4, width: 362, height: 362 },
+    { src: SECTION5, width: 362, height: 362 },
+  ],
+  [
+    { src: SECTION6, width: 362, height: 204 },
+    { src: SECTION7, width: 362, height: 362 },
+    { src: SECTION8, width: 362, height: 204 },
+  ],
+  [
+    { src: SECTION9, width: 362, height: 362 },
+    { src: SECTION10, width: 362, height: 362 },
+  ],
+  [
+    { src: SECTION11, width: 362, height: 204 },
+    { src: SECTION12, width: 362, height: 204 },
+    { src: SECTION13, width: 362, height: 362 },
+  ],
+  [
+    { src: SECTION14, width: 362, height: 362 },
+    { src: SECTION15, width: 362, height: 362 },
+  ],
 ];
-
 
 const items = [
   {
@@ -93,46 +113,43 @@ const items = [
   },
 ];
 
- const foodItems = [
-    {
-      id: "4",
-      title: "The Oxygen Pattaya",
-      imageUrl:
-        "https://img.wongnai.com/p/1920x0/2025/07/04/01218195f66e40bdb373cbfafcab1fd2.jpg",
-      minutes: 2,
-      href: "#",
-    },
-    {
-      id: "5",
-      title: "Castello Di Bellagio Pattaya",
-      imageUrl:
-        "https://img.wongnai.com/p/1920x0/2022/01/15/616d3b9694ff4a3fa589b5574bf5f505.jpg",
-      minutes: 4,
-      href: "#",
-    },
-    {
-      id: "6",
-      title: "Horizon Rooftop Restaurant & Bar",
-      imageUrl:
-        "https://img.wongnai.com/p/1920x0/2022/08/09/60f38f56c6994981be4cebe462fe185e.jpg",
-      minutes: 8,
-      href: "#",
-    },
-  ];
+const foodItems = [
+  {
+    id: "4",
+    title: "The Oxygen Pattaya",
+    imageUrl:
+      "https://img.wongnai.com/p/1920x0/2025/07/04/01218195f66e40bdb373cbfafcab1fd2.jpg",
+    minutes: 2,
+    href: "#",
+  },
+  {
+    id: "5",
+    title: "Castello Di Bellagio Pattaya",
+    imageUrl:
+      "https://img.wongnai.com/p/1920x0/2022/01/15/616d3b9694ff4a3fa589b5574bf5f505.jpg",
+    minutes: 4,
+    href: "#",
+  },
+  {
+    id: "6",
+    title: "Horizon Rooftop Restaurant & Bar",
+    imageUrl:
+      "https://img.wongnai.com/p/1920x0/2022/08/09/60f38f56c6994981be4cebe462fe185e.jpg",
+    minutes: 8,
+    href: "#",
+  },
+];
 export default function Home() {
-
-  
-
   return (
     <div className="flex flex-col gap-10">
       <HeroSection />
       <ReservationForm />
-      <VillaPricing/>
+      <VillaPricing />
       {/* <Infomation /> */}
       {/* <VideoPlayer videoId="Erflio-agG4" /> */}
       <Reserve />
       {/* <ImageSlider images={images} /> */}
-      <TomorrowlandThailand2026/>
+
       <VillaRetreatOverview />
       {/* <SeasideEscape
         title="Your Private Seaside Escape Awaits"
@@ -268,7 +285,8 @@ export default function Home() {
       </div> */}
 
       <ImageGallery />
-      <Activity/>
+      <TomorrowlandThailand2026 />
+      <Activity />
       <PlaceRecommendCombined
         groups={[
           {
@@ -295,9 +313,8 @@ export default function Home() {
         subTitle="Experience the ultimate beachfront luxury at our exclusive 5-bedroom villa — where every room boasts a private jacuzzi overlooking the ocean."
         image={Horizon}
       /> */}
-      
-      <Contact />
 
+      <Contact />
     </div>
   );
 }
