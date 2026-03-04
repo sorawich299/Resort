@@ -2,7 +2,7 @@
 
 export default function TomorrowlandThailand2026() {
   return (
-    <section className="relative py-20 px-6">
+    <section className="relative py-20 px-6" style={{ fontFamily: '"Cormorant Infant", sans-serif' }}>
 
       {/* Neon Background */}
       <div className="absolute inset-0 bg-gradient-to-br 
