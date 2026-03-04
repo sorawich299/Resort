@@ -98,7 +98,7 @@ const items = [
       id: "4",
       title: "The Oxygen Pattaya",
       imageUrl:
-        "https://scontent.fbkk22-2.fna.fbcdn.net/v/t39.30808-6/480220787_936846538635449_7193350373101981417_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=HA_Ail3DJn8Q7kNvwFdIXjs&_nc_oc=AdkJ737BuDV1sVMjca-llIv8_2mEtKahBJ-ax1C-IvVnSDOmZuwdjM_CkZZwQrCBUqE&_nc_zt=23&_nc_ht=scontent.fbkk22-2.fna&_nc_gid=n12JOH0Bb-bg7pUkQNCo7w&oh=00_Afip9u1V4ivDKXzgBARzvyP4DRjQLK4lBKoeOQVV56rQSw&oe=69178FC9",
+        "https://img.wongnai.com/p/1920x0/2025/07/04/01218195f66e40bdb373cbfafcab1fd2.jpg",
       minutes: 2,
       href: "#",
     },
@@ -106,7 +106,7 @@ const items = [
       id: "5",
       title: "Castello Di Bellagio Pattaya",
       imageUrl:
-        "https://scontent.fbkk22-2.fna.fbcdn.net/v/t39.30808-6/497709148_1100654288763266_6866494021417173089_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=qjy2JBDhZfoQ7kNvwGmoZIj&_nc_oc=Adk0p5zZWduSnHASmu6_3QNQ9tOqf8JffpoQzh2eszithY823oNOxFWuVfBch7RMeos&_nc_zt=23&_nc_ht=scontent.fbkk22-2.fna&_nc_gid=GVJ7T8UGp0iKrRnmE5P3eA&oh=00_Afg56y3OjM58Pfr8lfD0SmbtDFDGq6O5wKrKdRAQ-jfQfg&oe=69178E72",
+        "https://img.wongnai.com/p/1920x0/2022/01/15/616d3b9694ff4a3fa589b5574bf5f505.jpg",
       minutes: 4,
       href: "#",
     },
@@ -114,7 +114,7 @@ const items = [
       id: "6",
       title: "Horizon Rooftop Restaurant & Bar",
       imageUrl:
-        "https://scontent.fbkk22-8.fna.fbcdn.net/v/t1.6435-9/155458395_2960615650835104_9166571135936235335_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=68gUnhGP5fUQ7kNvwGMACSe&_nc_oc=AdnLBENr4QV-KteZL4ZyHm9S_Ha_wv6-BzubLNeNwUhU2OMK_-ZnTXOM_zEWuXYziac&_nc_zt=23&_nc_ht=scontent.fbkk22-8.fna&_nc_gid=PKDPE8_sqX0jcsD-bm_jEg&oh=00_AfiyB36R6c1CAvaKEHEAiXEPWqgdy3R4lR0yZD02tYPHsA&oe=69392D3D",
+        "https://img.wongnai.com/p/1920x0/2022/08/09/60f38f56c6994981be4cebe462fe185e.jpg",
       minutes: 8,
       href: "#",
     },
