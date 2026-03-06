@@ -17,37 +17,50 @@ import Image from "next/image";
 
 const activities = [
   {
-    title: "Limousine Service",
-    image: "https://images.unsplash.com/photo-1771775751121-3091d79073d4?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    title: "Private Yacht",
-    image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    title: "Butler Service",
-    image: "https://poloandtweed.com/wp-content/uploads/2023/02/Blog-Photos-5.png"
+    title: "Personal Butler",
+    image:
+      "https://poloandtweed.com/wp-content/uploads/2023/02/Blog-Photos-5.png",
   },
   {
     title: "Beauty & Spa",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200&auto=format&fit=crop"
+    image:
+      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200&auto=format&fit=crop",
   },
   {
     title: "Private Chef",
-    image: "https://staffinghut.com/wp-content/uploads/2023/01/private-chef.jpg"
+    image:
+      "https://staffinghut.com/wp-content/uploads/2023/01/private-chef.jpg",
+  },
+  {
+    title: "Private Yacht",
+    image:
+      "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=1200&auto=format&fit=crop",
+  },
+  {
+    title: "Luxury Limousine",
+    image:
+      "https://images.unsplash.com/photo-1771775751121-3091d79073d4?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Skydiving",
-    image: "https://media3.thrillophilia.com/filestore/3gvdyxi7vxy45ljiq3yfi09tgmx5_LRM_EXPORT_20161122_182311.jpg?w=576&h=650"
+    image:
+      "https://media3.thrillophilia.com/filestore/3gvdyxi7vxy45ljiq3yfi09tgmx5_LRM_EXPORT_20161122_182311.jpg?w=576&h=650",
   },
   {
     title: "Jet Ski",
-    image: "https://images.unsplash.com/photo-1618858227841-9beacd3b5f6f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image:
+      "https://images.unsplash.com/photo-1618858227841-9beacd3b5f6f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
-{
+  {
     title: "Sunset Dinner Cruise",
-    image: "https://e-c.storage.googleapis.com/res/8e5a3765-8810-484c-b280-5f9d769adb43/original"
-  }
+    image:
+      "https://e-c.storage.googleapis.com/res/8e5a3765-8810-484c-b280-5f9d769adb43/original",
+  },
+  {
+    title: "Helicopter Tour",
+    image:
+      "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1200,h_630/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/e7wcw06gtvc5pfofm2pg/PhuketHelicopterTours-Klook.jpg",
+  },
 ];
 
 // const activities = [
@@ -79,60 +92,56 @@ const activities = [
 //     title: "Jet Ski Experience",
 //     image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1200&auto=format&fit=crop"
 //   },
-  
+
 // ];
 
 export default function Activities() {
   return (
-    <section style={{ fontFamily: '"Cormorant Infant", sans-serif' }} className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
-      {/* 🔹 BG Layer */}
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg-light)] via-[#f8f9fa] to-[var(--color-bg-dark)]" /> */}
-      <motion.div
-        className="absolute inset-0 bg-[url('https://image.makewebeasy.net/makeweb/m_1920x0/bL4zZ31F3/webp/S6_bg.webp?v=202405291424')] bg-cover bg-center opacity-100"
-        animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
-        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+    <section
+      style={{ fontFamily: '"Cormorant Infant", sans-serif' }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      {/* Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://image.makewebeasy.net/makeweb/m_1920x0/bL4zZ31F3/webp/S6_bg.webp?v=202405291424')",
+        }}
       />
-      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/20 to-transparent z-10" />
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/10 to-transparent z-10" />
 
-      <div className="w-full max-w-7xl relative z-20">
-        {/* 🔹 Header */}
-        <div className="text-center pt-8 pb-4">
-          <h1 className="text-3xl md:text-4xl  font-semibold text-white">
+      <div className="relative z-10 w-full max-w-7xl px-8 py-16">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl text-white font-semibold">
             Services & Activities
           </h1>
-          <div className="w-24 h-[2px] bg-[var(--color-logo)] mx-auto mt-3 rounded-full"></div>
+          <div className="w-24 h-[2px] bg-[var(--color-logo)] mx-auto mt-3"></div>
         </div>
 
-        {/* 🔹 Masonry Grid */}
-        <div className="flex-1 overflow-y-auto px-8 pb-12">
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
-            {activities.map((a, i) => (
-              <motion.div
-                key={i}
-                className="mb-4 overflow-hidden rounded-2xl relative group break-inside-avoid shadow-md shadow-black/10"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {activities.map((a, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.3 }}
+              className="relative overflow-hidden rounded-2xl shadow-xl group"
+            >
+              <div className="relative aspect-[4/3]">
                 <Image
                   src={a.image}
                   alt={a.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+              </div>
 
-                {/* Bottom text with background blur/40 */}
-                <div className="absolute bottom-0 left-0 right-0 
-                  bg-black/40 backdrop-blur-sm
-                  px-4 py-3 
-                  text-white text-lg font-semibold 
-                  flex items-center justify-center">
-                  {a.title}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm text-white text-lg font-semibold py-3 text-center">
+                {a.title}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
