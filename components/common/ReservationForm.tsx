@@ -73,7 +73,7 @@ const ReservationForm: React.FC = () => {
     });
 
     // ปลายทางจริงของคุณ เช่น https://booking.solunarvilla.com
-    const url = `http://localhost:8080/?${params.toString()}`;
+    const url = `https://booking.solunarvilla.com/?${params.toString()}`;
     window.open(url, "_blank");
   };
 

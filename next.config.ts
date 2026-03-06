@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 // const repoName = 'Home';
-const repoName = 'Resort';
+const repoName = 'Home';
 
 const nextConfig: NextConfig = {
   /* config options here */
