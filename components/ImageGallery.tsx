@@ -122,12 +122,18 @@ import NUT6023 from "../public/images/Portrait/Preview_1400px/_NUT6023.jpg";
 import NUT6234 from "../public/images/Portrait/Preview_1400px/_NUT6234.jpg";
 import NUT5890 from "../public/images/Portrait/Preview_1400px/_NUT5890.jpg";
 import View from "../public/images/Drone/Preview_1400px/DJI_20241224061556_0006_D-HDR.jpg";
+import section12 from "@/public/images/Slider/section6-image12.jpg"
+import section11 from "@/public/images/Slider/section6-image11.jpg"
+import home from '@/public/images/Drone/Fullsize/DJI_20241224163759_0172_D-HDR.jpg'
 import { motion } from "framer-motion";
 
 const images = [
   { src: NUT6023, title: "Golden Hour Portrait" },
   { src: NUT6234, title: "Studio Elegance" },
   { src: NUT5890, title: "Natural Light Mood" },
+  { src: section12, title: "section6-image12" },
+  { src: section11, title: "section6-image11" },
+  { src: home, title: "DJI_20241224163759_0172_D-HDR" },
   { src: View, title: "Drone Cityscape" },
 ];
 
@@ -177,7 +183,7 @@ export default function ImageGallery2() {
             />
 
             {/* Title ตอนปกติ */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent p-5 text-white">
+            {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent p-5 text-white">
               <h2 className="text-2xl font-semibold tracking-wide">
                 {images[currentIndex].title}
               </h2>
@@ -185,7 +191,7 @@ export default function ImageGallery2() {
                 Explore the emotion and story behind this frame. Crafted with
                 light, depth, and passion.
               </p>
-            </div>
+            </div> */}
 
           </motion.div>
 
