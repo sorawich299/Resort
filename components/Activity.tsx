@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Limousine from '@/public/images/luxury-car-speeds-by-modern-building-dusk-generative-ai.jpg'
 
 // const activities = [
 //   { title: "Pattaya Shooting Park and Adventure", image: "https://lh3.googleusercontent.com/p/AF1QipNg17UrvzY0ZvTVFw_roFy23Xfzh5QPxTDwjGwc=s680-w680-h510-rw" },
@@ -39,7 +40,7 @@ const activities = [
   {
     title: "Luxury Limousine",
     image:
-      "https://images.unsplash.com/photo-1771775751121-3091d79073d4?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      Limousine,
   },
   {
     title: "Skydiving",
@@ -128,7 +129,7 @@ export default function Activities() {
               transition={{ duration: 0.3 }}
               className="relative overflow-hidden rounded-2xl shadow-xl group"
             >
-              <div className="relative aspect-[4/3]">
+              <div className="relative aspect-[5/4]">
                 <Image
                   src={a.image}
                   alt={a.title}
