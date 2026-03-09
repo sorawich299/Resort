@@ -41,7 +41,7 @@ const activities = [
   {
     title: "Luxury Limousine",
     image:
-      "/images/luxury-car-speeds-by-modern-building-dusk-generative-ai.jpg",
+      Limousine,
   },
   {
     title: "Skydiving",
