@@ -34,33 +34,14 @@ export default function ServicesPage() {
             <div className="w-24 h-[2px] bg-[#C8A46B] mx-auto my-6"></div>
 
             <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl mx-auto">
-              Elevate your stay with a curated selection of premium services and
-              unforgettable experiences. From private chefs and luxury limousine
-              transfers to thrilling adventures and exclusive leisure
-              activities, our villa team is dedicated to creating exceptional
-              moments for you.
+              Elevate your stay with a curated selection of premium services and unforgettable experiences. From private chefs and luxury limousine transfers to thrilling adventures and exclusive leisure activities, our villa team is dedicated to creating exceptional moments for you.
+
+Our villa concierge team is delighted to assist you in arranging a wide range of additional services and activities designed to enhance your stay. Whether you seek relaxation, adventure, or luxury experiences, we are here to ensure every moment of your journey is seamless and memorable.
+
+Simply contact our villa staff to reserve services or request personalized arrangements during your stay.
             </p>
           </div>
 
-          {/* Second Text */}
-          <div className="space-y-6 pt-6">
-            <h2 className="text-3xl font-semibold text-white">
-              Tailored Experiences for Your Stay
-            </h2>
-
-            <p className="text-neutral-300 leading-relaxed">
-              Our villa concierge team is delighted to assist you in arranging a
-              wide range of additional services and activities designed to
-              enhance your stay. Whether you seek relaxation, adventure, or
-              luxury experiences, we are here to ensure every moment of your
-              journey is seamless and memorable.
-            </p>
-
-            <p className="text-neutral-400 leading-relaxed">
-              Simply contact our villa staff to reserve services or request
-              personalized arrangements during your stay.
-            </p>
-          </div>
         </div>
       </section>
 
