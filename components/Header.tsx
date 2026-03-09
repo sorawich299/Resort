@@ -14,13 +14,14 @@ export default function Header() {
   const menuItems = [
     { label: "The Infinity Villa", link: "Infinity" },
     { label: "The Horizon Retreat", link: "Horizon" },
+    { label: "Services & Activities", link: "ServicesAndActivities" },
     { label: "Gallery", link: "Gallery" },
     { label: "Contact", link: "Contact" },
     { label: "Home", link: "" }, // "/" → ""
   ];
 
   const activeLabel =
-    menuItems.find((item) => cleanPath.startsWith(item.link))?.label || "Home";
+    menuItems.find((item) => cleanPath.startsWith(item.link))?.label || "Home" || "Services & Activities";
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -47,7 +48,7 @@ export default function Header() {
         : "text-black/50 lg:hover:text-[var(--color-logo)] font-medium hover:font-bold";
     }
 
-    if (activeLabel === "Home") {
+    if (activeLabel === "Home" || activeLabel === "Services & Activities") {
       return isActive
         ? "text-white lg:hover:text-white font-bold"
         : "text-white/30 lg:hover:text-white font-medium hover:font-bold";
@@ -96,6 +97,7 @@ export default function Header() {
               { label: "Home", link: "/" },
               { label: "The Infinity Villa", link: "/Infinity" },
               { label: "The Horizon Retreat", link: "/Horizon" },
+              { label: "Services & Activities", link: "/ServicesAndActivities" },
               { label: "Gallery", link: "/Gallery" },
               { label: "Contact", link: "/Contact" },
             ].map((item, i) => (

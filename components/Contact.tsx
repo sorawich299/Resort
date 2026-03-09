@@ -97,7 +97,12 @@ export default function ContactSection() {
               <Mail className="text-[var(--color-logo)] w-6 h-6 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg">Email</h3>
-                <p className="text-gray-700">info@solunarvilla.com</p>
+                <a
+                      href="mailto:info@solunarvilla.com"
+                      className="text-gray-700 hover:underline"
+                    >
+                      info@solunarvilla.com
+                    </a>
               </div>
             </div>
 
@@ -105,7 +110,12 @@ export default function ContactSection() {
               <Phone className="text-[var(--color-logo)] w-6 h-6 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg">Phone</h3>
-                <p className="text-gray-700">+6693-659-9815</p>
+                <a
+                      href="tel:+66936599815"
+                      className="text-gray-700 hover:underline"
+                    >
+                      +66 93-659-9815
+                    </a>
               </div>
             </div>
 

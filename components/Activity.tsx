@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Limousine from '@/public/images/luxury-car-speeds-by-modern-building-dusk-generative-ai.jpg'
+import { usePathname, useRouter } from "next/navigation";
 
 // const activities = [
 //   { title: "Pattaya Shooting Park and Adventure", image: "https://lh3.googleusercontent.com/p/AF1QipNg17UrvzY0ZvTVFw_roFy23Xfzh5QPxTDwjGwc=s680-w680-h510-rw" },
@@ -40,7 +41,7 @@ const activities = [
   {
     title: "Luxury Limousine",
     image:
-      Limousine,
+      "/images/luxury-car-speeds-by-modern-building-dusk-generative-ai.jpg",
   },
   {
     title: "Skydiving",
@@ -64,39 +65,16 @@ const activities = [
   },
 ];
 
-// const activities = [
-//   {
-//     title: "Limousine Service",
-//     image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=1200&auto=format&fit=crop"
-//   },
-//   {
-//     title: "Private Yacht Charter",
-//     image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=1200&auto=format&fit=crop"
-//   },
-//   {
-//     title: "Private Butler Service",
-//     image: "https://images.unsplash.com/photo-1551776235-dde6d4829808?q=80&w=1200&auto=format&fit=crop"
-//   },
-//   {
-//     title: "Luxury Beauty & Spa",
-//     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200&auto=format&fit=crop"
-//   },
-//   {
-//     title: "Private Chef Experience",
-//     image: "https://images.unsplash.com/photo-1556911220-bda9f7f7597e?q=80&w=1200&auto=format&fit=crop"
-//   },
-//   {
-//     title: "Skydiving Adventure",
-//     image: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?q=80&w=1200&auto=format&fit=crop"
-//   },
-//   {
-//     title: "Jet Ski Experience",
-//     image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1200&auto=format&fit=crop"
-//   },
-
-// ];
-
 export default function Activities() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleClick = () => {
+    console.log(pathname)
+    if (pathname !== "/ServicesAndActivities/") {
+      router.push("/ServicesAndActivities");
+    }
+  };
   return (
     <section
       style={{ fontFamily: '"Cormorant Infant", sans-serif' }}
@@ -125,9 +103,10 @@ export default function Activities() {
           {activities.map((a, i) => (
             <motion.div
               key={i}
+              onClick={handleClick}
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.3 }}
-              className="relative overflow-hidden rounded-2xl shadow-xl group"
+              className="relative overflow-hidden rounded-2xl shadow-xl group cursor-pointer"
             >
               <div className="relative aspect-[5/4]">
                 <Image
