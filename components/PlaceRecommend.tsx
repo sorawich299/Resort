@@ -73,10 +73,10 @@ export default function PlaceRecommendCombined({ groups, className = "" }: Props
                       )}
                     </p>
 
-                    <div className="mt-5 flex justify-center">
+                    {/* <div className="mt-5 flex justify-center">
                       {it.href ? (
                         <a
-                          href={it.href}
+                          // href={it.href}
                           className="inline-block rounded border border-[#d8b08f] px-6 py-2.5 text-sm tracking-wide text-[#d8b08f] hover:bg-[#d8b08f]/10 transition"
                         >
                           MORE DETAILS
@@ -89,7 +89,7 @@ export default function PlaceRecommendCombined({ groups, className = "" }: Props
                           MORE DETAILS
                         </button>
                       )}
-                    </div>
+                    </div> */}
                   </article>
                 );
               })}

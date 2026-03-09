@@ -70,7 +70,6 @@ export default function Activities() {
   const pathname = usePathname();
 
   const handleClick = () => {
-    console.log(pathname)
     if (pathname !== "/ServicesAndActivities/") {
       router.push("/ServicesAndActivities");
     }
@@ -91,12 +90,14 @@ export default function Activities() {
 
       <div className="relative z-10 w-full max-w-7xl px-8 py-16">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl text-white font-semibold">
-            Services & Activities
-          </h1>
-          <div className="w-24 h-[2px] bg-[var(--color-logo)] mx-auto mt-3"></div>
-        </div>
+        {pathname !== "/ServicesAndActivities/" && (
+          <div className="text-center mb-12">
+            <h1 className="text-4xl text-white font-semibold">
+              Services & Activities
+            </h1>
+            <div className="w-24 h-[2px] bg-[var(--color-logo)] mx-auto mt-3"></div>
+          </div>
+        )}
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
