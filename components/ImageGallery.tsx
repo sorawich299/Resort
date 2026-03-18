@@ -226,7 +226,7 @@ export default function ImageGallery2() {
                 className="object-cover w-28 h-20 md:w-32 md:h-24"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-sm font-medium">
-                {img.title}
+                {/* {"5555555"} */}
               </div>
             </motion.button>
           ))}
