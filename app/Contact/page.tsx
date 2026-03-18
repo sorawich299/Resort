@@ -86,7 +86,7 @@ export default function Contact() {
                       129 moo 2 Bang Sare, Sattahip, Chon Buri 20250
                     </p>
                     <a
-                      href="https://www.google.com/maps?ll=12.775117,100.901945&z=15&t=h&hl=th&gl=TH&mapclient=embed&q=12%C2%B046%2730.4%22N+100%C2%B054%2707.0%22E+12.775111,+100.901944@12.7751111,100.9019444"
+                      href="https://maps.app.goo.gl/Yfx2WVPoPCZWW8gc7"
                       target="_blank"
                       className="text-[var(--color-logo)] hover:underline mt-1 inline-block"
                     >
