@@ -67,10 +67,10 @@ export default function PlaceRecommendCombined({ groups, className = "" }: Props
                     </div>
 
                     <p className="mt-4 text-center text-[17px] leading-7 text-[#2d2d2d]" style={{fontStyle: 'italic'}}>
-                      {it.title}
                       {typeof it.minutes === "number" && (
-                        <> use time {it.minutes} minutes</>
+                        <> Only {it.minutes} minutes away from </>
                       )}
+                      {it.title}
                     </p>
 
                     {/* <div className="mt-5 flex justify-center">
